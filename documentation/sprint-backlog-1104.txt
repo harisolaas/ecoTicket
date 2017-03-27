@@ -1,0 +1,39 @@
+Sprint Backlog
+ 27-03 al 11-04
+
+Paginas a desarrollar:
+
+*Home
+	>Presenta la idea del sitio. (GLOBAL 3hs.)
+		>Escribir la idea (1hs.)
+		>Organizar el contenido (1hs.)
+		>Escribir el HTML (1h.)
+	>Moderna y elegante.(*es parte del estilo*)
+	
+*Sign-up
+	>Formulario de registro (visual pero no funcional). 
+		>Definir el contenido (1.30hs)
+		>Organizar el contenido (1hs.)
+		>Escribir HTML y CSS especifico (2.30hs.)
+		
+*Sign-in
+	>Remind-me (2hs)
+	>Recuperar contrasena (2hs)
+
+*FAQ (Centro de ayuda)
+	>5 preguntas (1hr)
+	>5 respuestas (1hr)
+	
+
+Todas las paginas deben:
+
+*Respetar un mismo estilo y 
+	>Investigar estilos de aplicaciones similares (4hs)
+	>Escribir un CSS global (3hs)
+
+*Permitir una navegacion fluida
+	>Barra de navegacion (2hs)
+
+*Responsive
+	>Diseniar para Mobile First
+	>Programar para Desktop First
