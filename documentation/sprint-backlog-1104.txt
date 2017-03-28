@@ -30,10 +30,13 @@ Todas las paginas deben:
 *Respetar un mismo estilo y 
 	>Investigar estilos de aplicaciones similares (4hs)
 	>Escribir un CSS global (3hs)
+		>Media Query (2hs.)
 
 *Permitir una navegacion fluida
 	>Barra de navegacion (2hs)
 
 *Responsive
-	>Diseniar para Mobile First
-	>Programar para Desktop First
+	>Diseniar para Desktop First
+		>Investigar formatos de Destkop y su posible adaptacion a mobile(4hs)
+	>Programar para Mobile First
+		
