@@ -27,7 +27,7 @@ Paginas a desarrollar:
 
 Todas las paginas deben:
 
-*Respetar un mismo estilo y 
+*Respetar un mismo estilo
 	>Investigar estilos de aplicaciones similares (4hs)
 	>Escribir un CSS global (3hs)
 		>Media Query (2hs.)

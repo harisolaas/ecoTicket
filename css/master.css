@@ -6,6 +6,7 @@
 }
 body{
   font-family: 'Cabin Condensed', sans-serif;
+  min-height: 100vh;
 }
 a{
   color: inherit;
@@ -114,4 +115,25 @@ ul{
   background-color: blue;
   height: 100vh;
   min-height: 250px;
+}
+footer{
+  min-height: 30px;
+  background-color: #388E3C;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+footer ul{
+  display: flex;
+}
+footer li{
+  display: flex;
+  flex-grow: 0.6;
+  text-align: center;
+}
+footer a{
+  flex-grow: 1;
+  height: 10vh;
+  line-height: 10vh;
+  width: 100%;
 }
