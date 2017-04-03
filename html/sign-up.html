@@ -2,32 +2,83 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width:device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/sign-in-up-forms.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <title>ecoTicket - Registro</title>
   </head>
   <body>
-    <h1>Registro</h1>
-    <div class="form-container">
+    <div class="main-container">
 
-      <form class="" action="#.php" method="post">
+      <header>
+        <h1>Registro</h1>
+        <span class="icon ion-navicon"></span>
+      </header>
 
-        <label for="email">Correo electrónico</label><br>
-        <input type="email" name="email"><br>
+      <div class="form-container">
 
-        <label for="first-name">Nombre</label><br>
-        <input type="text" name="first-name"><br>
+        <form action="#.php" method="post">
 
-        <label for="last-name">Apellido</label><br>
-        <input type="text" name="last-name"><br>
+          <div class="form-element">
+            <div>
+              <label for="email">Correo electrónico</label><br>
+              <input type="email" name="email" required placeholder="correo@electronico.com">
+            </div>
+          </div>
 
-        <label for="password">Contraseña</label><br>
-        <input type="password" name="password"><br>
+          <div class="form-element">
 
-        <label for="confirm-password">Conformar contraseña</label><br>
-        <input type="password" name="confirm-password"><br>
+            <div class="form-name-lastname">
+              <div>
+                <label for="first-name">Nombre</label><br>
+                <input type="text" name="first-name" required placeholder="Tu nombre">
+              </div>
 
-        <button type="submit">Enviar</button>
+              <div class="">
+                <label for="last-name">Apellido</label><br>
+                <input type="text" name="last-name" required placeholder="Tu apellido">
+              </div>
 
-      </form>
-    </div> <!-- Cierra .form-container -->
+            </div>
+
+          </div>
+
+          <div class="form-element">
+            <div>
+              <label for="password">Contraseña</label><br>
+              <input type="password" name="password" required placeholder="Tu contraseña">
+            </div>
+          </div>
+
+          <div class="form-element">
+            <div>
+              <label for="confirm-password">Confirmar contraseña</label><br>
+              <input type="password" name="confirm-password" required placeholder="Tu contraseña otra vez">
+            </div>
+          </div>
+
+          <div class="form-element">
+            <button type="submit">Enviar</button>
+          </div>
+
+        </form>
+
+      </div> <!-- Cierra .form-container -->
+
+
+    </div><!-- Cierra .main-container -->
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem</a></li>
+          <li><a href="#">Ipsum</a></li>
+          <li><a href="#">Dolor</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
