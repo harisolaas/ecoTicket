@@ -30,31 +30,41 @@ ul{
 }
 
 .nav-principal-container{
+    position: absolute;
+    margin-top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 25%;
-    position: absolute;
+
+
 }
 .botonera{
     position: relative;
     margin: auto;
+    width: 200px;
 
     list-style: none;
-    width: 200px;
+
 
 }
 .botonera a{
-    background-color: #5a5d68;
     display: block;
     padding: 5px 10px;
-    text-align: center;
+    margin-bottom: 0.5vh;
 
+    border: 1px solid black;
+    border-radius: 4px;
+
+    text-align: center;
     text-decoration: none;
 
+    background-color: #5a5d68;
+    opacity: 0.7;
     color: #f8f0f0;
 }
 .botonera a:hover{
-    background-color: white;
+    background-color: transparent;
+
+    border: 1px solid black;
     color: black;
 }
 
