@@ -16,8 +16,6 @@ ul{
   list-style-type: none;
 }
 
-
-
 .pantalla-landing{
   background-image: url(../images/bg-image-landing.jpg);
   background-position: center;
@@ -30,8 +28,6 @@ ul{
   flex-flow: column;
   justify-content: center;
 }
-
-
 
 .nav-principal-container{
     left: 50%;
@@ -61,8 +57,6 @@ ul{
     background-color: white;
     color: black;
 }
-
-
 
 .pantalla-landing-titulo{
   text-align: center;
