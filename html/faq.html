@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/sign-in-up-forms.css">
-    <link rel="stylesheet" href="../html/faqs.css">
+    <link rel="stylesheet" href="../css/faqs.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <title>F.A.Q.s</title>
   </head>
@@ -15,7 +15,28 @@
   <article class="main-container">
       <header>
         <h1>F.A.Q.s</h1>
-        <span class="icon ion-navicon"></span>
+        <span id='boton' class="icon ion-navicon"></span>
+        <nav id='menu'>
+            <ul class="botonera">
+                <li><a href="../index.html">ecoTicket</a></li>
+                <li><a href="sign-up.html">Registro</a></li>
+                <li><a href="sign-in.html">Log-in</a></li>
+                <li><a href="faq.html">Centro de ayuda</a></li>
+            </ul>
+        </nav>
+        <script type="text/javascript">
+            var boton = document.getElementById('boton');
+            var menu = document.getElementById('menu');
+            boton.addEventListener('click', function () {
+                if (menu.className == 'nav-open') {
+                    menu.className = '';
+                } else {
+                    menu.className = 'nav-open'
+                }
+            }
+
+            )
+        </script>
       </header>
       <!--Start  question-container -->
     <article class="question-container">

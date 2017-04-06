@@ -18,15 +18,28 @@
 
         <header>
           <h1>Log-in</h1>
-          <span class="icon ion-navicon"></span>
-          <nav class="nav-principal-container">
+          <span id='boton' class="icon ion-navicon"></span>
+          <nav id='menu'>
               <ul class="botonera">
                   <li><a href="../index.html">ecoTicket</a></li>
                   <li><a href="sign-up.html">Registro</a></li>
-                  <li><a href="#">Log-in</a></li>
+                  <li><a href="sign-in.html">Log-in</a></li>
                   <li><a href="faq.html">Centro de ayuda</a></li>
               </ul>
           </nav>
+          <script type="text/javascript">
+              var boton = document.getElementById('boton');
+              var menu = document.getElementById('menu');
+              boton.addEventListener('click', function () {
+                  if (menu.className == 'nav-open') {
+                      menu.className = '';
+                  } else {
+                      menu.className = 'nav-open'
+                  }
+              }
+
+              )
+          </script>
         </header>
 
         <div class="form-container">
