@@ -29,25 +29,32 @@ ul{
   justify-content: center;
 }
 
-.nav-principal-container{
+.nav-home-container{
     position: relative;
     margin-top: 25%;
     left: 50%;
     transform: translateX(-50%);
+}
+.nav-principal-container{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
-
+    padding-top: 4vh;
+    background-color: white;
 }
 .botonera{
     position: relative;
     margin: auto;
-    width: 200px;
+    min-width: 100px;
+    width: 70%;
 
     list-style: none;
 }
 .botonera a{
     display: block;
     padding: 5px 10px;
-    margin-bottom: 0.5vh;
+    margin-bottom: 3vh;
 
     border: 1px solid black;
     border-radius: 4px;
