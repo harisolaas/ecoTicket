@@ -35,7 +35,12 @@ ul{
     left: 50%;
     transform: translateX(-50%);
 }
-.nav-principal-container{
+#menu{
+    display: none;
+}
+#menu.nav-open{
+    display: block;
+
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -43,7 +48,6 @@ ul{
     padding-top: 4vh;
     background-color: white;
 
-    display: none;
 }
 .botonera{
     position: relative;
