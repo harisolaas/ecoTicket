@@ -43,8 +43,6 @@ ul{
     width: 200px;
 
     list-style: none;
-
-
 }
 .botonera a{
     display: block;
@@ -88,8 +86,7 @@ ul{
 }
 
 .quienes-somos{
-  background-color: red;
-  height: 90vh;
+  height: 100vh;
   min-height: 225px;
 }
 .quienes-somos-img{
@@ -103,23 +100,8 @@ ul{
   float: left;
   background-color: blue;
 }
-.que-es-ecoticket{
-  background-color: green;
-  height: 100vh;
-  min-height: 250px;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-}
-.que-es-ecoticket-content{
-   background-color: yellow;
-   display: block;
-}
-.producto{
-  background-color: blue;
-  height: 100vh;
-  min-height: 250px;
-}
+
+
 footer{
   min-height: 30px;
   background-color: #388E3C;
