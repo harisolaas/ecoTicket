@@ -47,7 +47,9 @@ ul{
 
     padding-top: 4vh;
     background-color: white;
-
+}
+.icon:hover{
+    cursor: pointer;
 }
 .botonera{
     position: relative;
