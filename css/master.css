@@ -17,6 +17,7 @@ ul{
 }
 
 .pantalla-landing{
+  color: #fff;
   background-image: url(../images/bg-image-landing.jpg);
   background-position: center;
   background-size: cover;
@@ -30,7 +31,7 @@ ul{
 }
 
 .nav-home-container{
-    margin-top: 25%;
+    margin-top: 12%;
 }
 #menu{
     display: none;
@@ -58,29 +59,23 @@ ul{
     padding: 5px 0;
     margin-bottom: 3vh;
 
-    border: 1px solid black;
+    text-align: center;
+    font-size: 1.1em;
+
+    border: 1px solid #fff;
     border-radius: 4px;
 
-    text-align: center;
-    text-decoration: none;
-
-    background-color: #5a5d68;
-    opacity: 0.7;
-    color: #f8f0f0;
 }
 .botonera a:hover{
     background-color: transparent;
 
-    border: 1px solid black;
-    color: black;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #5a5d6888;
 }
 
 .pantalla-landing-titulo{
   text-align: center;
-}
-.pantalla-landing-titulo h1{
-  font-size: 3.5em;
-  font-style: italic;
 }
 .chevron{
   position: absolute;
@@ -94,23 +89,32 @@ ul{
   margin: 0 5px;
 }
 
-.quienes-somos{
-  height: 100vh;
-  min-height: 225px;
+.propuesta-valor{
+    display: flex;
+    justify-content: center;
 }
-.quienes-somos-img{
-  width: 35%;
-  float: left;
-  margin: 10px 2.5%;
-  background-color: green;
+.propuesta-valor-icons{
+    color: #388E3C;
 }
-.quienes-somos-txt{
-  max-width: 60%;
-  float: left;
-  background-color: blue;
+.propuesta-valor-div{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 10vh 0;
+}
+.propuesta-valor-div span{
+    font-size: 5em;
+    width: 104px;
+
+    text-align: center;
+
+    border: 3px solid #388E3C;
+    border-radius: 50%
 }
 
-
+.propuesta-valor-content{
+    display: none;
+}
 footer{
   min-height: 30px;
   background-color: #388E3C;
