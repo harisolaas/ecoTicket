@@ -15,28 +15,7 @@
   <article class="main-container">
       <header>
         <h1>F.A.Q.s</h1>
-        <span id='boton' class="icon ion-navicon"></span>
-        <nav id='menu'>
-            <ul class="botonera">
-                <li><a href="../index.html">ecoTicket</a></li>
-                <li><a href="sign-up.html">Registro</a></li>
-                <li><a href="sign-in.html">Log-in</a></li>
-                <li><a href="faq.html">Centro de ayuda</a></li>
-            </ul>
-        </nav>
-        <script type="text/javascript">
-            var boton = document.getElementById('boton');
-            var menu = document.getElementById('menu');
-            boton.addEventListener('click', function () {
-                if (menu.className == 'nav-open') {
-                    menu.className = '';
-                } else {
-                    menu.className = 'nav-open'
-                }
-            }
-
-            )
-        </script>
+        <?php include '../elements/nav.php'; ?>
       </header>
       <!--Start  question-container -->
     <article class="question-container">
