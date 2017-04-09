@@ -14,15 +14,15 @@
       <header class="pantalla-landing">
 
           <div class="pantalla-landing-titulo">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit<!-- value proposition --></h2>
+            <h2>Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
           </div>
 
         <nav class="nav-home-container">
               <ul class="botonera">
                   <li><a href="#">ecoTicket</a></li>
-                  <li><a href="html/sign-up.php">Registro</a></li>
-                  <li><a href="html/sign-in.php">Log-in</a></li>
-                  <li><a href="html/faq.php">Centro de ayuda</a></li>
+                  <li><a href="paginas/sign-up.php">Registro</a></li>
+                  <li><a href="paginas/sign-in.php">Log-in</a></li>
+                  <li><a href="paginas/faq.php">Centro de ayuda</a></li>
               </ul>
         </nav>
         <nav class="chevron">
@@ -33,46 +33,41 @@
 
     <div class="contenedor-principal">
 
-      <article id="propuesta-valor" class="propuesta-valor">
-        <section class="propuesta-valor-icons">
-            <div class="propuesta-valor-div">
+      <header class="menu">
+            <h1>ecoTicket</h1>
+            <?php include'elements/nav.php'; ?>
+      </header>
+
+      <div id="propuesta-valor" class="propuesta-valor">
+        <article class="propuesta-valor-icons">
+            <section class="propuesta-valor-section">
                 <span class="icon ion-leaf"></span>
-                <strong>Ayudá a preservar el planeta</strong>
-            </div>
+                <h2>Ayudá a preservar el planeta</h2>
 
-            <div class="propuesta-valor-div">
+                <div><p>Miles de toneladas de papel se desperdician todos los días en recibos que pronto terminan en la basura. </p><strong>Cada vez que usas ecoTicket ayudás a reducir el consumo de papel.</strong></div>
+
+            </section>
+
+            <section class="propuesta-valor-section">
                 <span class="icon ion-ios-paper"></span>
-                <strong>Mantené tus cuentas al día</strong>
-            </div>
+                <h2>Llevá tus cuentas al día</h2>
 
-            <div class="propuesta-valor-div">
+                <div><strong>Accedé al registro de todas tus compras desde la plataforma de ecoTicket</strong><p> y organizate como más te guste.</p></div>
+
+
+            </section>
+
+            <section class="propuesta-valor-section">
                 <span class="icon ion-bag"></span>
-                <strong>Asegurá tus compras</strong>
-            </div>
-        </section>
-        <section class="propuesta-valor-content">
-            <div>
-                Miles de toneladas de papel se desperdician todos los días en recibos que pronto terminan en la basura. <strong>Cada vez que usas ecoTicket estás colaborando con el planeta</strong>.
-            </div>
+                <h2>Asegurá tus compras</h2>
 
-            <div>
-                Desde la plataforma de ecoTicket tenés acceso al registro de todas tus compras para que puedas organizarte como más te guste.
-            </div>
+                <div><strong>La fidelidad de ecoTicket permite que revises cualquier transacción</strong><p> que hayas realizado en caso de que necesites fundamentar un reclamo.</p></div>
+            </section>
+        </article>
+    </div>
 
-            <div>
-                La fidelidad de ecoTicket permite que revises cualquier transacción que hayas realizado en caso de que necesites fundamentar un reclamo.
-            </div>
-        </section>
-      </article>
-      <footer>
-        <nav>
-          <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Ipsum</a></li>
-            <li><a href="#">Dolor</a></li>
-          </ul>
-        </nav>
-      </footer>
+    <?php include 'elements/footer.php'; ?>
+
     </div><!-- cierra .contenedor-principal -->
   </body>
 </html>

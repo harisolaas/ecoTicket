@@ -26,20 +26,27 @@
   text-align: center;
   font-size: 2em;
 }
+.contenedor-principal{
+    width: 96vw;
+    margin: auto;
+}
+header.menu{
+    position: sticky;
+}
 .propuesta-valor{
     display: flex;
     justify-content: center;
 }
-.propuesta-valor-icons{
+
+.propuesta-valor-section{
     color: #388E3C;
-}
-.propuesta-valor-div{
     display: flex;
     flex-flow: column;
     align-items: center;
+    text-align: center;
     margin: 10vh 0;
 }
-.propuesta-valor-div span{
+.propuesta-valor-section span{
     font-size: 5em;
     width: 104px;
 
@@ -48,7 +55,17 @@
     border: 3px solid #388E3C;
     border-radius: 50%
 }
-
-.propuesta-valor-content{
+.propuesta-valor-section h2{
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+.propuesta-valor-section div{
+    width: 90%;
+    color: #444;
+}
+.propuesta-valor-section strong{
+    font-weight: normal;
+}
+.propuesta-valor-section p{
     display: none;
 }
