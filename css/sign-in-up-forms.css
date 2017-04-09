@@ -16,7 +16,7 @@ form{
   display: flex;
   flex-direction: column;
 
-  color: #313E2C;
+  color: #354F04;
 }
 form:first-child{
   padding-top: 2vh;
@@ -57,7 +57,7 @@ input{
 button{
   width: 96%;
   margin: auto;
-  background-color: #70834C;
+  background-color: #80AA29;
   border-radius: 5px;
 
   font-family: inherit;

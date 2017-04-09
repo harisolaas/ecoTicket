@@ -15,12 +15,20 @@ a{
 ul{
   list-style-type: none;
 }
+.button{
+    background-color: #80AA29;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+}
+
+
 .headerNavContainer{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #F9FBF2;
+    background-color: #fff;
 }
 header.menu{
 
@@ -31,11 +39,11 @@ header.menu{
   min-height: 48px;
   line-height: 10vh;
 
-  border-bottom: solid 1px #70834C;
+  border-bottom: solid 1px #80AA29;
 }
 h1{
   display: inline;
-  color: #313E2C;
+  color: #354F04;
 }
 span.menu{
   float: right;
@@ -43,7 +51,7 @@ span.menu{
   font-size: 1.6em;
   padding: 0 10px;
 
-  color: #313E2C;
+  color: #354F04;
 }
 .nav{
     display: none;
@@ -65,10 +73,10 @@ span.menu{
 
     display: block;
     padding: 4vh 0;
-    background-color: #F9FBF2;
+    background-color: #fff;
     background-size: cover;
     border-radius: 2px;
-    color: #313E2C;
+    color: #354F04;
 }
 .icon:hover{
     cursor: pointer;
@@ -86,17 +94,17 @@ span.menu{
     text-align: center;
     font-size: 1.3em;
 
-    border: 1px solid #313E2C;
+    border: 1px solid #354F04;
     border-radius: 4px;
 
 }
 .botonera a:hover{
-    border: 2px solid #313E2C;
+    border: 2px solid #354F04;
 }
 
 footer{
   min-height: 30px;
-  background-color: #1C2817;
+  background-color: #223A01;
   color: #fff;
   width: 100%;
   border-radius: 5px 5px 0 0;

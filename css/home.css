@@ -1,5 +1,6 @@
+/* Pantalla landing */
 .pantalla-landing{
-  color: #FFF;
+  color: #000;
   background-image: url(../images/bg-image-landing.jpg);
   background-position: center;
   background-size: cover;
@@ -14,10 +15,11 @@
 
 .nav-home-container{
     margin-top: 12%;
+    color: #000;
 }
 .nav-home-container a{
-    background-color: #313E2C99;
-    border: 1px solid #F9FBF2aa;
+    background-color: #fff5;
+    border: none;
 }
 .nav-home-container a:hover{
     border: 2px solid #fff;
@@ -25,7 +27,7 @@
 .pantalla-landing-titulo{
   text-align: center;
   font-size: 1em;
-  background-color: #313E2C22;
+  background-color: #fff9;
 }
 .chevron{
   position: absolute;
@@ -36,18 +38,26 @@
   font-size: 2em;
 }
 
+/* Barra de navegación desplegable */
 .headerNavContainer{
     position: sticky;
 }
+
+/* content */
+.content{
+    width: 96vw;
+    margin: auto;
+}
+
+/* Propuesta de valor*/
 .propuesta-valor{
     width: 96vw;
     margin: auto;
     display: flex;
     justify-content: center;
 }
-
 .propuesta-valor-section{
-    color: #70834C;
+    color: #80AA29;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -57,12 +67,12 @@
 .propuesta-valor-section span{
     font-size: 5em;
     width: 104px;
-    background-color: #70834C;
-    color: #F9FBF2;
+    background-color: #80AA29;
+    color: #fff;
 
     text-align: center;
 
-    /*border: 3px solid #70834C;*/
+    /*border: 3px solid #80AA29;*/
     border-radius: 50%
 }
 .propuesta-valor-section h2{
@@ -71,11 +81,35 @@
 }
 .propuesta-valor-section div{
     width: 90%;
-    color: #313E2C;
+    color: #354F04;
 }
 .propuesta-valor-section strong{
     font-weight: normal;
 }
 .propuesta-valor-section p{
     display: none;
+}
+
+/* Crea tu cuenta */
+.crea-tu-cuenta{
+    background-color: #BDD098aa;
+}
+.crea-tu-cuenta-content{
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+}
+.crea-tu-cuenta h2{
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+.crea-tu-cuenta ul{
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* F.A.Q.s */
+.faqs{
 }
