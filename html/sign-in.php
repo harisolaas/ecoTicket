@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head class="no-home">
     <meta charset="utf-8">
     <meta name="viewport" content="width:device-width, initial-scale=1">
 
@@ -16,7 +16,7 @@
   <body>
       <div class="main-container">
 
-        <header>
+        <header class="menu">
           <h1>Log-in</h1>
           <?php include '../elements/nav.php'; ?>
         </header>

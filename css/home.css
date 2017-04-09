@@ -1,0 +1,54 @@
+.pantalla-landing{
+  color: #fff;
+  background-image: url(../images/bg-image-landing.jpg);
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+  min-height: 250px;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.nav-home-container{
+    margin-top: 12%;
+}
+.pantalla-landing-titulo{
+  text-align: center;
+}
+.chevron{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  text-align: center;
+  font-size: 2em;
+}
+.propuesta-valor{
+    display: flex;
+    justify-content: center;
+}
+.propuesta-valor-icons{
+    color: #388E3C;
+}
+.propuesta-valor-div{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 10vh 0;
+}
+.propuesta-valor-div span{
+    font-size: 5em;
+    width: 104px;
+
+    text-align: center;
+
+    border: 3px solid #388E3C;
+    border-radius: 50%
+}
+
+.propuesta-valor-content{
+    display: none;
+}

@@ -13,9 +13,9 @@
   </head>
   <body>
   <article class="main-container">
-      <header>
+      <header class="menu">
         <h1>F.A.Q.s</h1>
-        <?php include '../elements/nav.php'; ?>
+        <?php include'../elements/nav.php'; ?>
       </header>
       <!--Start  question-container -->
     <article class="question-container">

@@ -14,7 +14,7 @@
   <body>
     <div class="main-container">
 
-      <header>
+      <header class="menu">
         <h1>Registro</h1>
         <?php include '../elements/nav.php'; ?>
       </header>

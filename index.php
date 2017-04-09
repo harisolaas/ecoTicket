@@ -4,17 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width:device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/home.css">
     <title>ecoTicket - Home</title>
   </head>
   <body>
-<<<<<<< HEAD
 
-
-=======
-    
->>>>>>> master
       <header class="pantalla-landing">
 
           <div class="pantalla-landing-titulo">
@@ -24,9 +20,9 @@
         <nav class="nav-home-container">
               <ul class="botonera">
                   <li><a href="#">ecoTicket</a></li>
-                  <li><a href="html/sign-up.html">Registro</a></li>
-                  <li><a href="html/sign-in.html">Log-in</a></li>
-                  <li><a href="html/faq.html">Centro de ayuda</a></li>
+                  <li><a href="html/sign-up.php">Registro</a></li>
+                  <li><a href="html/sign-in.php">Log-in</a></li>
+                  <li><a href="html/faq.php">Centro de ayuda</a></li>
               </ul>
         </nav>
         <nav class="chevron">
