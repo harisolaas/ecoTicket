@@ -15,34 +15,38 @@ a{
 ul{
   list-style-type: none;
 }
+.headerNavContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F9FBF2;
+}
 header.menu{
-  position: fixed;
-  top: 0;
-  width: inherit;
-  background-color: #fff;
+
+  width: 96vw;
+  margin: auto;
 
   height: 10vh;
   min-height: 48px;
   line-height: 10vh;
 
-  border-bottom: solid 1px #388E3C;
+  border-bottom: solid 1px #70834C;
 }
 h1{
   display: inline;
+  color: #313E2C;
 }
 span.menu{
   float: right;
 
   font-size: 1.6em;
   padding: 0 10px;
+
+  color: #313E2C;
 }
 .nav{
     display: none;
-    top: 10vh;
-    width: 100%;
-
-    text-align: center;
-    background-color: #fff;
 }
 .nav-ul{
     width: 100%;
@@ -58,14 +62,13 @@ span.menu{
     display: none;
 }
 #menu.nav-open{
+
     display: block;
-
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    padding-top: 4vh;
-    background-color: white;
+    padding: 4vh 0;
+    background-color: #F9FBF2;
+    background-size: cover;
+    border-radius: 2px;
+    color: #313E2C;
 }
 .icon:hover{
     cursor: pointer;
@@ -81,23 +84,19 @@ span.menu{
     margin-bottom: 3vh;
 
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.3em;
 
-    border: 1px solid #fff;
+    border: 1px solid #313E2C;
     border-radius: 4px;
 
 }
 .botonera a:hover{
-    background-color: transparent;
-
-    border: 2px solid #fff;
-    color: #fff;
-    background-color: #5a5d6888;
+    border: 2px solid #313E2C;
 }
 
 footer{
   min-height: 30px;
-  background-color: #388E3C;
+  background-color: #1C2817;
   color: #fff;
   width: 100%;
   border-radius: 5px 5px 0 0;

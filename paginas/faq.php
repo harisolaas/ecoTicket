@@ -13,10 +13,15 @@
   </head>
   <body>
   <article class="main-container">
-      <header class="menu">
-        <h1>F.A.Q.s</h1>
-        <?php include'../elements/nav.php'; ?>
-      </header>
+
+      <div class="headerNavContainer">
+          <header class="menu">
+              <h1>F.A.Q.s</h1>
+              <?php include'../elements/nav.php'; ?>
+          </header>
+      </div>
+
+
       <!--Start  question-container -->
     <article class="question-container">
       <section class="question-button"><a href="#question1">

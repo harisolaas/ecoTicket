@@ -15,11 +15,12 @@
 
   <body>
       <div class="main-container">
-
-        <header class="menu">
-          <h1>Log-in</h1>
-          <?php include '../elements/nav.php'; ?>
-        </header>
+          <div class="headerNavContainer">
+              <header class="menu">
+                  <h1>Log-in</h1>
+                  <?php include '../elements/nav.php'; ?>
+              </header>
+          </div>
 
         <div class="form-container">
 
@@ -62,6 +63,6 @@
       </div><!-- Cierra .main-container -->
 
       <?php include '../elements/footer.php'; ?>
-      
+
   </body>
 </html>

@@ -1,5 +1,5 @@
 .pantalla-landing{
-  color: #fff;
+  color: #FFF;
   background-image: url(../images/bg-image-landing.jpg);
   background-position: center;
   background-size: cover;
@@ -15,8 +15,17 @@
 .nav-home-container{
     margin-top: 12%;
 }
+.nav-home-container a{
+    background-color: #313E2C99;
+    border: 1px solid #F9FBF2aa;
+}
+.nav-home-container a:hover{
+    border: 2px solid #fff;
+}
 .pantalla-landing-titulo{
   text-align: center;
+  font-size: 1em;
+  background-color: #313E2C22;
 }
 .chevron{
   position: absolute;
@@ -26,20 +35,19 @@
   text-align: center;
   font-size: 2em;
 }
-.contenedor-principal{
-    width: 96vw;
-    margin: auto;
-}
-header.menu{
+
+.headerNavContainer{
     position: sticky;
 }
 .propuesta-valor{
+    width: 96vw;
+    margin: auto;
     display: flex;
     justify-content: center;
 }
 
 .propuesta-valor-section{
-    color: #388E3C;
+    color: #70834C;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -49,10 +57,12 @@ header.menu{
 .propuesta-valor-section span{
     font-size: 5em;
     width: 104px;
+    background-color: #70834C;
+    color: #F9FBF2;
 
     text-align: center;
 
-    border: 3px solid #388E3C;
+    /*border: 3px solid #70834C;*/
     border-radius: 50%
 }
 .propuesta-valor-section h2{
@@ -61,7 +71,7 @@ header.menu{
 }
 .propuesta-valor-section div{
     width: 90%;
-    color: #444;
+    color: #313E2C;
 }
 .propuesta-valor-section strong{
     font-weight: normal;
