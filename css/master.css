@@ -15,35 +15,68 @@ a{
 ul{
   list-style-type: none;
 }
-
-.pantalla-landing{
-  background-image: url(../images/bg-image-landing.jpg);
-  background-position: center;
-  background-size: cover;
-
-  height: 100vh;
-  min-height: 250px;
-
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+.button{
+    background-color: #80AA29;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
 }
 
-.nav-home-container{
-    margin-top: 25%;
+
+.headerNavContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+header.menu{
+
+  width: 96vw;
+  margin: auto;
+
+  height: 10vh;
+  min-height: 48px;
+  line-height: 10vh;
+
+  border-bottom: solid 1px #80AA29;
+}
+h1{
+  display: inline;
+  color: #354F04;
+}
+span.menu{
+  float: right;
+
+  font-size: 1.6em;
+  padding: 0 10px;
+
+  color: #354F04;
+}
+.nav{
+    display: none;
+}
+.nav-ul{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+
+    height: 90vh;
+}
+.nav-li{
+    flex-grow: 1;
 }
 #menu{
     display: none;
 }
 #menu.nav-open{
+
     display: block;
-
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    padding-top: 4vh;
-    background-color: white;
+    padding: 4vh 0;
+    background-color: #fff;
+    background-size: cover;
+    border-radius: 2px;
+    color: #354F04;
 }
 .icon:hover{
     cursor: pointer;
@@ -58,62 +91,20 @@ ul{
     padding: 5px 0;
     margin-bottom: 3vh;
 
-    border: 1px solid black;
+    text-align: center;
+    font-size: 1.3em;
+
+    border: 1px solid #354F04;
     border-radius: 4px;
 
-    text-align: center;
-    text-decoration: none;
-
-    background-color: #5a5d68;
-    opacity: 0.7;
-    color: #f8f0f0;
 }
 .botonera a:hover{
-    background-color: transparent;
-
-    border: 1px solid black;
-    color: black;
+    border: 2px solid #354F04;
 }
-
-.pantalla-landing-titulo{
-  text-align: center;
-}
-.pantalla-landing-titulo h1{
-  font-size: 3.5em;
-  font-style: italic;
-}
-.chevron{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
-  text-align: center;
-  font-size: 2em;
-}
-.contenedor-principal{
-  margin: 0 5px;
-}
-
-.quienes-somos{
-  height: 100vh;
-  min-height: 225px;
-}
-.quienes-somos-img{
-  width: 35%;
-  float: left;
-  margin: 10px 2.5%;
-  background-color: green;
-}
-.quienes-somos-txt{
-  max-width: 60%;
-  float: left;
-  background-color: blue;
-}
-
 
 footer{
   min-height: 30px;
-  background-color: #388E3C;
+  background-color: #223A01;
   color: #fff;
   width: 100%;
   border-radius: 5px 5px 0 0;
