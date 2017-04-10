@@ -12,9 +12,15 @@
   <body>
 
       <header class="pantalla-landing">
+          <div class="background-image-landing">
+          </div>
+
+
+
+          <div class="content-landing">
 
           <div class="pantalla-landing-titulo">
-            <h2>Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
+            <h2 class="title-landing">Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
           </div>
 
         <nav class="nav-home-container">
@@ -28,6 +34,8 @@
         <nav class="chevron">
           <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
         </nav>
+        </div>
+
     </header>
 
 
