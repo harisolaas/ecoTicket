@@ -142,4 +142,26 @@
         margin: 0;
     }
 
+    /* Propuesta de valor */
+    .propuesta-valor-article{
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+    }
+    .propuesta-valor-section h2{
+        height: 48px;
+    }
+
+    /* Crea tu cuenta */
+    .crea-tu-cuenta-img{
+        background-image: url(../images/home-propuesta-valor.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .crea-tu-cuenta{
+        background: -moz-linear-gradient(left, #ffff, #0003);
+    }
+    .crea-tu-cuenta-content{
+
+    }
 }

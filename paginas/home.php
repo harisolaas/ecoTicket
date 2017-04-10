@@ -47,12 +47,12 @@
         </div>
       <div class="content">
           <div class="propuesta-valor">
-              <article>
+              <article class="propuesta-valor-article">
                   <section class="propuesta-valor-section">
                       <span class="icon ion-leaf"></span>
                       <h2>Ayudá a preservar el planeta</h2>
 
-                      <div><p>Miles de toneladas de papel se desperdician todos los días en recibos que pronto terminan en la basura. </p><strong>Cada vez que usas ecoTicket ayudás a reducir el consumo de papel.</strong></div>
+                      <div><p>Miles de toneladas de papel se desperdician todos los días en recibos que pronto terminan en la basura. </p><strong>Cada vez que usas ecoTicket ayudás a reducir el consumo de papel</strong></div>
 
                   </section>
 
@@ -60,7 +60,7 @@
                       <span class="icon ion-ios-paper"></span>
                       <h2>Llevá tus cuentas al día</h2>
 
-                      <div><strong>Accedé al registro de todas tus compras desde la plataforma de ecoTicket</strong><p> y organizate como más te guste.</p></div>
+                      <div><strong>Accedé al registro de todas tus compras desde la plataforma de ecoTicket</strong><p> y organizate como más te guste</p></div>
 
 
                   </section>
@@ -69,23 +69,25 @@
                       <span class="icon ion-bag"></span>
                       <h2>Asegurá tus compras</h2>
 
-                      <div><strong>La fidelidad de ecoTicket permite que revises cualquier transacción</strong><p> que hayas realizado en caso de que necesites fundamentar un reclamo.</p></div>
+                      <div><strong>La fidelidad de ecoTicket permite que revises cualquier transacción</strong><p> que hayas realizado en caso de que necesites fundamentar un reclamo</p></div>
                   </section>
               </article>
           </div>
 
-          <div class="crea-tu-cuenta">
-              <div class="crea-tu-cuenta-content">
-                  <article>
-                      <h2>Creá tu cuenta de ecoTicket</h2>
-                      <ul>
-                          <li>Agrupá todos tus comprobantes y promos en un sólo lugar.</li>
-                          <li>Accedé a ofertas especiales en el momento que las necesitas.</li>
-                          <li>Sos comerciante? Lleva registro de todas tus transacciones por local y cliente.</li>
-                      </ul>
-                      <p style="margin-bottom: 20px">Creá tu cuenta por única vez y comenzá a disfrutar de los beneficios e ecoTicket.</p>
-                      <a class="button" href="sign-up.php">Sumate a nuestra comunidad!</a>
-                  </article>
+          <div class="crea-tu-cuenta-img">
+              <div class="crea-tu-cuenta">
+                  <div class="crea-tu-cuenta-content">
+                      <article>
+                          <h2>Creá tu cuenta de ecoTicket</h2>
+                          <ul>
+                              <li>Agrupá todos tus comprobantes y promos en un sólo lugar.</li>
+                              <li>Accedé a ofertas especiales en el momento que las necesitas.</li>
+                              <li>Sos comerciante? Lleva registro de todas tus transacciones por local y cliente.</li>
+                          </ul>
+                          <p style="margin-bottom: 20px">Creá tu cuenta por única vez y comenzá a disfrutar de los beneficios e ecoTicket.</p>
+                          <a class="button" href="sign-up.php">Sumate a nuestra comunidad!</a>
+                      </article>
+                  </div>
               </div>
           </div>
 
