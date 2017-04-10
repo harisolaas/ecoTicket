@@ -123,3 +123,95 @@ footer a{
   line-height: 10vh;
   width: 100%;
 }
+
+/* Responsive */
+
+@media (min-width: 480px) {
+    span.menu{
+        display: none;
+    }
+
+    #menu{
+        display: block;
+    }
+    .botonera{
+        width: 95%;
+        position: absolute;
+        top: 0;
+        display: inline-flex;
+        justify-content: flex-end;
+    }
+    .botonera a:hover{
+        border: none;
+        text-decoration: underline;
+    }
+    .botonera a{
+        border: 0px white solid;
+        padding: 0px 1.5vw;
+        font-size: 1.2em;
+    }
+
+/*
+
+  .toggle-nav img{
+    display: none;
+  }
+  .main-nav{
+    text-align: center;
+  }
+  .main-nav ul li{
+    font-size: 0.5em;
+    width: 15%;
+    padding: 6px;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    margin-top: -5%;
+
+  }
+  .main-nav ul li:last-child {
+    margin-right:0;
+  }
+  .banner{
+    display: block;
+
+  }
+  .banner img{
+    width: 100%;
+  }
+  .vip-products{
+    width: 100%;
+    display: inline-block;
+  }
+  .vip-products img{
+    width: 100%;
+  }
+  .product{
+    margin-left: 6%;
+    margin-bottom: 5%;
+    width: 40%;
+    float: left;
+  }
+  .product:nth-child(even){
+    float: right;
+    margin-right: 6%;
+  }
+  .main-footer{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px){
+  .product{
+    width: 25%;
+    margin-left: 6%;
+
+  }
+
+  .product:nth-child(even){
+    float: left;
+    margin-right: 0%;
+  }
+
+
+}
