@@ -1,7 +1,7 @@
 <span id='boton' class="menu icon ion-navicon"></span>
 <nav id='menu'>
     <ul class="botonera">
-        <li><a href="../index.php">ecoTicket</a></li>
+        <li><a href="home.php">ecoTicket</a></li>
         <li><a href="sign-up.php">Registro</a></li>
         <li><a href="sign-in.php">Log-in</a></li>
         <li><a href="faq.php">Centro de ayuda</a></li>

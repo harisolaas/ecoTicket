@@ -12,28 +12,26 @@
   <body>
 
       <header class="pantalla-landing">
-          <div class="background-image-landing">
-          </div>
+        <div class="background-image-landing">
+        </div>
 
+        <div class="content-landing">
 
+            <div class="pantalla-landing-titulo">
+                <h2>Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
+            </div>
 
-          <div class="content-landing">
-
-          <div class="pantalla-landing-titulo">
-            <h2 class="title-landing">Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
-          </div>
-
-        <nav class="nav-home-container">
-              <ul class="botonera">
-                  <li><a href="#">ecoTicket</a></li>
-                  <li><a href="sign-up.php">Registro</a></li>
-                  <li><a href="sign-in.php">Log-in</a></li>
-                  <li><a href="faq.php">Centro de ayuda</a></li>
-              </ul>
-        </nav>
-        <nav class="chevron">
-          <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
-        </nav>
+            <nav class="nav-home-container">
+                  <ul class="botonera">
+                      <li><a href="#">ecoTicket</a></li>
+                      <li><a href="sign-up.php">Registro</a></li>
+                      <li><a href="sign-in.php">Log-in</a></li>
+                      <li><a href="faq.php">Centro de ayuda</a></li>
+                  </ul>
+            </nav>
+            <nav class="chevron">
+              <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
+            </nav>
         </div>
 
     </header>

@@ -1,9 +1,6 @@
 /* Pantalla landing */
 .pantalla-landing{
   color: #000;
-  background-image: url(../images/bg-image-landing.jpg);
-  background-position: center;
-  background-size: cover;
 
   height: 100vh;
   min-height: 250px;
@@ -13,9 +10,17 @@
   justify-content: center;
 }
 .background-image-landing{
-    display: none;
-}
+    background-image: url(../images/bg-image-landing.jpg);
+    background-position: center;
+    background-size: cover;
 
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+.content-landing{
+    z-index: 1;
+}
 .nav-home-container{
     margin-top: 12%;
     color: #000;
@@ -116,34 +121,25 @@
 /* F.A.Q.s */
 .faqs{
 }
+
+/* Media query para tablet */
 @media (min-width: 480px) {
-    .pantalla-landing{
-      color: #000;
-      /*background-image: url(../images/bg-image-landing.jpg);
-      background-position: center;
-      background-size: cover;*/
-
-      height: 80vh;
-      min-height: 250px;
-
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-    }
     .background-image-landing{
-        background-image: url(../images/bg-image-landing.jpg);
-        background-position: center;
-        background-size: cover;
-        z-index: -1;
-        height: 80vh;
+        height: 75vh;
+        top: 10vh;
     }
     .content-landing{
-        height: 20vh;
     }
-    .title-landing{
+    .pantalla-landing-titulo{
         position: absolute;
-        top: 30vh;
-        left: 50vw;
-        transform: translateX(-50%);
+        padding-left: 2vw;
+        width: 100%;
+        bottom: 23vh;
+        text-align: left;
+        font-size: 1.3em;
     }
+    .nav-home-container{
+        margin: 0;
+    }
+
 }
