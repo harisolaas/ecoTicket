@@ -9,33 +9,33 @@
             }
             .paletaDark{
                 height: 20vh;
-                background-color: #1C2817;
+                background-color: #223A01;
             }
             .paletaMidDark{
                 height: 20vh;
-                background-color: #313E2C;
+                background-color: #354F04;
             }
             .paletaMidLight{
                 height: 20vh;
-                background-color: #70834C;
+                background-color: #80AA29;
             }
             .paletaLight{
                 height: 20vh;
-                background-color: #CAD2B7;
+                background-color: #B3C02D;
             }
             .paletaSupLight{
                 height: 20vh;
-                background-color: #F9FBF2;
+                background-color: #BDD098;
             }
         </style>
     </head>
     <body>
         <div class="paleta">
-            <div class="paletaDark"></div>
-            <div class="paletaMidDark"></div>
-            <div class="paletaMidLight"></div>
-            <div class="paletaLight"></div>
-            <div class="paletaSupLight"></div>
+            <div class="paletaDark">#223A01</div>
+            <div class="paletaMidDark">#354F04</div>
+            <div class="paletaMidLight">#80AA29</div>
+            <div class="paletaLight">#B3C02D</div>
+            <div class="paletaSupLight">#BDD098</div>
         </div>
     </body>
 </html>

@@ -68,7 +68,7 @@
           <!-- confirm pass -->
 
           <div class="form-element">
-            <button type="submit">Enviar</button>
+            <input class='button' type="submit" name="submit" value="Enviar">
           </div>
           <!-- button -->
 

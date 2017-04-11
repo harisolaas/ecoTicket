@@ -6,7 +6,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../css/master.css">
-    <link rel="stylesheet" href="../css/sign-in-up-forms.css">
     <link rel="stylesheet" href="../css/faqs.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <title>F.A.Q.s</title>

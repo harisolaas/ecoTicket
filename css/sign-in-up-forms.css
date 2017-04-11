@@ -54,15 +54,12 @@ input{
   text-align: inherit;
   font-style: italic;
 }
-button{
-  width: 96%;
+input.button{
+  width: 90%;
   margin: auto;
-  background-color: #80AA29;
-  border-radius: 5px;
 
-  font-family: inherit;
   font-size: 1.2em;
-  color: #fff;
+  font-style: normal;
 }
 @media (min-width: 480px) {
     body{
@@ -76,7 +73,7 @@ button{
         height: 400px;
         background-color: white;
         border-radius: 3px;
-        box-shadow: 0 0 3px 3px #223A01
+        box-shadow: 0 0 3px 3px #363533;
     }
     .form-container{
         display: flex;

@@ -21,7 +21,9 @@ ul{
     padding: 10px;
     color: #fff;
 }
-
+.button:hover{
+    cursor: pointer;
+}
 
 .headerNavContainer{
     position: fixed;
@@ -106,8 +108,9 @@ footer{
   min-height: 30px;
   background-color: #223A01;
   color: #fff;
-  width: 100%;
+  width: 96vw;
   border-radius: 5px 5px 0 0;
+  margin: auto;
 }
 footer ul{
   display: flex;

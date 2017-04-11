@@ -51,7 +51,7 @@
               <!-- remember me -->
 
               <div class="form-element">
-                <button type="submit">Entrar</button>
+                <input class='button' type="submit" name="submit" value="Entrar">
               </div>
               <!-- button -->
 
