@@ -64,3 +64,26 @@ button{
   font-size: 1.2em;
   color: #fff;
 }
+@media (min-width: 480px) {
+    body{
+        background-image: url(../images/sign-in-up-bg.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    form{
+        margin: 0;
+        width: 350px;
+        height: 400px;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 0 3px 3px #223A01
+    }
+    .form-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin-bottom: 10vh;
+        box-sizing: content-box;
+    }
+}
