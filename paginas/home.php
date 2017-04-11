@@ -12,10 +12,10 @@
   <body>
 
       <header class="pantalla-landing">
-        <div class="background-image-landing">
+        <div class="pantalla-landing-bgi">
         </div>
 
-        <div class="content-landing">
+        <div class="pantalla-landing-content">
 
             <div class="pantalla-landing-titulo">
                 <h2>Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
@@ -32,6 +32,11 @@
             <nav class="chevron">
               <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
             </nav>
+            <div class="pantalla-landing-texto-container">
+                <div class="pantalla-landing-texto">
+                    <strong>El ticket digital ya llegó</strong><p> y es tan simple como pedir tu versión digital en locales adheridos.</p>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -91,9 +96,9 @@
               </div>
           </div>
 
-          <div class="faqs">
-              <p>¿Tenés alguna duda?</p>
-              <a href="faq.php">Preguntas frecuentes</a>
+          <div class="faqs-container">
+              <p class="faqs-p">¿Tenés alguna duda?</p>
+              <a class="faqs-a" href="faq.php">Preguntas frecuentes</a>
           </div>
       </div>
 

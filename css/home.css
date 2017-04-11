@@ -9,7 +9,7 @@
   flex-flow: column;
   justify-content: center;
 }
-.background-image-landing{
+.pantalla-landing-bgi{
     background-image: url(../images/bg-image-landing.jpg);
     background-position: center;
     background-size: cover;
@@ -18,7 +18,7 @@
     height: 100vh;
     width: 100%;
 }
-.content-landing{
+.pantalla-landing-content{
     z-index: 1;
 }
 .nav-home-container{
@@ -26,7 +26,7 @@
     color: #000;
 }
 .nav-home-container a{
-    background-color: #fff5;
+    background-color: #fff9;
     border: none;
 }
 .nav-home-container a:hover{
@@ -34,7 +34,7 @@
 }
 .pantalla-landing-titulo{
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
   background-color: #fff9;
 }
 .chevron{
@@ -44,6 +44,9 @@
 
   text-align: center;
   font-size: 2em;
+}
+.pantalla-landing-texto-container{
+    display: none;
 }
 
 /* Barra de navegación desplegable */
@@ -100,12 +103,14 @@
 
 /* Crea tu cuenta */
 .crea-tu-cuenta{
-    background-color: #BDD098aa;
+    background-color: #BDD09855;
 }
 .crea-tu-cuenta-content{
     width: 90%;
     margin: auto;
-    padding: 20px 0;
+    padding: 30px 0;
+    padding-bottom: 40px;
+    font-size: 1.2em;
 }
 .crea-tu-cuenta h2{
     margin-bottom: 20px;
@@ -119,16 +124,55 @@
 
 
 /* F.A.Q.s */
-.faqs{
+.faqs-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.faqs-p{
+    font-size: 2em;
+    padding: 40px;
+    margin-top: 40px;
+}
+.faqs-a{
+    font-size: 2em;
+    line-height: 50px;
+    color: #80AA29;
+    border: 3px solid #80AA29;
+    border-radius: 27.8px;
+    padding: 0 15%;
+    margin-bottom: 80px;
+}
+.faqs-a:hover{
+    color: white;
+    border: 3px solid white;
+    background-color: #80AA29;
 }
 
 /* Media query para tablet */
 @media (min-width: 480px) {
-    .background-image-landing{
+    .pantalla-landing-bgi{
         height: 75vh;
         top: 10vh;
     }
-    .content-landing{
+    .pantalla-landing-texto-container{
+        position: absolute;
+        bottom: 1px;
+        display: block;
+        width: 100%;
+    }
+    .pantalla-landing-texto{
+        font-size: 1.2em;
+        line-height: 15vh;
+        padding-left: 10px;
+        border-bottom: 1px solid #80AA29;
+    }
+    .pantalla-landing-texto strong{
+        color: #80AA29;
+    }
+    .pantalla-landing-texto p{
+        display: none;
     }
     .pantalla-landing-titulo{
         position: absolute;
@@ -139,7 +183,14 @@
         font-size: 1.3em;
     }
     .nav-home-container{
-        margin: 0;
+        display: none;
+    }
+    .chevron{
+        display: none;
+    }
+    .headerNavContainer{
+        position: fixed;
+        z-index: 2;
     }
 
     /* Propuesta de valor */
@@ -157,11 +208,24 @@
         background-image: url(../images/home-propuesta-valor.jpg);
         background-position: center;
         background-size: cover;
+        height: 400px;
     }
     .crea-tu-cuenta{
         background: -moz-linear-gradient(left, #ffff, #0003);
+        height: 100%;
     }
     .crea-tu-cuenta-content{
-
+        padding: 40px 0;
+    }
+    .crea-tu-cuenta-content article{
+        width: 385px;
+    }
+}
+@media (min-width: 640px) {
+    .pantalla-landing-texto p{
+        display: inline;
+    }
+    .crea-tu-cuenta-content article{
+        width: 60%;
     }
 }
