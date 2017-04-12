@@ -23,26 +23,26 @@
 
       <!--Start  question-container -->
     <article class="question-container">
-      <section class="question-button"><a href="#question1">
+      <section class="button"><a href="#question1">
         <p> Question 1</p>
       </a></section>
 
-      <section class="question-button"><a href="#question2">
+      <section class="button"><a href="#question2">
         <p> Question 2</p>
       </a></section>
 
-      <section class="question-button"><a href="#queston3">
+      <section class="button"><a href="#queston3">
         <p> Question 3 </p>
       </a></section>
 
-      <section class="question-button"><a href="#question4">
+      <section class="button"><a href="#question4">
         <p> Question 4</p>
       </a></section>
-      <section class="question-button"><a href="#question5">
+      <section class="button"><a href="#question5">
         <p> Question 5</p>
       </a></section>
 
-      <section class="question-button"><a href="#question6">
+      <section class="button"><a href="#question6">
         <p> Question 6</p>
       </a></section>
 

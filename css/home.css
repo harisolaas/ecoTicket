@@ -129,6 +129,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .faqs-p{
     font-size: 2em;

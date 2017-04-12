@@ -13,16 +13,18 @@ p{
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.question-button{
-  border: 2px solid green;
+.button{
+  background-color: #fff;
+  color: #80AA29;
+  border: 3px solid #80AA29;
   max-width: 40%;
   float: left;
-  margin-left: 1%;
-  margin-top: 3%;
+  margin: 5px 1%;
 }
-.question-button:hover{
-  background-color: forestgreen;
-  color: white;
+.button:hover{
+    color: white;
+    border: 3px solid white;
+    background-color: #80AA29;
 }
 .answer-container{
   margin-top: 2%;
@@ -31,7 +33,7 @@ p{
   text-align: center;
 }
 .answer{
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #354F04;
   max-width: 100%;
   margin-top: 2%;
 }
