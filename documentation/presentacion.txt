@@ -1,0 +1,6 @@
+Nombre del proyecto: "ecoTicket"
+
+Integrantes: Miguel Rusconi, Andrés Olaizola y Harald Solaas
+
+Descripción:
+ecoTicket pretende ser una plataforma web que genera tickets digitales para reemplazar a los tickets de papel tradicionales y los envía a los compradores. Existen dos tipos de usuario en la plataforma: comerciantes y compradores. Para los primeros, ecoTicket debe presentar una interfaz que permita seleccionar distintos artículos de una base de datos, generar tickets digitales según la normativa vigente y enviarlo a los compradores en forma simple. Para los consumidores debe entregar la documentación en forma segura y ofrecer una plataforma opcional a través de la cual puedan acceder a los datos de compras pasadas.

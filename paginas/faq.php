@@ -31,7 +31,7 @@
         <p> Question 2</p>
       </a></section>
 
-      <section class="button"><a href="#queston3">
+      <section class="button"><a href="#question3">
         <p> Question 3 </p>
       </a></section>
 
