@@ -1,3 +1,6 @@
+<?php
+$titulo = 'ecoTicket';
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +10,7 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/home.css">
-    <title>ecoTicket - Home</title>
+    <title>ecoTicket :: Home</title>
   </head>
   <body>
 
@@ -44,12 +47,14 @@
 
     <div id="contenedor-principal" class="contenedor-principal">
 
-      <div class="headerNavContainer">
+      <?php include'../elements/nav.php'; ?>
+      <!-- <div class="headerNavContainer">
             <header class="menu">
                 <h1>ecoTicket</h1>
                 <?php include'../elements/nav.php'; ?>
             </header>
-        </div>
+        </div> -->
+
       <div class="content">
           <div class="propuesta-valor">
               <article class="propuesta-valor-article">

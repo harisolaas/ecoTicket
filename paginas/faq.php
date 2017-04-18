@@ -1,3 +1,6 @@
+<?php
+$titulo = 'F.A.Q.';
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,17 +11,12 @@
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/faqs.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <title>F.A.Q.s</title>
+    <title>ecoTicket :: Preguntas Frecuentes</title>
   </head>
   <body>
   <article class="main-container">
 
-      <div class="headerNavContainer">
-          <header class="menu">
-              <h1>F.A.Q.s</h1>
-              <?php include'../elements/nav.php'; ?>
-          </header>
-      </div>
+      <?php include'../elements/nav.php'; ?>
 
 
       <!--Start  question-container -->

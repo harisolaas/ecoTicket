@@ -1,3 +1,6 @@
+<?php
+$titulo = 'Log-in';
+ ?>
 <!DOCTYPE html>
 <html>
   <head class="no-home">
@@ -9,18 +12,14 @@
     <link rel="stylesheet" href="../css/sign-in-up-forms.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <title>ecoTicket - Log-in</title>
+    <title>ecoTicket :: Log-in</title>
 
   </head>
 
   <body>
       <div class="main-container">
-          <div class="headerNavContainer">
-              <header class="menu">
-                  <h1>Log-in</h1>
-                  <?php include '../elements/nav.php'; ?>
-              </header>
-          </div>
+
+          <?php include'../elements/nav.php'; ?>
 
         <div class="form-container">
 

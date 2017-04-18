@@ -1,3 +1,6 @@
+<?php
+$titulo = 'Registro'
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,17 +12,12 @@
     <link rel="stylesheet" href="../css/sign-in-up-forms.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <title>ecoTicket - Registro</title>
+    <title>ecoTicket :: Registro</title>
   </head>
   <body>
     <div class="main-container">
 
-        <div class="headerNavContainer">
-            <header class="menu">
-                <h1>Registro</h1>
-                <?php include '../elements/nav.php'; ?>
-            </header>
-        </div>
+        <?php include'../elements/nav.php'; ?>
 
       <div class="form-container">
 
