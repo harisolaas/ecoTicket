@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .pantalla-landing-bgi{
-    background-image: url(../images/bg-image-landing.jpg);
+    background-image: url(../images/bg-image-landing-mobile.jpg);
     background-position: center;
     background-size: cover;
 
@@ -26,7 +26,7 @@
     color: #000;
 }
 .nav-home-container a{
-    background-color: #fff9;
+    background-color: rgba(255, 255, 255, 0.6);
     border: none;
 }
 .nav-home-container a:hover{
@@ -35,7 +35,7 @@
 .pantalla-landing-titulo{
   text-align: center;
   font-size: 1.2em;
-  background-color: #fff9;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .chevron{
   position: absolute;
@@ -52,6 +52,7 @@
 /* Barra de navegación desplegable */
 .headerNavContainer{
     position: sticky;
+    position: -webkit-sticky;
 }
 
 /* content */
@@ -83,7 +84,6 @@
 
     text-align: center;
 
-    /*border: 3px solid #80AA29;*/
     border-radius: 50%
 }
 .propuesta-valor-section h2{
@@ -103,7 +103,7 @@
 
 /* Crea tu cuenta */
 .crea-tu-cuenta{
-    background-color: #BDD09855;
+    background-color: rgba(189, 208, 152, 0.33);
 }
 .crea-tu-cuenta-content{
     width: 90%;
@@ -154,6 +154,7 @@
 /* Media query para tablet */
 @media (min-width: 480px) {
     .pantalla-landing-bgi{
+        background-image: url(../images/bg-image-landing-desktop.jpg);
         height: 75vh;
         top: 10vh;
     }
@@ -212,7 +213,8 @@
         height: 400px;
     }
     .crea-tu-cuenta{
-        background: -moz-linear-gradient(left, #ffff, #0003);
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
         height: 100%;
     }
     .crea-tu-cuenta-content{
