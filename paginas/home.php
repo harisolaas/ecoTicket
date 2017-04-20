@@ -16,13 +16,13 @@ $titulo = 'ecoTicket';
 
       <header class="pantalla-landing">
         <div class="pantalla-landing-bgi">
+            <div class="pantalla-landing-bgi-skin">
+                    <h2 class="pantalla-landing-titulo">Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
+            </div>
         </div>
 
         <div class="pantalla-landing-content">
 
-            <div class="pantalla-landing-titulo">
-                <h2>Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
-            </div>
 
             <nav class="nav-home-container">
                   <ul class="botonera">
