@@ -158,6 +158,23 @@
         height: 75vh;
         top: 10vh;
     }
+    .pantalla-landing-bgi-skin{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-flow: wrap;
+    }
+    .pantalla-landing-titulo{
+        font-size: 2.5em;
+        width: 500px;
+        display: inline;
+        background-color: transparent;
+        color: #fff;
+    }
     .pantalla-landing-texto-container{
         position: absolute;
         bottom: 1px;
@@ -175,14 +192,6 @@
     }
     .pantalla-landing-texto p{
         display: none;
-    }
-    .pantalla-landing-titulo{
-        position: absolute;
-        padding-left: 2vw;
-        width: 100%;
-        bottom: 23vh;
-        text-align: left;
-        font-size: 1.3em;
     }
     .nav-home-container{
         display: none;
