@@ -46,6 +46,8 @@ header.menu{
 h1{
   display: inline;
   color: #354F04;
+  position: relative;
+  z-index: 1;
 }
 span.menu{
   float: right;
