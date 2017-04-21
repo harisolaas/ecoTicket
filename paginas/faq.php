@@ -1,6 +1,3 @@
-<?php
-$titulo = 'F.A.Q.';
- ?>
 <!DOCTYPE html>
 <html>
   <head>

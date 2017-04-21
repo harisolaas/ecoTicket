@@ -18,23 +18,23 @@ $titulo = 'ecoTicket';
         <div class="pantalla-landing-bgi">
             <div class="pantalla-landing-bgi-skin">
                     <h2 class="pantalla-landing-titulo">Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
+                    <nav class="nav-home-container">
+                        <ul class="botonera">
+                            <li><a href="#">ecoTicket</a></li>
+                            <li><a href="sign-up.php">Registro</a></li>
+                            <li><a href="sign-in.php">Log-in</a></li>
+                            <li><a href="faq.php">Centro de ayuda</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="chevron">
+                        <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
+                    </nav>
             </div>
         </div>
 
         <div class="pantalla-landing-content">
 
 
-            <nav class="nav-home-container">
-                  <ul class="botonera">
-                      <li><a href="#">ecoTicket</a></li>
-                      <li><a href="sign-up.php">Registro</a></li>
-                      <li><a href="sign-in.php">Log-in</a></li>
-                      <li><a href="faq.php">Centro de ayuda</a></li>
-                  </ul>
-            </nav>
-            <nav class="chevron">
-              <a href="#contenedor-principal"><span class="icon ion-chevron-down"></span></a>
-            </nav>
             <div class="pantalla-landing-texto-container">
                 <div class="pantalla-landing-texto">
                     <strong>El ticket digital ya llegó</strong><p> y es tan simple como pedir tu versión digital en locales adheridos.</p>
