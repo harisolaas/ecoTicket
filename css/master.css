@@ -74,8 +74,6 @@ span.menu{
     display: none;
 }
 #menu.nav-open{
-
-
     display: block;
     padding: 4vh 0;
     background-color: #fff;
@@ -109,11 +107,11 @@ span.menu{
 }
 
 footer{
-  min-height: 30px;
-  background-color: #223A01;
+  min-height: 100px;
+  background-color: #80AA29;
   color: #fff;
-  width: 96vw;
-  border-radius: 5px 5px 0 0;
+  width: 100vw;
+
   margin: auto;
 }
 footer ul{
@@ -121,14 +119,19 @@ footer ul{
 }
 footer li{
   display: flex;
+  justify-content: center;
+
   flex-grow: 0.6;
   text-align: center;
 }
 footer a{
   flex-grow: 1;
-  height: 10vh;
-  line-height: 10vh;
   width: 100%;
+  height: 100px;
+  line-height: 100px;
+
+  font-size: 2.5em;
+
 }
 
 /* Responsive */

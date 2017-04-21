@@ -1,9 +1,11 @@
 <footer>
   <nav>
     <ul>
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
+      <li><a href="#"><span class="icon ion-social-facebook"></span></a></li>
+      <li><a href="#"><span class="ion-social-instagram"></span></a></li>
+      <li><a href="#"><span class="ion-social-twitter"></span></a></li>
+      <li><a href="#"><span class="ion-social-linkedin"></span></a></li>
+
     </ul>
   </nav>
 </footer>
