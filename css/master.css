@@ -37,9 +37,9 @@ header.menu{
   width: 96vw;
   margin: auto;
 
-  height: 10vh;
+  height: 50px;
   min-height: 48px;
-  line-height: 10vh;
+  line-height: 44px;
 
   border-bottom: solid 1px #80AA29;
 }
@@ -75,11 +75,13 @@ span.menu{
 }
 #menu.nav-open{
 
+
     display: block;
     padding: 4vh 0;
     background-color: #fff;
     background-size: cover;
     border-radius: 2px;
+    border-bottom: solid 1px #80AA29;
     color: #354F04;
 }
 .icon:hover{
@@ -139,12 +141,17 @@ footer a{
     #menu{
         display: block;
     }
+    #menu.nav-open{
+        display: none;
+    }
+
     .botonera{
         width: 95%;
         position: absolute;
         top: 0;
         display: inline-flex;
         justify-content: flex-end;
+
     }
     .botonera a:hover{
         border: none;
