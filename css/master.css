@@ -25,23 +25,25 @@ ul{
     cursor: pointer;
 }
 
+/*==========================NAV==========================*/
 .headerNavContainer{
+    background-color: #fff;
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
-    background-color: #fff;
+    height: 50px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    border-bottom: solid 1px #80AA29;
 }
 header.menu{
-
   width: 96vw;
   margin: auto;
-
-  height: 50px;
-  min-height: 48px;
-  line-height: 44px;
-
-  border-bottom: solid 1px #80AA29;
 }
 h1{
   display: inline;
@@ -49,7 +51,7 @@ h1{
   position: relative;
   z-index: 1;
 }
-span.menu{
+.icon{
   float: right;
 
   font-size: 1.6em;
@@ -57,54 +59,58 @@ span.menu{
 
   color: #354F04;
 }
-.nav{
-    display: none;
+.icon:hover{
+    cursor: pointer;
 }
-.nav-ul{
-    width: 100%;
-    display: flex;
-    flex-flow: column;
 
-    height: 90vh;
-}
-.nav-li{
-    flex-grow: 1;
+.navContainer{
+    position: absolute;
+    top: 50px;
+
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
 }
 #menu{
     display: none;
 }
 #menu.nav-open{
+    width: 96%;
+    margin: auto;
+
     display: block;
-    padding: 4vh 0;
+
     background-color: #fff;
-    background-size: cover;
-    border-radius: 2px;
+    border-radius: 0 0 2px 2px;
     border-bottom: solid 1px #80AA29;
+
     color: #354F04;
 }
-.icon:hover{
-    cursor: pointer;
-}
 .botonera{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+
     margin: auto;
+
     min-width: 100px;
     width: 70%;
+    min-height: 70vh;
 }
 .botonera a{
     display: block;
-    padding: 5px 0;
-    margin-bottom: 3vh;
-
     text-align: center;
     font-size: 1.3em;
 
     border: 1px solid #354F04;
     border-radius: 4px;
 
+    height: 60px;
+    line-height: 60px;
 }
 .botonera a:hover{
     border: 2px solid #354F04;
 }
+/*==========================NAV-END==========================*/
 
 footer{
   min-height: 100px;

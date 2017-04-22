@@ -45,9 +45,12 @@
 }
 
 .chevron{
-  text-align: center;
-  font-size: 1.5em;
-  color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.chevron span{
+    font-size: 1.5em;
+    color: #fff;
 }
 .pantalla-landing-texto-container{
     display: none;
