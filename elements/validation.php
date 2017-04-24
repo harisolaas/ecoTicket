@@ -36,7 +36,11 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
         // VALIDACION LONGITUD DEL PASSWORD + de 6 caracteres
     } elseif(strlen($_POST['pass']) < 6){
         $errorPass = 'Debes ingresar un Passsword de al menos 6 caracteres';
-    }  //VALIDACION PASSWORD EXITOSA
+    }  elseif (strlen($_POST['pass']) >= 12) {
+        $errorPass = 'Debes ingresar un Password de 12 o menos caracteres';
+    }
+
+    //VALIDACION PASSWORD EXITOSA
 
     else {
         $errorPass = '';
