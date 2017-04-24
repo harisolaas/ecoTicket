@@ -1,5 +1,17 @@
 <?php
-$titulo = 'Registro'
+session_start();
+
+$titulo = 'Registro';
+
+$errorFirstName = $_SESSION['errorFirstName'];
+$errorPass = $_SESSION['errorPass'];
+$errorEmail= $_SESSION['errorEmail'];
+$errorLastName= $_SESSION['errorLastName'];
+
+$firstName = $_SESSION['firstName'];
+$lastName = $_SESSION['lastName'];
+$email = $_SESSION['email'];
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -21,12 +33,18 @@ $titulo = 'Registro'
 
       <div class="form-container">
 
-        <form action="#.php" method="post">
+        <form action="../elements/sign-up-controller.php" method="post">
 
           <div class="form-element">
             <div>
               <label for="email">Correo electrónico</label><br>
-              <input type="email" name="email" required placeholder="correo@electronico.com">
+              <input type="text" name="email" required placeholder="correo@electronico.com" value="<?php
+              if(isset($email)){
+                  echo $email;
+              }
+
+              ?>">
+              <?php echo $errorEmail; ?>
             </div>
           </div>
           <!-- email -->
@@ -36,12 +54,20 @@ $titulo = 'Registro'
             <div class="form-name-lastname">
               <div>
                 <label for="first-name">Nombre</label><br>
-                <input type="text" name="first-name" required placeholder="Tu nombre">
+                <input type="text" name="first-name" required placeholder="Tu nombre" value="<?php // PERSISTENCIA DE DATOS
+                if(isset($firstName)){
+                echo $firstName;
+            } ?>">
+            <?php echo $errorFirstName; ?>
               </div>
 
               <div class="">
                 <label for="last-name">Apellido</label><br>
-                <input type="text" name="last-name" required placeholder="Tu apellido">
+                <input type="text" name="last-name" required placeholder="Tu apellido" value="<?php // PERSISTENCIA DE DATOS
+                if(isset($lastName)){
+                echo $lastName;
+            } ?>">
+            <?php echo $errorLastName; ?>
               </div>
 
             </div>
@@ -51,16 +77,19 @@ $titulo = 'Registro'
 
           <div class="form-element">
             <div>
-              <label for="password">Contraseña</label><br>
-              <input type="password" name="password" required placeholder="Tu contraseña">
+              <label for="pass">Contraseña</label><br>
+              <input type="password" name="pass" required placeholder="Tu contraseña">
+          <?php echo $errorPass; ?>
             </div>
           </div>
           <!-- pass -->
 
           <div class="form-element">
             <div>
-              <label for="confirm-password">Confirmar contraseña</label><br>
-              <input type="password" name="confirm-password" required placeholder="Tu contraseña otra vez">
+              <label for="confirm-pass">Confirmar contraseña</label><br>
+              <input type="password" name="confirm-pass" required placeholder="Tu contraseña otra vez">
+          <?php echo $errorPass; ?>
+
             </div>
           </div>
           <!-- confirm pass -->
@@ -78,6 +107,7 @@ $titulo = 'Registro'
     </div><!-- Cierra .main-container -->
 
     <?php include '../elements/footer.php'; ?>
+
 
   </body>
 </html>
