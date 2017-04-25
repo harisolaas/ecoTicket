@@ -53,13 +53,13 @@
         mpor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
       </section>
 
-      <section id="question2">
+      <section id="question1">
         <h2 class="head_question">Question 2</h2>
         <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te
         mpor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
       </section>
 
-      <section id="question3">
+      <section id="question1">
         <h2 class="head_question">Question 3</h2>
         <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te
         mpor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>

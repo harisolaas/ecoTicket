@@ -2,7 +2,7 @@
 session_start();
 
 //var_dump($_POST);
-include '../elements/validation.php';
+include 'validation.php';
 /*echo "<br>";
 echo $errorFirstName;
 echo "<br>";
@@ -71,6 +71,9 @@ if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == f
 
 
     header('Location: ../paginas/sign-up.php');
+
+
+
 }
 
 //} //else {

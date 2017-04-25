@@ -33,7 +33,7 @@ $email = $_SESSION['email'];
 
       <div class="form-container">
 
-        <form action="../elements/sign-up-controller.php" method="post">
+        <form action="../elements/sign-up-controller.php" enctype="multipart/form-data" method="post">
 
           <div class="form-element">
             <div>
@@ -93,6 +93,14 @@ $email = $_SESSION['email'];
             </div>
           </div>
           <!-- confirm pass -->
+
+          <!--Avatar  -->
+
+          <div>
+            <label for="avatar">Avatar</label> <br>
+            <input type="file" name="avatar" id="avatar">
+          </div>
+          <!-- Avatar -->
 
           <div class="form-element">
             <input class='button' type="submit" name="submit" value="Enviar">

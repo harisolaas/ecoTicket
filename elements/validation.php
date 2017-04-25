@@ -55,4 +55,40 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     } else { $errorEmail = '';
     }
 
+    // Avatar-------
+
+      function guardarImagen($upload, $nombreImagen) {
+      $error = '';
+      if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
+        $nombre = $_FILES[$upload]["name"];
+        $ext = pathinfo($nombre, PATHINFO_EXTENSION);
+
+        // Validation of img
+        if ($ext !== "png" && $ext !== "jpg") {
+          $error = "Introduzca un archivo png o jpg (forro)";
+        } else {
+          $miArchivo = dirname(__FILE__);
+          $miArchivo = $miArchivo . "/imgAvatar/";
+          $miArchivo = $miArchivo . $nombreImagen . "." . $ext;
+          move_uploaded_file($_FILES[$upload]["tmp_name"], $miArchivo);
+        }
+
+      // Limit File Size.
+        if ($_FILES[$upload]["size"] > 800000) {
+        echo "Supera la capacidad de carga";
+        $uploadOk = 0;
+    }
+      } else {
+        $error = "Archivo no pudo subirse";
+      }
+      return $error;
+    }
+
+
+    $error = guardarImagen('avatar', $email);
+
+    if ($error) {
+      echo $error;
+    }
+
  ?>
