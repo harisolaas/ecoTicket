@@ -147,8 +147,16 @@ footer a{
         display: none;
     }
 
+    .navContainer{
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
     #menu{
+        width: 40%;
+        min-width: 275px;
         display: block;
+        float: right;
     }
     #menu.nav-open{
         display: none;
@@ -156,10 +164,14 @@ footer a{
 
     .botonera{
         width: 95%;
-        position: absolute;
+        /*position: absolute;*/
         top: 0;
-        display: inline-flex;
-        justify-content: flex-end;
+        /*display: inline-flex;
+        justify-content: flex-end;*/
+
+        min-height: inherit;
+
+        flex-flow: row;
 
     }
     .botonera a:hover{
@@ -170,4 +182,7 @@ footer a{
         border: 0px white solid;
         padding: 0px 1.5vw;
         font-size: 1.2em;
+
+        height: 50px;
+        line-height: 50px;
     }

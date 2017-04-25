@@ -11,7 +11,7 @@
 
                   <li><a href="sign-up.php">Registro</a></li>
                   <li><a href="sign-in.php">Log-in</a></li>
-                  <li><a href="faq.php">Centro de ayuda</a></li>
+                  <li><a href="faq.php">F.A.Q.</a></li>
               </ul>
           </nav>
           <script type="text/javascript">
