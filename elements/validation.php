@@ -55,7 +55,7 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     }
 
     // Avatar-------
-
+/*
       function guardarImagen($upload, $nombreImagen) {
       $error = '';
       if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
@@ -89,5 +89,5 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     if ($error) {
       echo $error;
     }
-
+*/
  ?>
