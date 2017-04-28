@@ -15,6 +15,10 @@ a{
 ul{
   list-style-type: none;
 }
+.error{
+    color: red;
+    font-weight: bold;
+}
 .button{
     background-color: #80AA29;
     border-radius: 5px;

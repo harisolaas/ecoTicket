@@ -15,7 +15,7 @@ if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == f
     $users = json_decode($users, true);
     // Chequear si el mail ya esta en base de datos para que no reescriba el indice con los usuarios.
     $users[$_POST['email']] = $rawUserData;
-    $users = json_encode($users, true);
+    $users = json_encode($users);
     file_put_contents('users.json', $users);
 var_dump($users);
     //header('Location: ../paginas/exito.php');

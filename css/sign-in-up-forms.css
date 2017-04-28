@@ -49,10 +49,15 @@ label{
 }
 input{
   margin: auto;
-  width: 94%;
+  width: 65%;
 
   text-align: inherit;
   font-style: italic;
+}
+input:focus{
+    -moz-box-shadow: inset 0 0 2px #000000;
+    -webkit-box-shadow: inset 0 0 2px #000000;
+    box-shadow: inset 0 0 2px #000000;
 }
 input.button{
   width: 90%;

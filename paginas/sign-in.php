@@ -1,4 +1,5 @@
 <?php
+session_start();
 $titulo = 'Log-in';
  ?>
 <!DOCTYPE html>
@@ -23,31 +24,92 @@ $titulo = 'Log-in';
 
         <div class="form-container">
 
-          <form action="#.php" method="post">
+          <form action="../helpers/sign-in.controller.php" method="post">
 
-              <div class="form-element">
-                <div>
-                  <label for="email">Correo electrónico</label><br>
-                  <input type="email" name="email" required placeholder="correo@electronico.com">
-                </div>
-              </div>
-              <!-- email -->
 
-              <div class="form-element">
-                <div>
-                  <label for="password">Contraseña</label><br>
-                  <input type="password" name="password" required placeholder="Tu contraseña">
-                </div>
-              </div>
-              <!-- pass -->
+              <?php if (isset($_COOKIE['pass']) && isset($_COOKIE['email'])): ?>
 
-              <div class="form-element">
-                  <div class="form-element-remember-me">
-                      <input type="checkbox" name="remember-me">
-                      <label for="remember-me">Recordarme</label>
+                  <div class="form-element">
+                      <div>
+                          <label for="email">Correo electrónico</label><br>
+                          <input style='background-color: #ffffcc;' type="email" name="email" value="<?php echo $_COOKIE['email']; ?>">
+
+                          <?php if (isset($_SESSION['errors']['missingData'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
+                          <?php endif; ?>
+
+                      </div>
                   </div>
-              </div>
-              <!-- remember me -->
+                  <!-- cookie email -->
+
+                  <div class="form-element">
+                      <div>
+                          <label for="pass">Contraseña</label><br>
+                          <input style='background-color: #ffffcc;' type="password" name="fakePass" value="<?php echo $_COOKIE['fakePass'] ?>">
+                          <input type="hidden" name="pass" value="<?php echo $_COOKIE['pass'] ?>">
+
+                          <?php if (isset($_SESSION['errors']['missingData'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
+                              <?php unset($_SESSION['errors']['missingData']); ?>
+                          <?php elseif(isset($_SESSION['errors']['errorPass'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['errorPass'] ?></p>
+                              <?php unset($_SESSION['errors']['errorPass']); ?>
+                          <?php endif; ?>
+
+                      </div>
+                  </div>
+                  <!-- cookie pass -->
+
+                  <div class="form-element">
+                      <div class="form-element-remember-me">
+                          <input type="checkbox" name="dontRememberMe">
+                          <label for="rememberMe">Dejar de recordarme</label>
+                      </div>
+                  </div>
+                  <!-- dont remember me -->
+
+              <?php else: ?>
+
+                  <div class="form-element">
+                      <div>
+                          <label for="email">Correo electrónico</label><br>
+                          <input type="email" name="email" placeholder="correo@electronico.com">
+
+                          <?php if (isset($_SESSION['errors']['missingData'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
+                          <?php endif; ?>
+
+                      </div>
+                  </div>
+                  <!-- cookie email -->
+
+                  <div class="form-element">
+                      <div>
+                          <label for="pass">Contraseña</label><br>
+                          <input type="password" name="pass" placeholder="Tu contraseña">
+
+                          <?php if (isset($_SESSION['errors']['missingData'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
+                              <?php unset($_SESSION['errors']['missingData']); ?>
+                          <?php elseif(isset($_SESSION['errors']['errorPass'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['errorPass'] ?></p>
+                              <?php unset($_SESSION['errors']['errorPass']); ?>
+                          <?php endif; ?>
+
+                      </div>
+                  </div>
+                  <!-- pass -->
+
+                  <div class="form-element">
+                      <div class="form-element-remember-me">
+                          <input type="checkbox" name="rememberMe">
+                          <label for="rememberMe">Recordarme</label>
+                      </div>
+                  </div>
+                  <!-- remember me -->
+
+              <?php endif; ?>
+
 
               <div class="form-element">
                 <input class='button' type="submit" name="submit" value="Entrar">
