@@ -7,7 +7,7 @@ session_start();
 function openUsers()
 {
     global $users;
-    $users = file_get_contents('C:\xampp\htdocs\proyecto-integrador\elements\users.json');
+    $users = file_get_contents('C:\xampp\htdocs\proyecto-integrador\json\users.json');
     $users = json_decode($users, true);
 }
 
@@ -15,33 +15,9 @@ function closeUsers()
 {
     global $users;
     $users = json_encode($users);
-    file_put_contents('C:\xampp\htdocs\proyecto-integrador\elements\users.json', $users);
+    file_put_contents('C:\xampp\htdocs\proyecto-integrador\json\users.json', $users);
 }
 
-function rememberMe()
-{
-    if (!strlen($_POST['pass'])>12) {
-        global $users;
-
-        $user = $_POST['email'];
-        $pass = $_POST['pass'];
-        $passLength = strlen($_POST['pass']);
-        $fakePass = '';
-        for ($i=0; $i < $passLength ; $i++) {
-            $fakePass = $fakePass."x";
-        }
-        $pass = password_hash($pass, PASSWORD_BCRYPT);
-        $cookieDuration = time() + 60*60*24*15;
-        $cookieDir = '/';
-        setcookie('fakePass', $fakePass, $cookieDuration, $cookieDir);
-        setcookie('pass', $pass, $cookieDuration, $cookieDir);
-        setcookie('email', $user, $cookieDuration, $cookieDir);
-
-        $users[$user]['pass'] = $pass;
-    }
-}
-function unsetRememberMe()
-{}
 
 function isDataCorrect()
 {
@@ -74,37 +50,66 @@ function isPassCorrect()
     }
 }
 
+
+function rememberMe()
+{
+    if (strlen($_POST['pass'])<=12) {
+        global $users;
+
+        $user = $_POST['email'];
+        $pass = $_POST['pass'];
+        $passLength = strlen($_POST['pass']);
+        $fakePass = '';
+        for ($i=0; $i < $passLength ; $i++) {
+            $fakePass = $fakePass."x";
+        }
+        $pass = $users[$user]['pass'];
+        $cookieDuration = time() + 60*60*24*15;
+        $cookieDir = '/';
+        setcookie('fakePass', $fakePass, $cookieDuration, $cookieDir);
+        setcookie('pass', $pass, $cookieDuration, $cookieDir);
+        setcookie('email', $user, $cookieDuration, $cookieDir);
+    }
+}
+function unsetRememberMe()
+{
+    // Expire cookie
+    $cookieDuration = time() - 60*60*24*15;
+    $cookieDir = '/';
+    setcookie('fakePass', '', $cookieDuration, $cookieDir);
+    setcookie('pass', '', $cookieDuration, $cookieDir);
+    setcookie('email', '', $cookieDuration, $cookieDir);
+}
+
 function logIn()
 {
     // Set session timeout
     $_SESSION['logIn'] = true;
 }
-
 // ============-Functions-End-=========== //
 
 
 openUsers();
-var_dump($_POST);echo "<br>";echo "<br>";
-var_dump($users);
 
 if (!isDataCorrect())
 {
     $_SESSION['errors']['missingData'] = '*Campo requerido';
-    // header('Location: ../paginas/sign-in.php');
-    echo "error1";
+    $_SESSION['email'] = $_POST['email'];
+    header('Location: ../paginas/sign-in.php');
     exit;
 }
 elseif (!isUserSet())
 {
-    $_SESSION['errors']['errorEmail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';// Tengo que llamarla y borrarla en sign-in.php
-    // header('Location: ../paginas\sign-in.php');
-    echo "error2";
+    $_SESSION['errors']['errorEmail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
+    $_SESSION['email'] = $_POST['email'];
+    header('Location: ../paginas\sign-in.php');
     exit;
 }
 elseif (!isPassCorrect())
 {
     $_SESSION['errors']['errorPass'] = '*La contraseña ingresada es incorrecta!';
-    // header('Location: ../paginas\sign-in.php');
+    $_SESSION['email'] = $_POST['email'];
+    header('Location: ../paginas\sign-in.php');
     echo "error3";
     exit;
 }
@@ -113,9 +118,11 @@ else
     logIn();
     if (isset($_POST['rememberMe'])) {
         rememberMe();
+        echo "is rememberMe";
+    }elseif (isset($_POST['dontRememberMe'])) {
+        unsetRememberMe();
     }
-    // header('Location: ../paginas\exito.php');
-    echo "success";
+    header('Location: ../paginas\exito.php');
 }
 closeUsers();
  ?>

@@ -18,6 +18,8 @@ ul{
 .error{
     color: red;
     font-weight: bold;
+    width: 80%;
+    margin: auto;
 }
 .button{
     background-color: #80AA29;

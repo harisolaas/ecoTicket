@@ -45,7 +45,7 @@ $titulo = 'Log-in';
                   <div class="form-element">
                       <div>
                           <label for="pass">Contraseña</label><br>
-                          <input style='background-color: #ffffcc;' type="password" name="fakePass" value="<?php echo $_COOKIE['fakePass'] ?>">
+                          <input style='background-color: #ffffcc;' type="password" name="fakePass" value="<?php echo $_COOKIE['fakePass'] ?>" disabled>
                           <input type="hidden" name="pass" value="<?php echo $_COOKIE['pass'] ?>">
 
                           <?php if (isset($_SESSION['errors']['missingData'])): ?>
@@ -63,7 +63,7 @@ $titulo = 'Log-in';
                   <div class="form-element">
                       <div class="form-element-remember-me">
                           <input type="checkbox" name="dontRememberMe">
-                          <label for="rememberMe">Dejar de recordarme</label>
+                          <label for="dontRememberMe">Dejar de recordarme</label>
                       </div>
                   </div>
                   <!-- dont remember me -->
@@ -73,15 +73,23 @@ $titulo = 'Log-in';
                   <div class="form-element">
                       <div>
                           <label for="email">Correo electrónico</label><br>
-                          <input type="email" name="email" placeholder="correo@electronico.com">
+                          <input type="email" name="email" placeholder="correo@electronico.com" <?php if(isset($_SESSION['email'])) {
+                              $email = 'email';
+                              echo "value="."'$_SESSION[$email]'"." style='background-color: #ffffcc;'"; } ?>>
 
                           <?php if (isset($_SESSION['errors']['missingData'])): ?>
                               <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
+                          <?php elseif(isset($_SESSION['errors']['errorEmail'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['errorEmail'] ?></p>
+                              <?php
+                              unset($_SESSION['errors']['errorEmail']);
+                              unset($_SESSION['email']);
+                               ?>
                           <?php endif; ?>
 
                       </div>
                   </div>
-                  <!-- cookie email -->
+                  <!-- email -->
 
                   <div class="form-element">
                       <div>
