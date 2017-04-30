@@ -53,8 +53,8 @@ $email = $_SESSION['email'];
 
             <div class="form-name-lastname">
               <div>
-                <label for="first-name">Nombre</label><br>
-                <input type="text" name="first-name" required placeholder="Tu nombre" value="<?php // PERSISTENCIA DE DATOS
+                <label for="name">Nombre</label><br>
+                <input type="text" name="name" required placeholder="Tu nombre" value="<?php // PERSISTENCIA DE DATOS
                 if(isset($firstName)){
                 echo $firstName;
             } ?>">
@@ -62,8 +62,8 @@ $email = $_SESSION['email'];
               </div>
 
               <div class="">
-                <label for="last-name">Apellido</label><br>
-                <input type="text" name="last-name" required placeholder="Tu apellido" value="<?php // PERSISTENCIA DE DATOS
+                <label for="lastName">Apellido</label><br>
+                <input type="text" name="lastName" required placeholder="Tu apellido" value="<?php // PERSISTENCIA DE DATOS
                 if(isset($lastName)){
                 echo $lastName;
             } ?>">

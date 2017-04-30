@@ -4,19 +4,7 @@ session_start();
 // ============-Functions-=========== //
 
 
-function openUsers()
-{
-    global $users;
-    $users = file_get_contents('C:\xampp\htdocs\proyecto-integrador\json\users.json');
-    $users = json_decode($users, true);
-}
-
-function closeUsers()
-{
-    global $users;
-    $users = json_encode($users);
-    file_put_contents('C:\xampp\htdocs\proyecto-integrador\json\users.json', $users);
-}
+include('C:\xampp\htdocs\proyecto-integrador\helpers\users.library.php');
 
 
 function isDataCorrect()
@@ -124,5 +112,5 @@ else
     }
     header('Location: ../paginas\exito.php');
 }
-closeUsers();
+updateUsers();
  ?>

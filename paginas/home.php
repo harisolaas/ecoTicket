@@ -17,7 +17,7 @@ $titulo = 'ecoTicket';
       <header class="pantalla-landing">
         <div class="pantalla-landing-bgi">
             <div class="pantalla-landing-bgi-skin">
-                    <h2 class="pantalla-landing-titulo">Soluciones digitales a problemas cotidianos<!-- value proposition --></h2>
+                    <h2 class="pantalla-landing-titulo">Soluciones digitales a problemas cotidianos</h2>
                     <nav class="nav-home-container">
                         <ul class="botonera">
                             <li><a href="#">ecoTicket</a></li>
@@ -48,12 +48,6 @@ $titulo = 'ecoTicket';
     <div id="contenedor-principal" class="contenedor-principal">
 
       <?php include'../elements/nav.php'; ?>
-      <!-- <div class="headerNavContainer">
-            <header class="menu">
-                <h1>ecoTicket</h1>
-                <?php include'../elements/nav.php'; ?>
-            </header>
-        </div> -->
 
       <div class="content">
           <div class="propuesta-valor">

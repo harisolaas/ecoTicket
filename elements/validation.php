@@ -7,12 +7,7 @@ $errorPass = '';
 $errorEmail= '';
 
 
-
-
-
-
-
-        // VALIDACION NAME < 30 caracteres
+// VALIDACION NAME < 30 caracteres
 $firstName = trim($_POST["first-name"]);
 if(strlen($firstName) > 30){
     $errorFirstName = 'El nombre es demasiado largo';
@@ -24,19 +19,19 @@ if(strlen($lastName) > 30){
     $errorLastName = 'El apellido es demasiado largo';
 }
 
-        // VALIDACION PASSWORD vs CONFIRM_PASSWORD
-        $pass = $_POST['pass'];
-        $confirmPass = $_POST['confirm-pass'];
+// VALIDACION PASSWORD vs CONFIRM_PASSWORD
+$pass = $_POST['pass'];
+$confirmPass = $_POST['confirm-pass'];
 if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     if($_POST['pass'] !== $_POST['confirm-pass']){
         $errorPass = 'Los Passwords no coinciden';
 
 
-        // VALIDACION LONGITUD DEL PASSWORD + de 6 caracteres
+// VALIDACION LONGITUD DEL PASSWORD + de 6 caracteres
     } elseif(strlen($_POST['pass']) < 6){
         $errorPass = 'Debes ingresar un Passsword de al menos 6 caracteres';
     }  elseif (strlen($_POST['pass']) >= 12) {
-        $errorPass = 'Debes ingresar un Password de 12 o menos caracteres';
+        $errorPass = 'Debes ingresar un Password de hasta 12 caracteres';
     }
 
     //VALIDACION PASSWORD EXITOSA
