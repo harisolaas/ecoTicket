@@ -3,14 +3,14 @@ session_start();
 
 $titulo = 'Registro';
 
-$errorFirstName = $_SESSION['errorFirstName'];
-$errorPass = $_SESSION['errorPass'];
-$errorEmail= $_SESSION['errorEmail'];
-$errorLastName= $_SESSION['errorLastName'];
+@$errorFirstName = $_SESSION['errorFirstName'];
+@$errorPass = $_SESSION['errorPass'];
+@$errorEmail= $_SESSION['errorEmail'];
+@$errorLastName= $_SESSION['errorLastName'];
 
-$firstName = $_SESSION['firstName'];
-$lastName = $_SESSION['lastName'];
-$email = $_SESSION['email'];
+@$firstName = $_SESSION['firstName'];
+@$lastName = $_SESSION['lastName'];
+@$email = $_SESSION['email'];
 
  ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ $email = $_SESSION['email'];
 
       <div class="form-container">
 
-        <form action="../elements/sign-up-controller.php" enctype="multipart/form-data" method="post">
+        <form action="C:\xampp\htdocs\proyecto-integrador\helpers\sign-up.controller.php" enctype="multipart/form-data" method="post">
 
           <div class="form-element">
             <div>
