@@ -1,11 +1,11 @@
 .main-container{
-  width: 96vw;
-  margin: auto;
+  width: 100%;
   position: relative;
 }
 
 .form-container{
   border-top: 44px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 form{
   margin: 3vh auto;
@@ -84,8 +84,8 @@ input.button{
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 600px;
         height: 90vh;
-        margin-bottom: 10vh;
         box-sizing: content-box;
     }
 }

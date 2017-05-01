@@ -160,9 +160,12 @@
 
 /* Media query para tablet */
 @media (min-width: 480px) {
+    .pantalla-landing{
+        min-height: 800px;
+    }
     .pantalla-landing-bgi{
         background-image: url(../images/bg-image-landing-desktop.jpg);
-        height: 95vh;
+        height: 95%;
         /*top: 44px;*/
     }
     .pantalla-landing-bgi-skin{
@@ -185,7 +188,7 @@
     }
     .pantalla-landing-texto{
         font-size: 1.2em;
-        line-height: 15vh;
+        line-height: 100px;
         padding-left: 10px;
         border-bottom: 1px solid #80AA29;
         background-color: #fff;
