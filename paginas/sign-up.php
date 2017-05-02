@@ -33,7 +33,7 @@ $titulo = 'Registro';
 
       <div class="form-container">
 
-        <form action="C:\xampp\htdocs\proyecto-integrador\helpers\sign-up.controller.php" enctype="multipart/form-data" method="post">
+        <form action="..\helpers\sign-up.controller.php" enctype="multipart/form-data" method="post">
 
           <div class="form-element">
             <div>
@@ -112,7 +112,7 @@ $titulo = 'Registro';
       </div> <!-- Cierra .form-container -->
 
       <div style="height: 100px; background-color: rgba(0,0,0,0.5)"></div>
-      
+
     </div><!-- Cierra .main-container -->
 
     <?php include '../elements/footer.php'; ?>

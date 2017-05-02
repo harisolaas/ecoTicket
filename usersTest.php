@@ -1,7 +1,7 @@
 <?php
 include('helpers/users.library.php');
 openUsers();
-deleteUser('hari_2500@hotmail.com');
+// deleteUser('hari_2500@hotmail.com');
 // if (isset($_POST['email'])) {
 //     setUserEmail($_POST['newEmail'], $_POST['email']);
 // }else{
@@ -9,7 +9,7 @@ deleteUser('hari_2500@hotmail.com');
 // }
 // setUserFullName($_POST['newEmail'], $_POST['name'], $_POST['lastName']);
 //
-// setUserPassword($_POST['newEmail'], $_POST['pass']);
+setUserPassword('hari@solaas.com', '12345678');
 
 updateUsers();
 

@@ -2,9 +2,9 @@
 session_start();
 
 
-include 'C:\xampp\htdocs\proyecto-integrador\helpers\validation.php';
+include '..\helpers\validation.php';
 // ===Here's an include with defined functions for user data editing=== //
-include 'C:\xampp\htdocs\proyecto-integrador\helpers\users.library.php';
+include '..\helpers\users.library.php';
 
 
 if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == false) && ($errorPass == false)) {

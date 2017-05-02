@@ -4,16 +4,9 @@ $titulo = 'Log-in';
  ?>
 <!DOCTYPE html>
 <html>
-  <head class="no-home">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width:device-width, initial-scale=1">
-
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="../css/master.css">
+  <head>
+    <?php include('C:\xampp\htdocs\proyecto-integrador\elements\head.php') ?>
     <link rel="stylesheet" href="../css/sign-in-up-forms.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-    <title>ecoTicket :: Log-in</title>
 
   </head>
 
@@ -108,7 +101,10 @@ $titulo = 'Log-in';
                   </div>
                   <!-- pass -->
 
-                  <div class="form-element">
+                  <div class="form-element" style="flex-direction:row; align-items:center; justify-content:space-around">
+                      <div class="reset-pass">
+                           <a href="reset-password.php" style="font-size: 0.8em">¿Olvidaste tu contraseña?</a>
+                      </div>
                       <div class="form-element-remember-me">
                           <input type="checkbox" name="rememberMe">
                           <label for="rememberMe">Recordarme</label>
