@@ -28,8 +28,8 @@ if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == f
         // $users[$_POST['email']] = $rawUserData;
         // $users = json_encode($users);
         // file_put_contents('users.json', $users);
-var_dump($users);
-    //header('Location: ../paginas/exito.php');
+
+    header('Location: ../paginas/exito.php');
 
 
 } else {

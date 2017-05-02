@@ -8,13 +8,13 @@ $errorEmail= '';
 
 
 // VALIDACION NAME < 30 caracteres
-$firstName = trim($_POST["first-name"]);
+$firstName = trim($_POST["name"]);
 if(strlen($firstName) > 30){
     $errorFirstName = 'El nombre es demasiado largo';
 }
 
 // VALIDACION LAST NAME
-$lastName = trim($_POST["last-name"]);
+$lastName = trim($_POST["lastName"]);
 if(strlen($lastName) > 30){
     $errorLastName = 'El apellido es demasiado largo';
 }
