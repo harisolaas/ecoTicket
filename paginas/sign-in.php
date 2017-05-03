@@ -55,8 +55,8 @@ $titulo = 'Log-in';
 
                   <div class="form-element">
                       <div class="form-element-remember-me">
-                          <input type="checkbox" name="dontRememberMe">
-                          <label for="dontRememberMe">Dejar de recordarme</label>
+                          <input type="checkbox" name="rememberMe" checked>
+                          <label for="rememberMe">Recordarme</label>
                       </div>
                   </div>
                   <!-- dont remember me -->
@@ -101,11 +101,11 @@ $titulo = 'Log-in';
                   </div>
                   <!-- pass -->
 
-                  <div class="form-element" style="flex-direction:row; align-items:center; justify-content:space-around">
-                      <div class="reset-pass">
+                  <div class="form-element" style="flex-direction:row; align-items:center;">
+                      <div class="reset-pass" style="width: 50%">
                            <a href="reset-password.php" style="font-size: 0.8em">¿Olvidaste tu contraseña?</a>
                       </div>
-                      <div class="form-element-remember-me">
+                      <div class="form-element-remember-me" style="width:50%">
                           <input type="checkbox" name="rememberMe">
                           <label for="rememberMe">Recordarme</label>
                       </div>

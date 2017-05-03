@@ -32,7 +32,7 @@ function isPassCorrect()
     {
         $validation = password_verify($_POST['pass'], $users[$_POST['email']]['pass']);
         return $validation;
-    } elseif (strlen($_POST['pass']) > 12) {
+    } else {
         $validation = ($_POST['pass'] == $users[$_POST['email']]['pass']);
         return $validation;
     }
@@ -98,7 +98,6 @@ elseif (!isPassCorrect())
     $_SESSION['errors']['errorPass'] = '*La contraseña ingresada es incorrecta!';
     $_SESSION['email'] = $_POST['email'];
     header('Location: ../paginas\sign-in.php');
-    echo "error3";
     exit;
 }
 else
@@ -106,8 +105,7 @@ else
     logIn();
     if (isset($_POST['rememberMe'])) {
         rememberMe();
-        echo "is rememberMe";
-    }elseif (isset($_POST['dontRememberMe'])) {
+    }else {
         unsetRememberMe();
     }
     header('Location: ../paginas\exito.php');
