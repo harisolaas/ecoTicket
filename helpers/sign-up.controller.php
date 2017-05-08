@@ -9,13 +9,7 @@ include '..\helpers\users.library.php';
 
 if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == false) && ($errorPass == false)) {
 
-        // $rawUserData = [];
-        // $rawUserData['firstName'] = $_POST['first-name'];
-        // $rawUserData['lastName'] = $_POST['last-name'];
-        // $rawUserData['pass'] = password_hash($_POST['pass'], PASSWORD_BCRYPT);
 
-        // $users = file_get_contents('users.json');
-        // $users = json_decode($users, true);
     openUsers();
 
     // Chequear si el mail ya esta en base de datos para que no reescriba el indice con los usuarios.
@@ -25,9 +19,6 @@ if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == f
     setUserPassword($_POST['email'], $_POST['pass']);
 
     updateUsers();
-        // $users[$_POST['email']] = $rawUserData;
-        // $users = json_encode($users);
-        // file_put_contents('users.json', $users);
 
     header('Location: ../paginas/exito.php');
 

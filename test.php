@@ -1,7 +1,11 @@
 <?php
-$_SESSION['email'] = 'hari@solaas.com';
-var_dump($_SESSION);echo "<br>";echo "<br>";
-$string = $_SESSION['email'];
-$string = "value="."'$string'"." style='background-color: #ffffcc;'";
-var_dump($string);
+function test()
+{
+    global $hola;
+    $hola = 'Hola';
+    return $hola." Mundo";
+}
+$holaMundo = 'algo';
+var_dump($holaMundo);echo "<br>";echo "<br>";
+var_dump($hola);echo "<br>";echo "<br>";
  ?>

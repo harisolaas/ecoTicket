@@ -5,7 +5,9 @@
 
 .form-container{
   border-top: 44px solid white;
-  background-color: rgba(0, 0, 0, 0.5);
+}
+.span{
+    display: none;
 }
 form{
   margin: 3vh auto;
@@ -60,7 +62,7 @@ input:focus{
     -webkit-box-shadow: inset 0 0 2px #000000;
     box-shadow: inset 0 0 2px #000000;
 }
-input.button{
+.button{
   width: 90%;
   margin: auto;
 
@@ -88,5 +90,11 @@ input.button{
         min-height: 600px;
         height: 90vh;
         box-sizing: content-box;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .span{
+        display: block;
+        height: 100px;
+        background-color: rgba(0,0,0,0.5)
     }
 }

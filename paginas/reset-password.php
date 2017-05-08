@@ -5,13 +5,14 @@ $titulo = 'Restablecer contraseña'
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include('C:\xampp\htdocs\proyecto-integrador\elements\head.php'); ?>
+        <?php include('..\elements\head.php'); ?>
         <link rel="stylesheet" href="../css/sign-in-up-forms.css">
         <style>
-            input{
+            .email{
                 -moz-box-shadow: inset 0 0 2px #000000;
                 -webkit-box-shadow: inset 0 0 2px #000000;
                 box-shadow: inset 0 0 2px #000000;
+                height: 22px;
             }
             p{
                 font-size: 0.8em;
@@ -23,10 +24,21 @@ $titulo = 'Restablecer contraseña'
                 border-radius: 4px 4px 0 0;
             }
             form{
-                height: 250px;
+                height: 320px;
             }
             form:first-child{
                 padding-top: 0;
+            }
+            label{
+                width: 80%;
+                margin: auto;
+            }
+            .button{
+                padding: 0;
+                width: 65%;
+                border: none;
+                font-size: 1em;
+                height: 22px;
             }
         </style>
     </head>
@@ -40,15 +52,18 @@ $titulo = 'Restablecer contraseña'
                     </div>
                     <div class="form-element">
                         <div>
-                            <input autofocus type="email" name="email" value="<?php echo @$_SESSION['email']; ?>"  >
                             <p>*ejemplo@ejemplo.com</p>
+                            <input class="email" autofocus type="email" name="email" value="<?php echo @$_SESSION['email']; ?>"  >
+                            <br>
+                            <br>
+                            <input class="button" type="submit" name="submit" value="Enviar">
                         </div>
                     </div>
                 </form>
 
             </div>
-            <div style="height: 100px; background-color: rgba(0,0,0,0.5)"></div>
+            <div class="span"></div>
         </div>
-        <?php include('C:\xampp\htdocs\proyecto-integrador\elements\footer.php'); ?>
+        <?php include('..\elements\footer.php'); ?>
     </body>
 </html>

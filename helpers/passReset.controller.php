@@ -1,19 +1,31 @@
 <?php
-function sendPassResetEmail()
-{
-    $to = $_POST['email'];
-    $subject = 'ecoTicket :: Recupero de contraseña';
-    $content = file_get_contents('passResetMail.php');
-    $headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: <ecoticket@no-reply.com>' . "\r\n";
-    mail($to, $subject, $content, $headers);
-}
+
+session_start();
+
+include 'users.library.php';
 
 function generateUniqueURL()
 {
-    global $url;
-    $url = uniqid();
-    $url = password_hash($url, PASSWORD_BCRYPT);
-    $url = "localhost/proyecto-integrador/passReset/?passReset=".$url;
-    var_dump($url);
+    global $passRecoverGetCode;
+    $passRecoverGetCode = uniqid();
+    $passRecoverGetCode = password_hash($url, PASSWORD_BCRYPT);
+    return "localhost/proyecto-integrador/paginas/passReset/?passReset=".$passRecoverGetCode;
+}
+
+openUsers();
+
+if (!isUserSet()) {
+    $_SESSION['errors']['errorEmail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
+    header('Location: ../paginas/reset-password.php');
+    exit;
+} else {
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['passRecoverURL'] = generateUniqueURL();
+
+    $users[$_POST['email']]['passRecoverGetCode'] = $passRecoverGetCode;
+    $users[$_POST['email']]['passRecoverGetCodeExpire'] = time() + 60*60*24;
+    updateUsers();
+
+    header('Location: PHPMailer-master/examples/gmail.php');
+    exit;
 }

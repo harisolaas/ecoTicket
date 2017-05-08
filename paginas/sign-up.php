@@ -111,7 +111,7 @@ $titulo = 'Registro';
 
       </div> <!-- Cierra .form-container -->
 
-      <div style="height: 100px; background-color: rgba(0,0,0,0.5)"></div>
+      <div class="span"></div>
 
     </div><!-- Cierra .main-container -->
 
