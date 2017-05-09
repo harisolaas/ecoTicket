@@ -87,6 +87,8 @@ $passRecoverMail = '<html>
     </body>
 </html>';
 
+unset($_SESSION['passRecoverURL']);
+
 $mail->msgHTML($passRecoverMail);
 
 //Replace the plain text body with one created manually
@@ -98,6 +100,8 @@ $mail->AltBody = 'Copiá y pegá este link en tu navegador para recuperar tu con
 //send the message, check for errors
 if (!$mail->send()) {
     $_SESSION['errors']['emailNotSent'] = 'Hubo un error durante mientras intentabamos enviarte el correo de recuperación. Por favor, intentalo de vuelta.';
+    header('Location: ../../../paginas/resset-password.php');
 } else {
-    header('Location: ../../../paginas/home.php');
+    $_SESSION['isMailSent'] = true;
+    header('Location: ../../../paginas/reset-password.php');
 }

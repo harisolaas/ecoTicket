@@ -5,7 +5,7 @@ $titulo = 'Log-in';
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include('C:\xampp\htdocs\proyecto-integrador\elements\head.php') ?>
+    <?php include('../elements/head.php') ?>
     <link rel="stylesheet" href="../css/sign-in-up-forms.css">
 
   </head>

@@ -5,7 +5,7 @@
 function openUsers()
 {
     global $users;
-    $users = file_get_contents('..\json\users.json');
+    $users = file_get_contents('../json/users.json');
     $users = json_decode($users, true);
 }
 
@@ -13,7 +13,7 @@ function updateUsers()
 {
     global $users;
     $users = json_encode($users);
-    file_put_contents('..\json\users.json', $users);
+    file_put_contents('../json/users.json', $users);
 }
 
 function setUserEmail($newEmail, $email = '')
@@ -82,6 +82,11 @@ function unsetRememberMe()
     setcookie('fakePass', '', $cookieDuration, $cookieDir);
     setcookie('pass', '', $cookieDuration, $cookieDir);
     setcookie('email', '', $cookieDuration, $cookieDir);
+}
+
+function getUserMail($userID)
+{
+
 }
 
  ?>

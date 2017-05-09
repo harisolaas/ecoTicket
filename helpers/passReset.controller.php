@@ -6,16 +6,19 @@ include 'users.library.php';
 
 function generateUniqueURL()
 {
+    global $users;
     global $passRecoverGetCode;
+    $id = $users[$_POST['email']]['id'];
     $passRecoverGetCode = uniqid();
-    $passRecoverGetCode = password_hash($url, PASSWORD_BCRYPT);
-    return "localhost/proyecto-integrador/paginas/passReset/?passReset=".$passRecoverGetCode;
+    $passRecoverGetCode = password_hash($passRecoverGetCode, PASSWORD_BCRYPT);
+    return "localhost/proyecto-integrador/paginas/password-reset.php?passReset=".$passRecoverGetCode."&id=".$id;
 }
 
 openUsers();
 
 if (!isUserSet()) {
     $_SESSION['errors']['errorEmail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
+    $_SESSION['email'] = $_POST['email'];
     header('Location: ../paginas/reset-password.php');
     exit;
 } else {
