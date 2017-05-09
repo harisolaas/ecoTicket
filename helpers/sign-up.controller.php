@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-
+include '../helpers/users.library.php';
 include '../helpers/validation.php';
 // ===Here's an include with defined functions for user data editing=== //
-include '../helpers/users.library.php';
+
 
 
 if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == false) && ($errorPass == false)) {
