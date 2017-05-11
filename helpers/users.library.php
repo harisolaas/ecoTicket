@@ -30,6 +30,21 @@ function setUserEmail($newEmail, $email = '')
     }
 }
 
+function setUserID($email)
+{
+    global $users;
+    $userID = file_get_contents('../json/userID.json');
+    $userID = json_decode($userID, true);
+
+    $id = randLetter().time();
+    $userID[$id] = $email;
+
+    $userID = json_encode($userID);
+    file_put_contents('../json/userID.json', $userID);
+
+    $users[$email]['id'] = $id;
+}
+
 function setUserFullName($email, $name, $lastName)
 {
     global $users;
@@ -86,7 +101,22 @@ function unsetRememberMe()
 
 function getUserMail($userID)
 {
+    global $email;
+    $IDusers = file_get_contents('../json/userID.json');
+    $IDusers = json_decode($IDusers, true);
+    if (isset($IDusers[$userID])) {
+        $email = $IDusers[$userID];
+        return $email;
+    } else {
+        $email = false;
+        return false;
+    }
+}
 
+function randLetter()
+{
+    $a = ['a','b','c','d','e','f','g', 'h', 'i', 'j', 'k', 'l','m','n','o', 'p','q','r','s','t','u','v', 'w'];
+    return $a[rand(0, count($a))];
 }
 
  ?>
