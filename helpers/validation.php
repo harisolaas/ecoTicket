@@ -1,5 +1,6 @@
 <?php
 
+openUsers();
 
 $errorFirstName = '';
 $errorLastName= '';
@@ -44,45 +45,44 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     //VALIDACION EMAIL
     $email = trim($_POST['email']);
     $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+
     if($validateEmail === false){
         $errorEmail = 'Por favor ingresar un Email valido';
-    } else { $errorEmail = '';
+    }
+    elseif(isUserSet()){
+    $errorEmail = 'Este email ya esta registrado';
+}
+    else { $errorEmail = '';
     }
 
     // Avatar-------
-/*
-      function guardarImagen($upload, $nombreImagen) {
-      $error = '';
-      if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
-        $nombre = $_FILES[$upload]["name"];
-        $ext = pathinfo($nombre, PATHINFO_EXTENSION);
+    
 
-        // Validation of img
-        if ($ext !== "png" && $ext !== "jpg") {
-          $error = "Introduzca un archivo png o jpg (forro)";
-        } else {
-          $miArchivo = dirname(__FILE__);
-          $miArchivo = $miArchivo . "/imgAvatar/";
-          $miArchivo = $miArchivo . $nombreImagen . "." . $ext;
-          move_uploaded_file($_FILES[$upload]["tmp_name"], $miArchivo);
-        }
+    function guardarImagen($upload, $nombreImagen) {
+    	$error = '';
+    	if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
+    		$nombre=$_FILES[$upload]["name"];
+    		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
-      // Limit File Size.
-        if ($_FILES[$upload]["size"] > 800000) {
-        echo "Supera la capacidad de carga";
-        $uploadOk = 0;
-    }
-      } else {
-        $error = "Archivo no pudo subirse";
-      }
-      return $error;
+    		if ($ext != "png" && $ext != "jpg") {
+    			$error = "No acepto la extension";
+    		} else {
+    			$miArchivo = dirname(__FILE__);
+    			$miArchivo = $miArchivo . "/imgAvatar/";
+    			$miArchivo = $miArchivo . $nombreImagen . "." . $ext;
+    			move_uploaded_file($_FILES[$upload]["tmp_name"], $miArchivo);
+    		}
+    	} else {
+    		$error = "Ey, no pude subir la foto :(";
+    	}
+    	return $error;
     }
 
-
-    $error = guardarImagen('avatar', $email);
+    $error = guardarImagen('avatar', 'mi-imagen');
 
     if ($error) {
-      echo $error;
+    	echo $error;
     }
-*/
+
+
  ?>
