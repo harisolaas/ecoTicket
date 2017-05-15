@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include '../helpers/users.library.php';
-include '../helpers/validation.php';
+require 'users.library.php';
+require 'validation.php';
 // ===Here's an include with defined functions for user data editing=== //
 
 

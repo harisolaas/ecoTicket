@@ -5,7 +5,7 @@
 function openUsers()
 {
     global $users;
-    $users = file_get_contents('../json/users.json');
+    $users = file_get_contents('C:/xampp/htdocs/proyecto-integrador/json/users.json');
     $users = json_decode($users, true);
 }
 
@@ -13,7 +13,7 @@ function updateUsers()
 {
     global $users;
     $users = json_encode($users);
-    file_put_contents('../json/users.json', $users);
+    file_put_contents('C:/xampp/htdocs/proyecto-integrador/json/users.json', $users);
 }
 
 function setUserEmail($newEmail, $email = '')
@@ -33,16 +33,20 @@ function setUserEmail($newEmail, $email = '')
 function setUserID($email)
 {
     global $users;
-    $userID = file_get_contents('../json/userID.json');
-    $userID = json_decode($userID, true);
+    if (!isset($users[$email]['id'])) {
+        $userID = file_get_contents('userID.json');
+        $userID = json_decode($userID, true);
 
-    $id = randLetter().time();
-    $userID[$id] = $email;
+        $id = randLetter().time();
+        $userID[$id] = $email;
 
-    $userID = json_encode($userID);
-    file_put_contents('../json/userID.json', $userID);
+        $userID = json_encode($userID);
+        file_put_contents('userID.json', $userID);
 
-    $users[$email]['id'] = $id;
+        $users[$email]['id'] = $id;
+    }else {
+        return 'Error: id already set for'.$email;
+    }
 }
 
 function setUserFullName($email, $name, $lastName)
@@ -102,7 +106,7 @@ function unsetRememberMe()
 function getUserMail($userID)
 {
     global $email;
-    $IDusers = file_get_contents('../json/userID.json');
+    $IDusers = file_get_contents('C:/xampp/htdocs/proyecto-integrador/json/userID.json');
     $IDusers = json_decode($IDusers, true);
     if (isset($IDusers[$userID])) {
         $email = $IDusers[$userID];

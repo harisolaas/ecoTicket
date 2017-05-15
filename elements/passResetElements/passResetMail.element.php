@@ -1,4 +1,4 @@
-<form action="../helpers/passReset.controller.php" method="post">
+<form action="/proyecto-integrador/helpers/passResetControllers/passResetMailer.controller.php" method="post">
     <div class="form-element first-child">
         <label for="email">Ingresá el correo electrónico con el que te registraste para restablecer tu contraseña:</label>
     </div>
@@ -10,7 +10,6 @@
             <br>
             <br>
             <input class="button" type="submit" name="submit" value="Enviar">
-            <?php unset($_SESSION['errors']['errorEmail']); ?>
         </div>
     </div>
 </form>

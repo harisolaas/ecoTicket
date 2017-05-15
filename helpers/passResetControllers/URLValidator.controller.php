@@ -2,7 +2,7 @@
 
 session_start();
 
-require 'users.library.php';
+require '../users.library.php';
 
 openUsers();
 
@@ -17,13 +17,17 @@ if
 {
     $users[$email]['passValidation'] = true;
     $_SESSION['passValidation'] = true;
+    $_SESSION['email'] = $email;
+
     unset($users[$email]['passRecoverGetCode']);
-    unset($users[$email]['passRecoverGetCodeExpire');
+    unset($users[$email]['passRecoverGetCodeExpire']);
     unset($_SESSION['userID']);
     unset($_SESSION['passRecoverGetCode']);
-    header('Location ../paginas/reset-password.php');
 
+    updateUsers();
+
+    header('Location: ../../paginas/reset-password.php');
 }else {
-    $_SESSION['URLValidationFail'] = true;
-    header('Location ../paginas/reset-password.php');
+    $_SESSION['errors']['URLValidationFail'] = '*La URL ingresada es incorrecta!';
+    header('Location: ../../paginas/reset-password.php');
 }

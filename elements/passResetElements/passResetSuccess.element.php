@@ -1,5 +1,5 @@
-<form action="../helpers/passReset.controller.php" method="post">
-    <div class="form-element first-child">
+<form action="../helpers/passResetControllers/passResetMailer.controller.php" method="post">
+    <div class="form-element">
         <label for="email">El mail de confirmación ha sido <strong>enviado con éxito</strong>! Si no lo recibís n los próximos 5 minutos probá enviarlo de vuelta:</label>
     </div>
     <div class="form-element">
