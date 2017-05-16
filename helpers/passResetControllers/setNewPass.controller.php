@@ -30,22 +30,24 @@ function passValidation()
     return $errors;
 }
 
-openUsers();
+openUsers('../../');
 
 if (isset($_POST['pass']) && $_POST['confirm-pass']) {
     if (@$_SESSION['passValidation'] && $users[$_SESSION['email']]['passValidation']) {
 
         if (passValidation() === true) {
             setUserPassword($_SESSION['email'], $_POST['pass']);
+            unset($_SESSION['passValidation']);
+            unset($users[$_SESSION['email']]['passValidation']);
+            updateUsers('../../');
+            header('Location: ../../paginas/sign-in.php');
+            exit;
         }else {
             $_SESSION['errors'] = $errors;
+            header('Location: ../../paginas/reset-password.php');
+            exit;
         }
 
-        unset($_SESSION['passValidation']);
-        unset($users[$_SESSION['email']]['passValidation']);
-        updateUsers();
-        header('Location: ../../paginas/reset-password.php');
-        exit;
     }else {
         $_SESSION['errors']['passValidation'] = 'Hubo un error al intentar modificar tu contraseña. Por motivos de seguridad tu cuenta fue bloqueda, para recuperar el acceso volvé a Recuperar Contraseña:';
         unset($_SESSION['passValidation']);

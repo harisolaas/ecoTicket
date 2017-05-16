@@ -16,7 +16,7 @@ function generateUniqueURL()
 
 
 
-openUsers();
+openUsers('../../');
 
 
 if (!isUserSet()) {
@@ -33,7 +33,7 @@ else
     $users[$_POST['email']]['passRecoverGetCode'] = $passRecoverGetCode;
     $users[$_POST['email']]['passRecoverGetCodeExpire'] = time() + 60*60*24;
 
-    updateUsers();
+    updateUsers('../../');
 
     header('Location: ../passResetControllers/PHPMailer-master/examples/gmail.php');
     exit;

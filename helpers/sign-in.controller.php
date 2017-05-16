@@ -45,7 +45,7 @@ function rememberMe()
 // ============-Functions-End-=========== //
 
 
-openUsers();
+openUsers('../');
 
 if (!isDataCorrect())
 {
@@ -78,5 +78,5 @@ else
     }
     header('Location: ../paginas/exito.php');
 }
-updateUsers();
+updateUsers('../');
  ?>

@@ -4,9 +4,9 @@ session_start();
 
 require '../users.library.php';
 
-openUsers();
+openUsers('../../');
 
-getUserMail($_SESSION['userID']);
+getUserMail($_SESSION['userID'], '../../');
 
 if
 (
@@ -24,7 +24,7 @@ if
     unset($_SESSION['userID']);
     unset($_SESSION['passRecoverGetCode']);
 
-    updateUsers();
+    updateUsers('../../');
 
     header('Location: ../../paginas/reset-password.php');
 }else {

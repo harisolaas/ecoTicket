@@ -100,7 +100,7 @@ $mail->AltBody = 'Copiá y pegá este link en tu navegador para recuperar tu con
 //send the message, check for errors
 if (!$mail->send()) {
     $_SESSION['errors']['emailNotSent'] = 'Hubo un error durante mientras intentabamos enviarte el correo de recuperación. Por favor, intentalo de vuelta.';
-    header('Location: ../../../../paginas/resset-password.php');
+    header('Location: ../../../../paginas/reset-password.php');
 } else {
     $_SESSION['isMailSent'] = true;
     header('Location: ../../../../paginas/reset-password.php');

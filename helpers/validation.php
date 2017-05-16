@@ -1,6 +1,6 @@
 <?php
 
-openUsers();
+openUsers('../');
 
 $errorFirstName = '';
 $errorLastName= '';
@@ -56,7 +56,7 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     }
 
     // Avatar-------
-    
+
 
     function guardarImagen($upload, $nombreImagen) {
     	$error = '';

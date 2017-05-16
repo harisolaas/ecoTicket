@@ -1,25 +1,25 @@
 <?php
 session_start();
 
+// ===Here's an include with defined functions for user data editing=== //
 require 'users.library.php';
 require 'validation.php';
-// ===Here's an include with defined functions for user data editing=== //
 
 
 
 if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == false) && ($errorPass == false)) {
 
 
-    openUsers();
+    openUsers('../');
 
     // Chequear si el mail ya esta en base de datos para que no reescriba el indice con los usuarios.
 
     setUserEmail($_POST['email']);
-    setUserID($_POST['email']);
+    setUserID($_POST['email'], '../');
     setUserFullName($_POST['email'], $_POST['name'], $_POST['lastName']);
     setUserPassword($_POST['email'], $_POST['pass']);
 
-    updateUsers();
+    updateUsers('../');
 
     header('Location: ../paginas/exito.php');
 

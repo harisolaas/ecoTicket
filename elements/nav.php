@@ -1,5 +1,8 @@
-
-
+<?php
+if (@$_SESSION['logIn']) {
+    echo "<style>.log{display: none;}.avatar{display: block;border-radius: 50%;}</style>";
+}
+?>
 <div class="headerNavContainer">
       <header class="menu">
           <h1><a href="home.php">ecoTicket</a></h1>
@@ -9,9 +12,10 @@
           <nav id='menu'>
               <ul class="botonera">
 
-                  <li><a href="sign-up.php">Registro</a></li>
-                  <li><a href="sign-in.php">Log-in</a></li>
+                  <li class="log"><a href="sign-up.php">Registro</a></li>
+                  <li class="log"><a href="sign-in.php">Log-in</a></li>
                   <li><a href="faq.php">F.A.Q.</a></li>
+                  <li class="avatar"><img src="" alt=""></li>
               </ul>
           </nav>
           <script type="text/javascript">

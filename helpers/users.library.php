@@ -2,18 +2,18 @@
 
 // IMPORTANT: These functions will override user data, all validations and sanitizations must be done BEFORE using them as they will save data as they receive it.
 
-function openUsers()
+function openUsers($root)
 {
     global $users;
-    $users = file_get_contents('C:/xampp/htdocs/proyecto-integrador/json/users.json');
+    $users = file_get_contents($root.'json/users.json');
     $users = json_decode($users, true);
 }
 
-function updateUsers()
+function updateUsers($root)
 {
     global $users;
     $users = json_encode($users);
-    file_put_contents('C:/xampp/htdocs/proyecto-integrador/json/users.json', $users);
+    file_put_contents($root.'json/users.json', $users);
 }
 
 function setUserEmail($newEmail, $email = '')
@@ -30,18 +30,18 @@ function setUserEmail($newEmail, $email = '')
     }
 }
 
-function setUserID($email)
+function setUserID($email, $root)
 {
     global $users;
     if (!isset($users[$email]['id'])) {
-        $userID = file_get_contents('userID.json');
+        $userID = file_get_contents($root.'json/userID.json');
         $userID = json_decode($userID, true);
 
         $id = randLetter().time();
         $userID[$id] = $email;
 
         $userID = json_encode($userID);
-        file_put_contents('userID.json', $userID);
+        file_put_contents($root.'json/userID.json', $userID);
 
         $users[$email]['id'] = $id;
     }else {
@@ -103,10 +103,10 @@ function unsetRememberMe()
     setcookie('email', '', $cookieDuration, $cookieDir);
 }
 
-function getUserMail($userID)
+function getUserMail($userID, $root)
 {
     global $email;
-    $IDusers = file_get_contents('C:/xampp/htdocs/proyecto-integrador/json/userID.json');
+    $IDusers = file_get_contents($root.'json/userID.json');
     $IDusers = json_decode($IDusers, true);
     if (isset($IDusers[$userID])) {
         $email = $IDusers[$userID];

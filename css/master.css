@@ -149,6 +149,9 @@ footer a{
 /* Responsive */
 
 @media (min-width: 480px) {
+    .avatar{
+        display: none;
+    }
     span.menu{
         display: none;
     }
