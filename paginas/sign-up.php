@@ -44,6 +44,7 @@ $titulo = 'Registro';
               }
 
               ?>">
+              <br>
               <?php echo $errorEmail; ?>
             </div>
           </div>
@@ -93,8 +94,6 @@ $titulo = 'Registro';
             </div>
           </div>
           <!-- confirm pass -->
-
-          <!--Avatar  -->
 
           <div>
             <label for="avatar">Avatar</label> <br>

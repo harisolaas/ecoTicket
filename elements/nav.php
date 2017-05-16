@@ -1,6 +1,8 @@
 <?php
 if (@$_SESSION['logIn']) {
-    echo "<style>.log{display: none;}.avatar{display: block;border-radius: 50%;}</style>";
+    include '../helpers/users.library.php';
+    openUsers('../');
+    echo "<style>.log-off{display: none;}li.log-on{display: block;}</style>";
 }
 ?>
 <div class="headerNavContainer">
@@ -12,10 +14,10 @@ if (@$_SESSION['logIn']) {
           <nav id='menu'>
               <ul class="botonera">
 
-                  <li class="log"><a href="sign-up.php">Registro</a></li>
-                  <li class="log"><a href="sign-in.php">Log-in</a></li>
-                  <li><a href="faq.php">F.A.Q.</a></li>
-                  <li class="avatar"><img src="" alt=""></li>
+                  <li class="log-off"><a href="sign-up.php">Registro</a></li>
+                  <li class="log-off"><a href="sign-in.php">Log-in</a></li>
+                  <li class="log-on"><a href="faq.php">F.A.Q.</a></li>
+                  <li class="log-on"><img src="<?php echo '../images/imgAvatar/'.$users[$_SESSION['email']]['avatar']; ?>" alt="profile-pic.com"></li>
               </ul>
           </nav>
           <script type="text/javascript">

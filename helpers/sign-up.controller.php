@@ -12,13 +12,11 @@ if (($errorEmail == false) && ($errorFirstName == false) && ($errorLastName == f
 
     openUsers('../');
 
-    // Chequear si el mail ya esta en base de datos para que no reescriba el indice con los usuarios.
-
     setUserEmail($_POST['email']);
     setUserID($_POST['email'], '../');
     setUserFullName($_POST['email'], $_POST['name'], $_POST['lastName']);
     setUserPassword($_POST['email'], $_POST['pass']);
-
+    saveImage('avatar', $users[$_POST['email']]['id']);
     updateUsers('../');
 
     header('Location: ../paginas/exito.php');

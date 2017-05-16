@@ -58,31 +58,27 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     // Avatar-------
 
 
-    function guardarImagen($upload, $nombreImagen) {
-    	$error = '';
+    function saveImage($upload, $nombreImagen) {
+        global $errorFile;
+        global $users;
     	if ($_FILES[$upload]["error"] == UPLOAD_ERR_OK) {
-    		$nombre=$_FILES[$upload]["name"];
+
+    		$nombre = $_FILES[$upload]["name"];
     		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
     		if ($ext != "png" && $ext != "jpg") {
-    			$error = "No acepto la extension";
+    			$errorFile = "No acepto la extension";
     		} else {
     			$miArchivo = dirname(__FILE__);
-    			$miArchivo = $miArchivo . "/imgAvatar/";
-    			$miArchivo = $miArchivo . $nombreImagen . "." . $ext;
+    			$miArchivo = $miArchivo . "/../images/imgAvatar/";
+                $fileName = $nombreImagen . "." . $ext;
+    			$miArchivo = $miArchivo . $fileName;
     			move_uploaded_file($_FILES[$upload]["tmp_name"], $miArchivo);
+                $users[$_POST['email']]['avatar'] = $fileName;
     		}
     	} else {
-    		$error = "Ey, no pude subir la foto :(";
+    		$errorFile = "Ey, no pude subir la foto :(";
     	}
-    	return $error;
+    	return $errorFile;
     }
-
-    $error = guardarImagen('avatar', 'mi-imagen');
-
-    if ($error) {
-    	echo $error;
-    }
-
-
  ?>
