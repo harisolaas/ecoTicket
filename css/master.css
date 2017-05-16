@@ -157,6 +157,9 @@ footer a{
         border-radius: 50%;
         margin:5px;
     }
+    .allways{
+        display: block;
+    }
     span.menu{
         display: none;
     }
