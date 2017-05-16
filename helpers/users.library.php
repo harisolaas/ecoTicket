@@ -89,8 +89,14 @@ function isPassCorrect()
 
 function logIn()
 {
+    $mail = $_POST['email'];
     // Set session timeout
     $_SESSION['logIn'] = true;
+    $_SESSION['email'] = $mail;
+    $_SESSION['name'] = $users[$mail]['name'];
+    $_SESSION['lastName'] = $users[$mail]['lastName'];
+    $_SESSION['userID'] = $users[$mail]['id'];
+    $_SESSION['avatar'] = $users[$mail]['avatar'];
 }
 
 function unsetRememberMe()

@@ -17,7 +17,7 @@ if (@$_SESSION['logIn']) {
                   <li class="log-off"><a href="sign-up.php">Registro</a></li>
                   <li class="log-off"><a href="sign-in.php">Log-in</a></li>
                   <li class="log-on"><a href="faq.php">F.A.Q.</a></li>
-                  <li class="log-on"><img src="<?php echo '../images/imgAvatar/'.$users[$_SESSION['email']]['avatar']; ?>" alt="profile-pic.com"></li>
+                  <li class="log-on"><img src="<?= '../images/imgAvatar/'.$_SESSION['avatar'] ?>" alt="profile-pic.com"></li>
               </ul>
           </nav>
           <script type="text/javascript">
