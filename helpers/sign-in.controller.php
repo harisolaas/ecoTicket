@@ -76,7 +76,7 @@ else
     }else {
         unsetRememberMe();
     }
-    header('Location: ../paginas/exito.php');
+    header('Location: ../paginas/home.php');
 }
 updateUsers('../');
  ?>

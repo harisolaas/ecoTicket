@@ -89,6 +89,7 @@ function isPassCorrect()
 
 function logIn()
 {
+    global $users;
     $mail = $_POST['email'];
     // Set session timeout
     $_SESSION['logIn'] = true;
