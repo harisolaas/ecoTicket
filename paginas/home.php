@@ -22,9 +22,10 @@ $titulo = 'ecoTicket';
                     <nav class="nav-home-container">
                         <ul class="botonera">
                             <li><a href="#">ecoTicket</a></li>
-                            <li><a href="sign-up.php">Registro</a></li>
-                            <li><a href="sign-in.php">Log-in</a></li>
+                            <li><a class="log-off" href="sign-up.php">Registro</a></li>
+                            <li><a class="log-off" href="sign-in.php">Log-in</a></li>
                             <li><a href="faq.php">Centro de ayuda</a></li>
+                            <li><a class="log-on"href="../sessionDestroy.php">Cerrar Sesion</a></li>
                         </ul>
                     </nav>
                     <nav class="chevron">

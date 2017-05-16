@@ -1,3 +1,4 @@
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -115,6 +116,10 @@ h1{
 }
 .botonera a:hover{
     border: 2px solid #354F04;
+}
+
+.log-on img{
+    display: none;
 }
 /*==========================NAV-END==========================*/
 
