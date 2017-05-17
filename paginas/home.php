@@ -1,6 +1,11 @@
 <?php
 session_start();
 $titulo = 'ecoTicket';
+if (@$_SESSION['logIn']) {
+
+    echo "<style>.log-off{display: none !important;}li.log-on{display: block;}</style>";
+}
+
  ?>
 <!DOCTYPE html>
 <html>

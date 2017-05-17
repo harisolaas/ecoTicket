@@ -117,10 +117,19 @@ h1{
 .botonera a:hover{
     border: 2px solid #354F04;
 }
-
-.log-on img{
+li.log-on{
     display: none;
 }
+.log-on img{
+    height: 40px; width: 40px;
+    border-radius: 50%;
+    margin:5px;
+}
+.allways{
+    display: block;
+}
+
+
 /*==========================NAV-END==========================*/
 
 footer{
