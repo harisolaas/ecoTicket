@@ -1,11 +1,10 @@
 <?php
 session_start();
 $titulo = 'ecoTicket';
-if (@$_SESSION['logIn']) {
-
-    echo "<style>.log-off{display: none !important;}li.log-on{display: block;}</style>";
-}
-
+//if (@$_SESSION['logIn']) {
+//
+//    echo "<style>.log-off{display: none !important;}</style>";
+//}
  ?>
 <!DOCTYPE html>
 <html>
@@ -13,9 +12,10 @@ if (@$_SESSION['logIn']) {
     <meta charset="utf-8">
     <meta name="viewport" content="width:device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
     <title>ecoTicket :: Home</title>
   </head>
   <body>
@@ -112,5 +112,6 @@ if (@$_SESSION['logIn']) {
     <!-- footer -->
 
     </div><!-- cierra .contenedor-principal -->
+
   </body>
 </html>
