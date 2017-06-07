@@ -7,10 +7,10 @@ class PhisicalCustomer extends User
 {
     public $lastName;
 
-    function __construct($mail,$name,$pass,$lastName)
+    function __construct($userData)
     {
-        parent::__construct($mail,$name,$pass);
-        $this->lastName = $lastName;
+        parent::__construct($userData);
+        $this->lastName = $userData['lastName'];
     }
 
     public function setLastName($lastName)

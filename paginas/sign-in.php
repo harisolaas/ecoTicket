@@ -20,12 +20,12 @@ $titulo = 'Log-in';
           <form action="../helpers/sign-in.controller.php" method="post">
 
 
-              <?php if (isset($_COOKIE['pass']) && isset($_COOKIE['email'])): ?>
+              <?php if (isset($_COOKIE['pass']) && isset($_COOKIE['mail'])): ?>
 
                   <div class="form-element">
                       <div>
-                          <label for="email">Correo electrónico</label><br>
-                          <input style='background-color: #ffffcc;' type="email" name="email" value="<?php echo $_COOKIE['email']; ?>">
+                          <label for="mail">Correo electrónico</label><br>
+                          <input style='background-color: #ffffcc;' type="mail" name="mail" value="<?php echo $_COOKIE['mail']; ?>">
 
                           <?php if (isset($_SESSION['errors']['missingData'])): ?>
                               <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
@@ -33,7 +33,7 @@ $titulo = 'Log-in';
 
                       </div>
                   </div>
-                  <!-- cookie email -->
+                  <!-- cookie mail -->
 
                   <div class="form-element">
                       <div>
@@ -65,24 +65,24 @@ $titulo = 'Log-in';
 
                   <div class="form-element">
                       <div>
-                          <label for="email">Correo electrónico</label><br>
-                          <input type="email" name="email" placeholder="correo@electronico.com" <?php if(isset($_SESSION['email'])) {
-                              $email = 'email';
-                              echo "value="."'$_SESSION[$email]'"." style='background-color: #ffffcc;'"; } ?>>
+                          <label for="mail">Correo electrónico</label><br>
+                          <input type="mail" name="mail" placeholder="correo@electronico.com" <?php if(isset($_SESSION['mail'])) {
+                              $mail = 'mail';
+                              echo "value="."'$_SESSION[$mail]'"." style='background-color: #ffffcc;'"; } ?>>
 
                           <?php if (isset($_SESSION['errors']['missingData'])): ?>
                               <p class="error"><?php echo $_SESSION['errors']['missingData'] ?></p>
-                          <?php elseif(isset($_SESSION['errors']['errorEmail'])): ?>
-                              <p class="error"><?php echo $_SESSION['errors']['errorEmail'] ?></p>
+                          <?php elseif(isset($_SESSION['errors']['errormail'])): ?>
+                              <p class="error"><?php echo $_SESSION['errors']['errormail'] ?></p>
                               <?php
-                              unset($_SESSION['errors']['errorEmail']);
-                              unset($_SESSION['email']);
+                              unset($_SESSION['errors']['errormail']);
+                              unset($_SESSION['mail']);
                                ?>
                           <?php endif; ?>
 
                       </div>
                   </div>
-                  <!-- email -->
+                  <!-- mail -->
 
                   <div class="form-element">
                       <div>

@@ -5,7 +5,7 @@ openUsers('../');
 $errorFirstName = '';
 $errorLastName= '';
 $errorPass = '';
-$errorEmail= '';
+$errormail= '';
 
 
 // VALIDACION NAME < 30 caracteres
@@ -22,9 +22,9 @@ if(strlen($lastName) > 30){
 
 // VALIDACION PASSWORD vs CONFIRM_PASSWORD
 $pass = $_POST['pass'];
-$confirmPass = $_POST['confirm-pass'];
-if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
-    if($_POST['pass'] !== $_POST['confirm-pass']){
+$confirmPass = $_POST['confirmPass'];
+if(isset($_POST['pass']) && isset($_POST['confirmPass'])){
+    if($_POST['pass'] !== $_POST['confirmPass']){
         $errorPass = 'Los Passwords no coinciden';
 
 
@@ -42,17 +42,17 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
     }
 }
 
-    //VALIDACION EMAIL
-    $email = trim($_POST['email']);
-    $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+    //VALIDACION mail
+    $mail = trim($_POST['mail']);
+    $validatemail = filter_var($mail, FILTER_VALIDATE_mail);
 
-    if($validateEmail === false){
-        $errorEmail = 'Por favor ingresar un Email valido';
+    if($validatemail === false){
+        $errormail = 'Por favor ingresar un mail valido';
     }
     elseif(isUserSet()){
-    $errorEmail = 'Este email ya esta registrado';
+    $errormail = 'Este mail ya esta registrado';
 }
-    else { $errorEmail = '';
+    else { $errormail = '';
     }
 
     // Avatar-------
@@ -74,7 +74,7 @@ if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
                 $fileName = $nombreImagen . "." . $ext;
     			$miArchivo = $miArchivo . $fileName;
     			move_uploaded_file($_FILES[$upload]["tmp_name"], $miArchivo);
-                $users[$_POST['email']]['avatar'] = $fileName;
+                $users[$_POST['mail']]['avatar'] = $fileName;
     		}
     	} else {
     		$errorFile = "Ey, no pude subir la foto :(";

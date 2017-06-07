@@ -33,12 +33,12 @@ function passValidation()
 openUsers('../../');
 
 if (isset($_POST['pass']) && $_POST['confirm-pass']) {
-    if (@$_SESSION['passValidation'] && $users[$_SESSION['email']]['passValidation']) {
+    if (@$_SESSION['passValidation'] && $users[$_SESSION['mail']]['passValidation']) {
 
         if (passValidation() === true) {
-            setUserPassword($_SESSION['email'], $_POST['pass']);
+            setUserPassword($_SESSION['mail'], $_POST['pass']);
             unset($_SESSION['passValidation']);
-            unset($users[$_SESSION['email']]['passValidation']);
+            unset($users[$_SESSION['mail']]['passValidation']);
             updateUsers('../../');
             header('Location: ../../paginas/sign-in.php');
             exit;
@@ -51,7 +51,7 @@ if (isset($_POST['pass']) && $_POST['confirm-pass']) {
     }else {
         $_SESSION['errors']['passValidation'] = 'Hubo un error al intentar modificar tu contraseña. Por motivos de seguridad tu cuenta fue bloqueda, para recuperar el acceso volvé a Recuperar Contraseña:';
         unset($_SESSION['passValidation']);
-        unset($users[$_SESSION['email']]['passValidation']);
+        unset($users[$_SESSION['mail']]['passValidation']);
         // header('Location: ../../paginas/reset-password.php');
         exit;
     }

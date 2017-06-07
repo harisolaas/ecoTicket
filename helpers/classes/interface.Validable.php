@@ -1,4 +1,4 @@
 <?php
 interface Validable {
-    public function validate($data, $model){};
+    public function validate($data, $model);
 }

@@ -16,62 +16,62 @@ function updateUsers($root)
     file_put_contents($root.'json/users.json', $users);
 }
 
-function setUserEmail($newEmail, $email = '')
+function setUsermail($newmail, $mail = '')
 {
     global $users;
-    if (!isset($users[$email]))
+    if (!isset($users[$mail]))
     {
-        $users[$newEmail] = [];
+        $users[$newmail] = [];
     }
     else
     {
-        $users[$newEmail] = $users[$email];
-        unset($users[$email]);
+        $users[$newmail] = $users[$mail];
+        unset($users[$mail]);
     }
 }
 
-function setUserID($email, $root)
+function setUserID($mail, $root)
 {
     global $users;
-    if (!isset($users[$email]['id'])) {
+    if (!isset($users[$mail]['id'])) {
         $userID = file_get_contents($root.'json/userID.json');
         $userID = json_decode($userID, true);
 
         $id = randLetter().time();
-        $userID[$id] = $email;
+        $userID[$id] = $mail;
 
         $userID = json_encode($userID);
         file_put_contents($root.'json/userID.json', $userID);
 
-        $users[$email]['id'] = $id;
+        $users[$mail]['id'] = $id;
     }else {
-        return 'Error: id already set for'.$email;
+        return 'Error: id already set for'.$mail;
     }
 }
 
-function setUserFullName($email, $name, $lastName)
+function setUserFullName($mail, $name, $lastName)
 {
     global $users;
-    $users[$email]['name'] = $name;
-    $users[$email]['lastName'] = $lastName;
+    $users[$mail]['name'] = $name;
+    $users[$mail]['lastName'] = $lastName;
 }
 
-function setUserPassword($email, $pass)
+function setUserPassword($mail, $pass)
 {
     global $users;
-    $users[$email]['pass'] = password_hash($pass, PASSWORD_BCRYPT);
+    $users[$mail]['pass'] = password_hash($pass, PASSWORD_BCRYPT);
 }
 
-function deleteUser($email)
+function deleteUser($mail)
 {
     global $users;
-    unset($users[$email]);
+    unset($users[$mail]);
 }
 
 function isUserSet()
 {
     global $users;
-    return isset($users[$_POST['email']]);
+    return isset($users[$_POST['mail']]);
 }
 
 function isPassCorrect()
@@ -79,10 +79,10 @@ function isPassCorrect()
     global $users;
     if (strlen($_POST['pass']) <= 12)
     {
-        $validation = password_verify($_POST['pass'], $users[$_POST['email']]['pass']);
+        $validation = password_verify($_POST['pass'], $users[$_POST['mail']]['pass']);
         return $validation;
     } else {
-        $validation = ($_POST['pass'] == $users[$_POST['email']]['pass']);
+        $validation = ($_POST['pass'] == $users[$_POST['mail']]['pass']);
         return $validation;
     }
 }
@@ -90,10 +90,10 @@ function isPassCorrect()
 function logIn()
 {
     global $users;
-    $mail = $_POST['email'];
+    $mail = $_POST['mail'];
     // Set session timeout
     $_SESSION['logIn'] = true;
-    $_SESSION['email'] = $mail;
+    $_SESSION['mail'] = $mail;
     $_SESSION['name'] = $users[$mail]['name'];
     $_SESSION['lastName'] = $users[$mail]['lastName'];
     $_SESSION['userID'] = $users[$mail]['id'];
@@ -107,19 +107,19 @@ function unsetRememberMe()
     $cookieDir = '/';
     setcookie('fakePass', '', $cookieDuration, $cookieDir);
     setcookie('pass', '', $cookieDuration, $cookieDir);
-    setcookie('email', '', $cookieDuration, $cookieDir);
+    setcookie('mail', '', $cookieDuration, $cookieDir);
 }
 
 function getUserMail($userID, $root)
 {
-    global $email;
+    global $mail;
     $IDusers = file_get_contents($root.'json/userID.json');
     $IDusers = json_decode($IDusers, true);
     if (isset($IDusers[$userID])) {
-        $email = $IDusers[$userID];
-        return $email;
+        $mail = $IDusers[$userID];
+        return $mail;
     } else {
-        $email = false;
+        $mail = false;
         return false;
     }
 }

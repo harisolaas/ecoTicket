@@ -20,7 +20,7 @@ require_once 'interface.Validable.php'
                  $myFile = $myFile . $fileName;
                  move_uploaded_file($_FILES[$upload]["tmp_name"], $myFile);
                  // CHANGE THIS WHEN USERS AND DATABASE CLASSES ARE DONE
-                 $users[$_POST['email']]['avatar'] = $fileName;
+                 $users[$_POST['mail']]['avatar'] = $fileName;
              }
          } else {
              $errors[] = "Ey, no pude subir la foto :(";

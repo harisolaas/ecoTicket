@@ -10,17 +10,17 @@ getUserMail($_SESSION['userID'], '../../');
 
 if
 (
-    $email
-    && $users[$email]['passRecoverGetCode'] == $_SESSION['passRecoverGetCode']
-    && time() < $users[$email]['passRecoverGetCodeExpire']
+    $mail
+    && $users[$mail]['passRecoverGetCode'] == $_SESSION['passRecoverGetCode']
+    && time() < $users[$mail]['passRecoverGetCodeExpire']
 )
 {
-    $users[$email]['passValidation'] = true;
+    $users[$mail]['passValidation'] = true;
     $_SESSION['passValidation'] = true;
-    $_SESSION['email'] = $email;
+    $_SESSION['mail'] = $mail;
 
-    unset($users[$email]['passRecoverGetCode']);
-    unset($users[$email]['passRecoverGetCodeExpire']);
+    unset($users[$mail]['passRecoverGetCode']);
+    unset($users[$mail]['passRecoverGetCodeExpire']);
     unset($_SESSION['userID']);
     unset($_SESSION['passRecoverGetCode']);
 

@@ -9,14 +9,14 @@ include('users.library.php');
 
 function isDataCorrect()
 {
-    $email = $_POST['email'];
-    $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
-    $validateEmail = $validateEmail && boolval($email);
+    $mail = $_POST['mail'];
+    $validatemail = filter_var($mail, FILTER_VALIDATE_mail);
+    $validatemail = $validatemail && boolval($mail);
 
     $pass = $_POST['pass'];
     $validatePass = (strlen($pass) < 64) && (strlen($pass) >= 6);
 
-    return $validatePass && $validateEmail;
+    return $validatePass && $validatemail;
 }
 
 function rememberMe()
@@ -24,7 +24,7 @@ function rememberMe()
     if (strlen($_POST['pass'])<=12) {
         global $users;
 
-        $user = $_POST['email'];
+        $user = $_POST['mail'];
         $pass = $_POST['pass'];
         $passLength = strlen($_POST['pass']);
         $fakePass = '';
@@ -36,7 +36,7 @@ function rememberMe()
         $cookieDir = '/';
         setcookie('fakePass', $fakePass, $cookieDuration, $cookieDir);
         setcookie('pass', $pass, $cookieDuration, $cookieDir);
-        setcookie('email', $user, $cookieDuration, $cookieDir);
+        setcookie('mail', $user, $cookieDuration, $cookieDir);
     }
 }
 
@@ -50,21 +50,21 @@ openUsers('../');
 if (!isDataCorrect())
 {
     $_SESSION['errors']['missingData'] = '*Campo requerido';
-    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['mail'] = $_POST['mail'];
     header('Location: ../paginas/sign-in.php');
     exit;
 }
 elseif (!isUserSet())
 {
-    $_SESSION['errors']['errorEmail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
-    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['errors']['errormail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
+    $_SESSION['mail'] = $_POST['mail'];
     header('Location: ../paginas/sign-in.php');
     exit;
 }
 elseif (!isPassCorrect())
 {
     $_SESSION['errors']['errorPass'] = '*La contraseña ingresada es incorrecta!';
-    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['mail'] = $_POST['mail'];
     header('Location: ../paginas/sign-in.php');
     exit;
 }

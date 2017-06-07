@@ -3,14 +3,14 @@ session_start();
 
 $titulo = 'Registro';
 
-@$errorFirstName = $_SESSION['errorFirstName'];
-@$errorPass = $_SESSION['errorPass'];
-@$errorEmail= $_SESSION['errorEmail'];
-@$errorLastName= $_SESSION['errorLastName'];
+@$errorFirstName = $_SESSION['errors']['errorFirstName'];
+@$errorPass = $_SESSION['errors']['errorPass'];
+@$errormail= $_SESSION['errors']['errormail'];
+@$errorLastName= $_SESSION['errors']['errorLastName'];
 
 @$firstName = $_SESSION['firstName'];
 @$lastName = $_SESSION['lastName'];
-@$email = $_SESSION['email'];
+@$mail = $_SESSION['mail'];
 
  ?>
 <!DOCTYPE html>
@@ -33,22 +33,22 @@ $titulo = 'Registro';
 
       <div class="form-container">
 
-        <form action="..\helpers\sign-up.controller.php" enctype="multipart/form-data" method="post">
+        <form action="../helpers/classes/CONTROLLER.php" enctype="multipart/form-data" method="post">
 
           <div class="form-element">
             <div>
-              <label for="email">Correo electrónico</label><br>
-              <input type="text" name="email" required placeholder="correo@electronico.com" value="<?php
-              if(isset($email)){
-                  echo $email;
+              <label for="mail">Correo electrónico</label><br>
+              <input type="text" name="mail" required placeholder="correo@electronico.com" value="<?php
+              if(isset($mail)){
+                  echo $mail;
               }
 
               ?>">
               <br>
-              <?php echo $errorEmail; ?>
+              <?php echo $errormail; ?>
             </div>
           </div>
-          <!-- email -->
+          <!-- mail -->
 
           <div class="form-element">
 
@@ -87,8 +87,8 @@ $titulo = 'Registro';
 
           <div class="form-element">
             <div>
-              <label for="confirm-pass">Confirmar contraseña</label><br>
-              <input type="password" name="confirm-pass" required placeholder="Tu contraseña otra vez">
+              <label for="confirmPass">Confirmar contraseña</label><br>
+              <input type="password" name="confirmPass" required placeholder="Tu contraseña otra vez">
           <?php echo $errorPass; ?>
 
             </div>

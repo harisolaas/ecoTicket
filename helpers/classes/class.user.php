@@ -1,23 +1,25 @@
 <?php
 abstract class User{
-    private $mail;
+    public $mail;
 
-    private $name;
+    public $name;
 
-    private $pass;
+    public $pass;
 
-    private $id;
+    public $id;
 
-    private $avatar;
+    public $avatar;
 
 
-    public function __construct($mail, $name, $pass)
+    public function __construct($userData)
     {
-        $this->setMail($mail);
-        $this->setName($name);
-        $this->setPass($pass);
+        $this->setMail($userData['mail']);
+        $this->setName($userData['name']);
+        $this->setPass($userData['pass']);
         $this->setId();
     }
+
+    public function save(){}
 
     public function setMail($mail)
     {
@@ -29,9 +31,16 @@ abstract class User{
             $this->name = $firstName;
     }
 
-    public function setPass($pass, $confirmPass)
+    public function setPass($pass)
     {
             $pass = password_hash($pass, PASSWORD_BCRYPT);
             $this->pass = $pass;
+    }
+
+    public function setId()
+    {
+        $a = ['a','b','c','d','e','f','g', 'h', 'i', 'j', 'k', 'l','m','n','o', 'p','q','r','s','t','u','v', 'w'];
+        $id = $a[rand(0, count($a))].time();
+        $this->id = $id;
     }
 }

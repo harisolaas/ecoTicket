@@ -3,59 +3,59 @@ require_once "interface.validable.php";
 
 
 class RegisterValidator implements Validable {
-    public function validate($data, $user){
+    public function validate($data, $model = null){
         $errors = [];
 
         // VALIDATION FIRST NAME
-        $firstName = trim($_POST["name"]);
+        $firstName = trim($data["name"]);
         if (!$firstName){
-            $errors[] = 'Te olvidaste de ingresar tu nombre';
+            $errors['errorFirsName'] = 'Te olvidaste de ingresar tu nombre';
         }    elseif(strlen($firstName) > 30){
-            $errors[] = 'El nombre es demasiado largo';
+            $errors['errorFirsName'] = 'El nombre es demasiado largo';
         }
 
 
         // VALIDATION LAST NAME
-        $lastName = trim($_POST["lastName"]);
+        $lastName = trim($data["lastName"]);
         if (!$lastName){
-            $errors[] = 'Te olvidaste de ingresar tu apellido';
+            $errors['errorLastName'] = 'Te olvidaste de ingresar tu apellido';
         }
         elseif(strlen($lastName) > 30){
-            $errors[] = 'El apellido es demasiado largo';
+            $errors['errorLastName'] = 'El apellido es demasiado largo';
         }
 
         // VALIDATION PASSWORD vs CONFIRM_PASSWORD
-        $pass = $_POST['pass'];
-        $confirmPass = $_POST['confirm-pass'];
-        if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
-            if($_POST['pass'] !== $_POST['confirm-pass']){
-                $errors[] = 'Los Passwords no coinciden';
+        $pass = $data['pass'];
+        $confirmPass = $data['confirmPass'];
+        if(isset($data['pass']) && isset($data['confirmPass'])){
+            if($data['pass'] !== $data['confirmPass']){
+                $errors['errorPass'] = 'Los Passwords no coinciden';
 
 
         // VALIDATION  PASSWORD  LENGTH
-            } elseif(strlen($_POST['pass']) < 6){
-                $errors[] = 'Debes ingresar un Passsword de al menos 6 caracteres';
-            }  elseif (strlen($_POST['pass']) >= 12) {
-                $errors[] = 'Debes ingresar un Password de hasta 12 caracteres';
+            } elseif(strlen($data['pass']) < 6){
+                $errors['errorPass'] = 'Debes ingresar un Passsword de al menos 6 caracteres';
+            }  elseif (strlen($data['pass']) >= 12) {
+                $errors['errorPass'] = 'Debes ingresar un Password de hasta 12 caracteres';
             }
 
         }
 
-            //VALIDATION EMAIL
-            $email = trim($_POST['email']);
-            $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+            //VALIDATION mail
+            $mail = trim($data['mail']);
+            $validatemail = filter_var($mail, FILTER_VALIDATE_EMAIL);
 
-            if($validateEmail === false){
-                $errors[]= 'Por favor ingresar un Email valido';
+            if($validatemail === false){
+                $errors['errormail']= 'Por favor ingresar un mail valido';
             }
             //CHECK THIS WHEN DOING CLASS USERS & DATABASE
-            elseif(isUserSet()){
-            $errors[] = 'Este email ya esta registrado';
+            elseif($model->getUserByMail($data['mail'])){
+            $errors['errormail'] = 'Este mail ya esta registrado';
         }
 
-            	
+
 
         return $errors;
-    };
+    }
 
 }
