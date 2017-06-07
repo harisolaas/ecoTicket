@@ -33,7 +33,7 @@ $titulo = 'Registro';
 
       <div class="form-container">
 
-        <form action="../helpers/classes/CONTROLLER.php" enctype="multipart/form-data" method="post">
+        <form action="../helpers/sign-up.controller.php" enctype="multipart/form-data" method="post">
 
           <div class="form-element">
             <div>
@@ -45,7 +45,7 @@ $titulo = 'Registro';
 
               ?>">
               <br>
-              <?php echo $errormail; ?>
+              <p class='error'><?php echo $errormail; ?></p>
             </div>
           </div>
           <!-- mail -->
@@ -59,7 +59,7 @@ $titulo = 'Registro';
                 if(isset($firstName)){
                 echo $firstName;
             } ?>">
-            <?php echo $errorFirstName; ?>
+            <p class='error'><?php echo $errorFirstName; ?></p>
               </div>
 
               <div class="">
@@ -68,7 +68,7 @@ $titulo = 'Registro';
                 if(isset($lastName)){
                 echo $lastName;
             } ?>">
-            <?php echo $errorLastName; ?>
+            <p class='error'><?php echo $errorLastName; ?></p>
               </div>
 
             </div>
@@ -80,7 +80,7 @@ $titulo = 'Registro';
             <div>
               <label for="pass">Contraseña</label><br>
               <input type="password" name="pass" required placeholder="Tu contraseña">
-          <?php echo $errorPass; ?>
+          <p class='error'><?php echo $errorPass; ?></p>
             </div>
           </div>
           <!-- pass -->
@@ -89,7 +89,7 @@ $titulo = 'Registro';
             <div>
               <label for="confirmPass">Confirmar contraseña</label><br>
               <input type="password" name="confirmPass" required placeholder="Tu contraseña otra vez">
-          <?php echo $errorPass; ?>
+          <p class='error'><?php echo $errorPass; ?></p>
 
             </div>
           </div>
@@ -114,7 +114,9 @@ $titulo = 'Registro';
 
     </div><!-- Cierra .main-container -->
 
-    <?php include '../elements/footer.php'; ?>
+    <?php include '../elements/footer.php';
+        unset($_SESSION['errors']);
+    ?>
 
 
   </body>
