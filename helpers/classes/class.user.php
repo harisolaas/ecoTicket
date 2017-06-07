@@ -6,6 +6,8 @@ abstract class User{
 
     private $pass;
 
+    private $id;
+
     private $avatar;
 
 
@@ -14,6 +16,7 @@ abstract class User{
         $this->setMail($mail);
         $this->setName($name);
         $this->setPass($pass);
+        $this->setId();
     }
 
     public function setMail($mail)
