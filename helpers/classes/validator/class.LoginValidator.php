@@ -1,8 +1,8 @@
 <?php
-require_once 'interface.Validable.php';
-require_once 'trait.IsDataCorrect.php';
-require_once 'trait.IsPassCorrect.php';
-require_once 'trait.IsUserSet.php';
+require_once '../traits/interface.Validable.php';
+require_once '../traits/trait.IsDataCorrect.php';
+require_once '../traits/trait.IsPassCorrect.php';
+require_once '../traits/trait.IsUserSet.php';
 
 
 class LoginValidator implements Validable{

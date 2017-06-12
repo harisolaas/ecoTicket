@@ -8,7 +8,7 @@ $validator = new LogInValidator();
 
 $validator = $validator->validate($_POST, $repo);
 
-if ($validator) {
+if (!$validator) {
     $auth = new PhCustomAuth();
     $auth->logIn($_POST['mail']);
     if ($_POST['rememberMe']) {
@@ -18,4 +18,6 @@ if ($validator) {
     }
 
 header('Location: '.$_SERVER['DOCUMENT_ROOT'].'/ecoTicket');
+}else {
+
 }
