@@ -1,27 +1,10 @@
 <?php
-// var_dump($_SERVER);
+require 'support.variables.php';
 
-/**
- *
- */
-trait TraitName
-{
-    function functionName()
-    {
-        echo "funca";
-    }
-}
-/**
- *
- */
-class ClassName
-{
-use TraitName;
-public function sarasa()
-{
-    $this->functionName();
-}
-}
+$db = new PDO($dbDSN,$dbUser,$dbPass);
 
-$test = new ClassName;
-$test->sarasa();
+$query = $db->query('SELECT * from actor');
+
+$query = $query->fetchAll(PDO::FETCH_ASSOC);
+
+var_dump($query);

@@ -1,4 +1,3 @@
-CREATE SCHEMA `ecoticket_db` ;
 CREATE TABLE `MYSQLUsersRepo`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `id_JSON` INT NOT NULL,
