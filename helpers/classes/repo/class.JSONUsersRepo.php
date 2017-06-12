@@ -27,6 +27,11 @@ class JSONUsersRepo extends UsersRepo
         }
     }
 
+    public function getUserField($mail, $field)
+    {
+        return $this->users[$mail][$field];
+    }
+
     public function updateUsers($updatedUsersArray, $updatedUsersIDArray = null)
     {
         $updatedUsersArray = json_encode($updatedUsersArray);
