@@ -1,7 +1,9 @@
 <?php
 trait IsDataCorrect {
-    public function isDataCorrect(){
-        $email = $_POST['email'];
+
+    public function isDataCorrect()
+    {
+        $email = $_POST['mail'];
         $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
         $validateEmail = $validateEmail && boolval($email);
 

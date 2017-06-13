@@ -1,28 +1,27 @@
 <?php
-require_once '../traits/interface.Validable.php';
-require_once '../traits/trait.IsDataCorrect.php';
-require_once '../traits/trait.IsPassCorrect.php';
-require_once '../traits/trait.IsUserSet.php';
 
+require_once 'interface.Validable.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecoticket/helpers/classes/traits/trait.IsDataCorrect.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecoticket/helpers/classes/traits/trait.IsPassCorrect.php';
 
 class LoginValidator implements Validable{
         //TRAITS
     use IsDataCorrect;
-    use IsUserSet;
     use IsPassCorrect;
         //VALIDATE LOGIN
     public function validate($data, $repo){
-        $errors = [];
+        $errors = null;
 
-
-        if (!isDataCorrect()){
-            $errors[] = "Data is not correct";
+        if (!$this->isDataCorrect()){
+            $errors['missingData'] = '*Campo requerido';
         }
-        elseif(!isUserSet()){
-            $errors[] = "User is not set";
+        elseif(!$repo->getUserByMail($data['mail'])){
+            $errors['errormail'] = '*La dirección de correo ingresada no figura en nuestra base de datos!';
         }
-        elseif(!isPassCorrect()){
-            $errors[] = "Pass is not correct";
+        elseif(!$this->isPassCorrect($repo)){
+            $errors['errorPass'] = '*La contraseña ingresada es incorrecta!';
         }
         return $errors;
     }

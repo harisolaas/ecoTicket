@@ -1,10 +1,16 @@
 <?php
-require 'support.variables.php';
+trait TraitName
+{
+    function sarasa()
+    {
+        echo "funca";
+    }
+}
 
-$db = new PDO($dbDSN,$dbUser,$dbPass);
+class ClassName
+{
+    use TraitName;
+}
 
-$query = $db->query('SELECT * from actor');
-
-$query = $query->fetchAll(PDO::FETCH_ASSOC);
-
-var_dump($query);
+$test = new ClassName();
+$test->sarasa();

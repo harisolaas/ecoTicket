@@ -13,12 +13,11 @@ $titulo = 'Log-in';
   <body>
       <div class="main-container">
 
-          <?php include'../elements/nav.php'; ?>
+      <?php include'../elements/nav.php'; ?>
 
         <div class="form-container">
 
           <form action="../helpers/sign-in.controller.php" method="post">
-
 
               <?php if (isset($_COOKIE['pass']) && isset($_COOKIE['mail'])): ?>
 

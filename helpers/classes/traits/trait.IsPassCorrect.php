@@ -1,13 +1,14 @@
 <?php
 trait IsPassCorrect{
-    public function isPassCorrect(){
-            global $users;
-            if (strlen($_POST['pass']) <= 12)
-            {
-                $validation = password_verify($_POST['pass'], $users[$_POST['email']]['pass']);
-                return $validation;
-            } else {
-                $validation = ($_POST['pass'] == $users[$_POST['email']]['pass']);
-                return $validation;
+    public function isPassCorrect($repo)
+    {
+        if (strlen($_POST['pass']) <= 12)
+        {
+            $validation = password_verify($_POST['pass'], $repo->getUserField($_POST['mail'],'pass'));
+            return $validation;
+        } else {
+            $validation = ($_POST['pass'] == $users[$_POST['mail']]['pass']);
+            return $validation;
+        }
     }
 }
