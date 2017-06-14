@@ -1,16 +1,24 @@
 <?php
-trait TraitName
+$array = [
+    'uno' => [1],
+    'dos' => [1,2]
+];
+
+var_dump($array);echo "<br>";
+
+$newArray = [];
+
+foreach ($array as $key => $value)
 {
-    function sarasa()
-    {
-        echo "funca";
-    }
+    $value['mail'] = $key;
+    $newArray[] = $value;
 }
 
-class ClassName
-{
-    use TraitName;
-}
+var_dump($newArray);echo "<hr>";
 
-$test = new ClassName();
-$test->sarasa();
+$arr = array(1, 2, 3, 4);
+var_dump($arr);echo "<br>";
+foreach ($arr as &$value) {
+    $value = $value * 2;
+}
+var_dump($arr);

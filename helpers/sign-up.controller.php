@@ -2,7 +2,7 @@
 
 session_start();
 
-// require_once '';
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecoTicket/support.variables.php';
 
 require_once 'classes/repo/class.JSONUsersRepo.php';
 
@@ -10,7 +10,7 @@ require_once 'classes/validator/class.RegisterValidator.php';
 
 require_once 'classes/user/class.PhisicalCustomer.php';
 
-$repo = new JSONUsersRepo();
+$repo = new $dbType.UsersRepo();
 
 $validator = new RegisterValidator();
 

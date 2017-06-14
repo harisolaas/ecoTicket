@@ -2,13 +2,15 @@
 
 session_start();
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecoTicket/support.variables.php';
+
 require_once 'classes/repo/class.JSONUsersRepo.php';
 
 require_once 'classes/validator/class.LogInValidator.php';
 
 require_once 'classes/auth/class.PhCustomAuth.php';
 
-$repo = new JSONUsersRepo();
+$repo = new $dbType.UsersRepo();
 
 $validator = new LogInValidator();
 

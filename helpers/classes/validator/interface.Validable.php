@@ -1,5 +1,6 @@
 <?php
-interface Validable {
+interface Validable
+{
 
     public function validate($data, $model);
 
