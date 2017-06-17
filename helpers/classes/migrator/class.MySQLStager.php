@@ -19,8 +19,6 @@ class MySQLStager implements Stageable
     public function toArray()
     {
         $data = $this->db->query('SELECT * FROM user');
-        var_dump($this->db);
-        exit;
         $data = $data->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }

@@ -21,9 +21,11 @@ CREATE TABLE user (
     id_json             VARCHAR(50) NOT NULL,
     mail                VARCHAR(50) NOT NULL,
     name                VARCHAR(50) NOT NULL,
-    lastName            VARCHAR(50) NOT NULL,
+    last_name            VARCHAR(50) NOT NULL,
     pass                VARCHAR(72) NOT NULL
 );
+
+INSERT INTO user (id_json,mail,name,last_name,pass) VALUES ('k1496872406','h.solaas1@gmail.com','Hari','Solaas','$2y$10$YuVs9crpdc/w1WIFQw8zB.JqsgJ7NU/cb8DcuHnqxXze9rCuvit5G');
 
 -- INSERT INTO genero (nombre, ranking, activo, fecha_de_creacion) VALUES
 -- ('Comedia', 1, 1, '2016-7-04'),

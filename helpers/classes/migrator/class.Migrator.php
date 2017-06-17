@@ -12,8 +12,8 @@ class Migrator
 
     function __construct($currentDB,$newDB)
     {
-        $this->currentDB = new $currentDB.Stager();
-        $this->newDB = $newDB.Saver();
+        $this->currentDB = new $currentDB.'Stager';
+        $this->newDB = new $newDB.'Init';
     }
 
     public function migrate()

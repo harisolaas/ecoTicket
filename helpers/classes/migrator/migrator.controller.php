@@ -4,10 +4,10 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecoticket/support.variables.php';
 
 require_once 'class.Migrator.php';
 
-$migrator = new MySQLStager();
+$migrator = new Migrator($dbType, 'MySQL');
 
 var_dump($migrator);echo "<br>";
 
-$migrator = $migrator->toArray();
+$migrator = $migrator->migrate();
 
 var_dump($migrator);echo "<br>";
