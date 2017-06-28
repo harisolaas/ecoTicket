@@ -69,6 +69,12 @@ input:focus{
   font-size: 1.2em;
   font-style: normal;
 }
+.has-error{
+    background-color: red;
+}
+.has-success{
+    background-color: green;
+}
 @media (min-width: 480px) {
     body{
         background-image: url(../images/sign-in-up-bg.jpg);

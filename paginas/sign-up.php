@@ -55,7 +55,7 @@ $titulo = 'Registro';
             <div class="form-name-lastname">
               <div>
                 <label for="name">Nombre</label><br>
-                <input type="text" name="name" required placeholder="Tu nombre" value="<?php // PERSISTENCIA DE DATOS
+                <input id="name" type="text" name="name" required placeholder="Tu nombre" value="<?php // PERSISTENCIA DE DATOS
                 if(isset($firstName)){
                 echo $firstName;
             } ?>">
@@ -95,12 +95,6 @@ $titulo = 'Registro';
           </div>
           <!-- confirm pass -->
 
-          <div>
-            <label for="avatar">Avatar</label> <br>
-            <input type="file" name="avatar" id="avatar">
-          </div>
-          <!-- Avatar -->
-
           <div class="form-element">
             <input class='button' type="submit" name="submit" value="Enviar">
           </div>
@@ -118,6 +112,6 @@ $titulo = 'Registro';
         unset($_SESSION['errors']);
     ?>
 
-
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

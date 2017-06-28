@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once $_SERVER['DOCUMENT_ROOT'].'/ecoTicket/support.variables.php';
 
 require_once 'classes/repo/class.JSONUsersRepo.php';
@@ -10,19 +8,26 @@ require_once 'classes/validator/class.RegisterValidator.php';
 
 require_once 'classes/user/class.PhisicalCustomer.php';
 
-$repo = new $dbType.UsersRepo();
+
+$usersRepo = $dbType.'UsersRepo';
+
+$repo = new $usersRepo();
+
+if (isset($_GET['mail'])) {
+    var_dump($repo->getUserByMail($_GET['mail']));
+    die();
+}
 
 $validator = new RegisterValidator();
 
 $validator = $validator->validate($_POST, $repo);
 
+header('Content-Type: application/json');
+
 if ($validator) {
-    $_SESSION['errors'] = $validator;
-    header('Location: '.$_SERVER['ROOT_DIRECTORY'].'/ecoTicket/paginas/sign-up.php');
-    exit;
+    header('HTTP/1.0 422 Unprocessable entity.');
 }else {
     $newUser = new PhisicalCustomer($_POST);
     $repo->saveUser($newUser);
-    header('Location: '.$_SERVER['ROOT_DIRECTORY'].'/ecoTicket/paginas/sign-in.php');
-    exit;
 }
+print json_encode($validator);

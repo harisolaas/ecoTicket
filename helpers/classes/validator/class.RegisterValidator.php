@@ -1,15 +1,14 @@
 <?php
+
 require_once "interface.validable.php";
-require_once "trait.IsUserSet.php";
 
+class RegisterValidator implements Validable {
 
-class UserValidator implements Validable {
-    use IsUserSet;
     public function validate($data, $repo){
         $errors = [];
 
         // VALIDATION FIRST NAME
-        $firstName = trim($_POST["name"]);
+        $firstName = trim($data["name"]);
         if (!$firstName){
             $errors[] = 'Te olvidaste de ingresar tu nombre';
         }    elseif(strlen($firstName) > 30){
@@ -18,7 +17,7 @@ class UserValidator implements Validable {
 
 
         // VALIDATION LAST NAME
-        $lastName = trim($_POST["lastName"]);
+        $lastName = trim($data["lastName"]);
         if (!$lastName){
             $errors[] = 'Te olvidaste de ingresar tu apellido';
         }
@@ -27,37 +26,35 @@ class UserValidator implements Validable {
         }
 
         // VALIDATION PASSWORD vs CONFIRM_PASSWORD
-        $pass = $_POST['pass'];
-        $confirmPass = $_POST['confirm-pass'];
-        if(isset($_POST['pass']) && isset($_POST['confirm-pass'])){
-            if($_POST['pass'] !== $_POST['confirm-pass']){
+        $pass = $data['pass'];
+        $confirmPass = $data['confirmPass'];
+        if(isset($data['pass']) && isset($data['confirmPass'])){
+            if($data['pass'] !== $data['confirmPass']){
                 $errors[] = 'Los Passwords no coinciden';
 
 
         // VALIDATION  PASSWORD  LENGTH
-            } elseif(strlen($_POST['pass']) < 6){
+            } elseif(strlen($data['pass']) < 6){
                 $errors[] = 'Debes ingresar un Passsword de al menos 6 caracteres';
-            }  elseif (strlen($_POST['pass']) >= 12) {
+            }  elseif (strlen($data['pass']) >= 12) {
                 $errors[] = 'Debes ingresar un Password de hasta 12 caracteres';
             }
 
         }
 
             //VALIDATION EMAIL
-            $email = trim($_POST['email']);
+            $email = trim($data['mail']);
             $validateEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
 
             if($validateEmail === false){
-                $errors[]= 'Por favor ingresar un Email valido';
+                $errors[]= 'Por favor ingresar un Email válido';
             }
             //CHECK THIS WHEN DOING CLASS USERS & DATABASE
-            elseif(isUserSet()){
-            $errors[] = 'Este email ya esta registrado';
-        }
-
-
+            elseif($repo->getUserByMail($data['mail'])){
+            $errors[] = 'Este email ya está registrado';
+            }
 
         return $errors;
-    };
+    }
 
 }

@@ -1,0 +1,15 @@
+body{
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.jumbotron{
+    background-image: url(../images/bg-image-landing-desktop.jpg);
+    background-position: center;
+    background-size:cover;
+    color: #fff;
+}
+.nav-space{
+    height: 51px;
+}
+.col-md-2{
+    width: 16.66666667%;
+}
