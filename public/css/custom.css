@@ -1,0 +1,13 @@
+.main{
+    margin-top: 70px;
+}
+#pd-builder-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
