@@ -13,7 +13,7 @@
             req.onreadystatechange = function()
             {
                 if (this.readyState === 4 && this.status === 200) {
-                    res = this.responseText
+                    res = JSON.parse(this.responseText)
                 }
             }
             req.open('GET', '/ecoticket/helpers/sign-up.controller.php?mail='+mail)
