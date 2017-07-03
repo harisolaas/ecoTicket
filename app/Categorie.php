@@ -1,8 +1,15 @@
 <?php
+namespace App;
 
-class Categorie
+use Illuminate\Database\Eloquent\Model;
+
+use App\Product;
+
+class Categorie extends Model
 {
-    $guarded = ['id'];
+    public $guarded = ['id', 'token'];
+
+    public $timestamps = false;
 
     public function products()
     {

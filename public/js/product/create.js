@@ -3,116 +3,46 @@ function(window,document,undefined)
 {
     window.onload = function()
     {
-        function sendForm()
-        {
-            var data = new FormData(form)
-            req.open('POST', '/products')
-            req.setRequestHeader('X-CSRF-TOKEN', token)
-            req.send(data)
-            req.onreadystatechange = function()
-            {
-                // if (this.readyState == 4 && this.status == 200) {
-                //     stepThree.className += ' hidden'
-                // }
-            }
-        }
-
-        function setActive(crumb, element)
-        {
-            var text = crumb.innerText
-            crumb.removeChild(crumb.firstElementChild)
-            crumb.innerText = text
-            crumb.className += ' active'
-
-            element.className = element.className.replace('hidden', '')
-
-            activeCrumb = crumb
-            activeElement = element
-        }
-
-        function unsetActive(element = activeElement)
-        {
-            var text = activeCrumb.innerText
-            activeCrumb.innerText = ''
-            activeCrumb.append(document.createElement('a'))
-            activeCrumb.firstElementChild.href = '#'
-            activeCrumb.firstElementChild.innerText = text
-            activeCrumb.className = activeCrumb.className.replace('active', '')
-
-            element.className += ' hidden'
-        }
-
+        var modal = document.querySelector('#reqResponse')
         var form = document.forms[0]
-        var token = form.token.value
-        var stepOne = document.querySelector('#step1')
-        var stepTwo = document.querySelector('#step2')
-        var stepThree = document.querySelector('#step3')
-        var stepFour = document.querySelector('#step4')
-        var button = document.querySelector("#newProdButton")
-        var driver = document.querySelector('#newProdDriver')
-        var stepOneCrumb = document.querySelector('#step1-crumb')
-        var stepTwoCrumb = document.querySelector('#step2-crumb')
-        var stepThreeCrumb = document.querySelector('#step3-crumb')
-        var stepFourCrumb = document.querySelector('#step4-crumb')
-        var driverCrumb = document.querySelector('#newProdDriver-crumb')
-        var activeCrumb = stepOneCrumb
-        var activeElement = stepOne
-        var step = 1
+        var data = new FormData(form)
         var req = new XMLHttpRequest()
+        var token = form.token.value
 
-        stepOneCrumb.onclick = function()
-        {
-            unsetActive()
-            setActive(this, stepOne)
-        }
-        stepTwoCrumb.onclick = function()
-        {
-            unsetActive()
-            setActive(this, stepTwo)
-        }
-        stepThreeCrumb.onclick = function()
-        {
-            unsetActive()
-            setActive(this, stepThree)
-        }
-        stepFourCrumb.onclick = function()
-        {
-            unsetActive()
-            setActive(this, stepFour)
-            button.innerText = 'Enviar'
-        }
-        driverCrumb.onclick = function()
-        {
-            unsetActive(form)
-            setActive(this, driver)
-        }
-        
         form.onsubmit = function(e)
         {
             e.preventDefault()
-
-            switch (step)
+            req.open('POST', '/products')
+            req.setRequestHeader('X-CSRF-TOKEN', token)
+            console.log(data.getAll('brand_id'));
+            req.send(data)
+            var modalTitle = document.querySelector('.modal-title')
+            var modalBody = document.querySelector('.modal-body')
+            var mButton1 = document.querySelector('#modalButton1')
+            var mButton2 = document.querySelector('#modalButton2')
+            req.onreadystatechange = function()
             {
-                case 1:
-                    unsetActive()
-                    setActive(stepTwoCrumb, stepTwo)
-                    break
-                case 2:
-                    unsetActive()
-                    setActive(stepThreeCrumb, stepThree)
-                    break;
-                case 3:
-                    unsetActive()
-                    setActive(stepFourCrumb, stepFour)
-                    button.innerText = 'Enviar'
-                    break;
-                case 4:
-                    sendForm(this)
-                    unsetActive(form)
-                    setActive(driverCrumb, driver)
-                    break;
+                console.log(this.status);
+                console.log(this.readyState);
+                console.log(this.responseText);
+                var div = document.createElement('div')
+                div.innerHTML = this.responseText
+                document.body.append(div)
+                // if (this.readyState == 4 && this.status == 200) {
+                // // modalTitle.innerText = 'Producto cargado con éxito'
+                // // modalBody.innerHTML = "<table><tbody><td>Código de barras</td><td>"+form.barcode.value+"</td></tr><tr><td>Nombre</td><td>"+form.name.value+"</td></tr><tr><td>Precio</td><td>"+form.price.value+"</td></tr><tr><td>Marca</td><td>!!</td></tr></tbody></table>"
+                // // mButton1.innerText = 'Cargar otro producto'
+                // // mButton1.innerText = 'Volver al inicio'
+                // // modal.show()
+                // }else {
+                //     modalTitle.innerText = 'Producto cargado con éxito'
+                //     modalBody.innerHTML = "Ooops... Hubo un error mientras intentabamos cargar el producto en la base de datos."
+                //     mButton1.innerText = 'Reintentar'
+                //     mButton1.setAttribute('data-dismiss', 'modal')
+                //     mButton1.innerText = 'Cerrar'
+                //     modal.show()
+                // }
             }
-            step++
         }
     }
 }

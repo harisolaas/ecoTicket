@@ -15,23 +15,28 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        // dd($products[0]);
         return view('product.index', compact('products'));
     }
 
     public function create()
     {
         $brands = Brand::all()->values('id', 'name');
-        return view('product.create', compact('brands'));
+        $categories = Categorie::all()->values('id', 'name');
+        return view('product.create', compact('brands', 'categories'));
     }
 
     public function store()
     {
-        $product = Product::create(request()->all());
-        $categorie = Brand::find(request()->brand_id);
-        $product->brand()->associate($categorie);
-        $product->save();
-        return dd($product);
+        // $product = Product::create(request()->all());
+        // $brand = Brand::find(request()->brand_id);
+        // $product->brand()->associate($brand);
+
+        // $categorie = Categorie::find(request()->categorie_id);
+        return dd($_POST);
+        // $product->brand()->associate($brand);
+
+        // $product->save();
+        // return dd($product);
     }
 
     public function show($id)

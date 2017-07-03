@@ -5,23 +5,42 @@
 @endsection
 
 @section('main')
+    <!-- Modal -->
+<div class="modal fade" id="reqResponse" tabindex="-1" role="dialog" aria-labelledby="reqResponseLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content panel panel-succes">
+      <div class="modal-header panel-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="reqResponseLabel"></h4>
+      </div>
+      <div class="modal-body panel-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modalButton1" class="btn btn-primary"></button>
+        <button type="button" id="modalButton2" class="btn btn-default"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <main class="container-fluid main">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
                 <ul class="breadcrumb">
-                    <li id="step1-crumb" class="active"><a data-toggle="tab" href="#step1">Código de barras</a></li>
-                    <li id="step2-crumb"><a data-toggle="tab" href="#step2">Nombre</a></li>
-                    <li id="step3-crumb"><a data-toggle="tab" href="#step3">Precio</a></li>
-                    <li id="step4-crumb"><a data-toggle="tab" href="#step4">Marca</a></li>
-                    <li id="newProdDriver-crumb"><a data-toggle="tab" href="#driver">Listo</a></li>
+                    <li class="active"><a data-toggle="tab" href="#step1">Código de barras</a></li>
+                    <li><a data-toggle="tab" href="#step2">Nombre</a></li>
+                    <li><a data-toggle="tab" href="#step3">Precio</a></li>
+                    <li><a data-toggle="tab" href="#step4">Marca</a></li>
+                    <li><a data-toggle="tab" href="#step5">Categoría</a></li>
+                    <li><a data-toggle="tab" href="#confirm">Listo</a></li>
                 </ul>
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 tab-content">
+                    <div class="col-md-10 col-md-offset-1">
 
-                        <form id="pd-builder-form" action="">
+                        <form id="pd-builder-form" action="" class="tab-content">
                             <input type="hidden" name="token" value="{{csrf_token()}}">
-                            <div id="step1" class="form-group panel panel-info">
+                            <div id="step1" class="form-group panel panel-info tab-pane fade in active">
                                 <div class="panel-heading">
                                     <p>Ingresá el código de barras del nuevo producto.</p>
                                 </div>
@@ -30,7 +49,7 @@
                                     <input type="text" name="barcode">
                                 </div>
                             </div>
-                            <div id="step2" class="form-group panel panel-info hidden">
+                            <div id="step2" class="form-group panel panel-info tab-pane fade">
                                 <div class="panel-heading">
                                     Ingresá el nombre del nuevo producto.
                                 </div>
@@ -39,7 +58,7 @@
                                     <input type="text" name="name">
                                 </div>
                             </div>
-                            <div id="step3" class="form-group panel panel-info hidden">
+                            <div id="step3" class="form-group panel panel-info tab-pane fade">
                                 <div class="panel-heading">
                                     Ingresá el precio del nuevo producto.
                                 </div>
@@ -48,7 +67,7 @@
                                     <input type="number" name="price">
                                 </div>
                             </div>
-                            <div id="step4" class="form-group panel panel-info hidden">
+                            <div id="step4" class="form-group panel panel-info tab-pane fade">
                                 <div class="panel-heading">
                                     Seleccioná la marca del nuevo producto.
                                 </div>
@@ -62,26 +81,62 @@
                                     </select>
                                 </div>
                             </div>
-                            <br>
-                            <button id='newProdButton' type="submit" class="btn btn-default">Siguiente</button>
-                        </form>
-
-                        <div class="hidden panel panel-success" id="driver">
-                            <div class="panel-heading">
-                                <p>Listo</p>
-                            </div>
-
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-6 flex-center" >
-                                        <a class="btn btn-default" href="">Cargar otro producto</a>
-                                    </div>
-                                    <div class="col-md-6 flex-center" >
-                                        <a class="btn btn-default" href="#">Volver al inicio</a>
-                                    </div>
+                            <div id="step5" class="form-group panel panel-info tab-pane fade">
+                                <div class="panel-heading">
+                                    Seleccioná las categorías del nuevo producto.
+                                </div>
+                                <div class="panel-body">
+                                        @foreach ($categories as $categorie)
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" name="" value="{{$categorie->id}}">{{$categorie->name}}</label>
+                                            </div>
+                                        @endforeach
                                 </div>
                             </div>
-                        </div>
+                            <div class="panel panel-primary tab-pane fade" id="confirm">
+                                <div class="panel-heading">
+                                    <p>Confirmar</p>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-stripped">
+                                        <thead>
+                                            <tr>
+                                                <th>Campo</th>
+                                                <th>Valor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Código de barras</td>
+                                                <td>VACÍO</td>
+                                                <td><a data-toggle="tab" href="#step1">Modificar...</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                <td>VACÍO</td>
+                                                <td><a data-toggle="tab" href="#step2">Modificar...</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Precio</td>
+                                                <td>VACÍO</td>
+                                                <td><a data-toggle="tab" href="#step3">Modificar...</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marca</td>
+                                                <td>VACÍO</td>
+                                                <td><a data-toggle="tab" href="#step4">Modificar...</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-default">Cargar nuevo producto</button>
+
+                        </form>
+
+
                     </div>
                 </div>
 
@@ -90,5 +145,5 @@
         </div>
 
     </main>
-    {{-- <script type="text/javascript" src="{{asset('js/product/create.js')}}"></script> --}}
+    <script type="text/javascript" src="{{asset('js/product/create.js')}}"></script>
 @endsection

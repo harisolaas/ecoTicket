@@ -10,20 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('categories', 'CategorieController@store');
+Route::get('categories/create', 'CategorieController@create');
 
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
+// Route::get('products/{id}', 'ProductController@show');
+Route::post('products', 'ProductController@store');
+// Route::post('products/{id}/edit', 'ProductController@edit');
+// Route::post('products/{id}', 'ProductController@update');
+
 
 Route::get('my-ecoticket', 'RouteController@dashboard');
 
 Route::get('new-ecoticket', 'RouteController@newTk');
 
-Route::get('products/{id}', 'ProductController@show');
 
 
-Route::post('products', 'ProductController@store');
-Route::post('products/{id}/edit', 'ProductController@edit');
-Route::post('products/{id}', 'ProductController@update');
 
 // index
 // show
