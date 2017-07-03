@@ -11,7 +11,7 @@
 
                 <ul class="breadcrumb">
                     <li class="active"><a data-toggle="tab" href="#step1">Nombre</a></li>
-                    <li><a data-toggle="tab" href="#confirm">Confirm</a></li>
+                    <li><a data-toggle="tab" href="#confirm">Confirmar</a></li>
                 </ul>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-default">Cargar nuevo producto</button>
+                            <button type="submit" class="btn btn-default">Cargar nueva categoría</button>
                         </form>
                     </div>
                 </div>
