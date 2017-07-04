@@ -14,7 +14,7 @@ function(window,document,undefined)
             e.preventDefault()
             req.open('POST', '/products')
             req.setRequestHeader('X-CSRF-TOKEN', token)
-            console.log(data.getAll('brand_id'));
+            req.setRequestHeader('Content-Type', 'multipart/form-data')            
             req.send(data)
             var modalTitle = document.querySelector('.modal-title')
             var modalBody = document.querySelector('.modal-body')

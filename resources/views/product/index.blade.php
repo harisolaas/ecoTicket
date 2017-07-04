@@ -12,6 +12,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Producto</th>
                             <th>Precio</th>
                             <th>Marca</th>
@@ -21,12 +22,17 @@
                     <tbody>
                         @foreach ($products as $id => $product)
                             <tr>
+                                @php
+                                    $img = $product->images;
+                                    dd($img);
+                                @endphp
+                                <td><img src="{{storage_path('app/public').$img}}" alt="product-image"></td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->price}}</td>
                                 <td>{{$product->brand->name}}</td>
                                 <td>
-                                    <a class="btn btn-default" href="/products/{{$id}}/edit">Editar</a>
-                                    <a class="btn btn-default" href="/products/{{$id}}/delete">Borrar</a>
+                                    <a class="btn btn-default" href="/products/{{$product->id}}/edit">Editar</a>
+                                    <a class="btn btn-default" href="/products/{{$product->id}}/delete">Borrar</a>
                                 </td>
                             </tr>
                         @endforeach

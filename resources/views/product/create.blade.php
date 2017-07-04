@@ -33,13 +33,17 @@
                     <li><a data-toggle="tab" href="#step3">Precio</a></li>
                     <li><a data-toggle="tab" href="#step4">Marca</a></li>
                     <li><a data-toggle="tab" href="#step5">Categoría</a></li>
+                    <li><a data-toggle="tab" href="#step6">Imagen</a></li>
                     <li><a data-toggle="tab" href="#confirm">Listo</a></li>
                 </ul>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
 
-                        <form id="pd-builder-form" action="" class="tab-content">
-                            <input type="hidden" name="token" value="{{csrf_token()}}">
+                        <form id="pd-builder-form" action="/products" class="tab-content" enctype="multipart/form-data" method="POST">
+
+
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+
                             <div id="step1" class="form-group panel panel-info tab-pane fade in active">
                                 <div class="panel-heading">
                                     <p>Ingresá el código de barras del nuevo producto.</p>
@@ -91,6 +95,15 @@
                                                 <label><input type="checkbox" name="" value="{{$categorie->id}}">{{$categorie->name}}</label>
                                             </div>
                                         @endforeach
+                                </div>
+                            </div>
+                            <div id="step6" class="form-group panel panel-info tab-pane fade">
+                                <div class="panel-heading">
+                                    Ingresá una imagen para el nuevo producto.
+                                </div>
+                                <div class="panel-body">
+                                    <label for="price">Imagen</label>
+                                    <input type="file" name="image">
                                 </div>
                             </div>
                             <div class="panel panel-primary tab-pane fade" id="confirm">

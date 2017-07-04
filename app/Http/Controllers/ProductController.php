@@ -10,6 +10,8 @@ use App\Brand;
 
 use App\Categorie;
 
+use App\Image;
+
 class ProductController extends Controller
 {
     public function index()
@@ -27,17 +29,25 @@ class ProductController extends Controller
 
     public function store()
     {
-        // $product = Product::create(request()->all());
-        // $brand = Brand::find(request()->brand_id);
-        // $product->brand()->associate($brand);
+        $product = Product::create(request()->all());
 
-        // $categorie = Categorie::find(request()->categorie_id);
-        return dd($_POST);
-        // $product->brand()->associate($brand);
+        $fileName = uniqid().'.'.request()->file('image')->extension();
+        $path = request()->file('image')->storeAs('public/product', $fileName);
+        $image = new Image;
+        $image->src = $path;
+        $image->product()->associate($product);
+        $image->save();
 
-        // $product->save();
-        // return dd($product);
+        $brand = Brand::find(request()->brand_id);
+        $product->brand()->associate($brand);
+
+        $categorie = Categorie::find(request()->categorie_id);
+        // $product->categories()->associate($categorie);
+
+        $product->save();
     }
+
+
 
     public function show($id)
     {

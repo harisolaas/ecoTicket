@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public $guarded = ['id', 'token'];
+    public $guarded = ['id', 'token', 'image'];
 
     public $timestamps = false;
 
@@ -33,6 +33,11 @@ class Product extends Model
     public function transactions()
     {
         return $this->belongsToMany('App\Transaction');
+    }
+
+    public function image()
+    {
+        return $this->hasOne('App\Image');
     }
 
 

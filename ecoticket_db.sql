@@ -35,6 +35,12 @@ CREATE TABLE products(
     brand_id            INT NOT NULL
 );
 
+CREATE TABLE images(
+    id                  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    src                 VARCHAR(50) NOT NULL,    
+    product_id          INT NOT NULL
+);
+
 CREATE TABLE brands(
     id                  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name                VARCHAR(50)
