@@ -6,20 +6,23 @@
             return vMail && vName && vLastName && vPass && vConfirmPass
         }
 
-        function isUserSet(mail)
+        function checkMailAvailability(input, mail, callback)
         {
             var req = new XMLHttpRequest()
             var res = ''
             req.onreadystatechange = function()
             {
-                if (this.readyState === 4 && this.status === 200) {
-                    res = JSON.parse(this.responseText)
+                if (this.readyState === 4 && this.status === 200)
+                {
+                    if (JSON.parse(this.responseText)) {
+                        callback(input, true)
+                    }else {
+                        callback(input, false)
+                    }
                 }
             }
             req.open('GET', '/ecoticket/helpers/sign-up.controller.php?mail='+mail)
             req.send()
-            console.log(res);
-            return res
         }
 
         var mailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -65,13 +68,19 @@
         }
 
         mail.onblur = function () {
-            // console.log(typeof(isUserSet(this.value)));
-            // console.log(isUserSet(this.value) == "NULL");
-            if (this.value.match(mailRegex) && isUserSet(this.value) == 'NULL'){
+            checkMailAvailability(this, this.value, function(input, res)
+            {
+                if (res) {
+                    input.className = 'has-success'
+                }else {
+                    input.className = 'has-error'
+                }
+            })
+            if (this.value.match(mailRegex)){
                 vMail = true
-                mail.className = 'has-success'
+                this.className = 'has-success'
             } else {
-                mail.className = 'has-error'
+                this.className = 'has-error'
             }
         }
 

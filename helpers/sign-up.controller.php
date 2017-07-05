@@ -14,7 +14,13 @@ $usersRepo = $dbType.'UsersRepo';
 $repo = new $usersRepo();
 
 if (isset($_GET['mail'])) {
-    var_dump($repo->getUserByMail($_GET['mail']));
+    if($repo->getUserByMail($_GET['mail'])){
+        $res = true;
+    }else {
+        $res = false;
+    }
+    $res = json_encode($res);
+    print $res;
     die();
 }
 
