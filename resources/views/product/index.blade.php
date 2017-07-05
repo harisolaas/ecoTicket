@@ -22,11 +22,7 @@
                     <tbody>
                         @foreach ($products as $id => $product)
                             <tr>
-                                @php
-                                    $img = $product->images;
-                                    dd($img);
-                                @endphp
-                                <td><img src="{{storage_path('app/public').$img}}" alt="product-image"></td>
+                                <td><img class="img-sm img-rounded" src="{{asset("storage/product/595aacd29bb54.jpg")}}" alt="product-image"></td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->price}}</td>
                                 <td>{{$product->brand->name}}</td>

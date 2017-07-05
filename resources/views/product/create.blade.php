@@ -92,7 +92,7 @@
                                 <div class="panel-body">
                                         @foreach ($categories as $categorie)
                                             <div class="checkbox">
-                                                <label><input type="checkbox" name="" value="{{$categorie->id}}">{{$categorie->name}}</label>
+                                                <label><input type="checkbox" name="categories[]" value="{{$categorie->id}}">{{$categorie->name}}</label>
                                             </div>
                                         @endforeach
                                 </div>

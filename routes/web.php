@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');    
+});
 
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
@@ -37,3 +40,7 @@ Route::get('new-ecoticket', 'RouteController@newTk');
 // delete
 // edit
 // update
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
