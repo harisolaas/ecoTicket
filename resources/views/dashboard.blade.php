@@ -3,7 +3,7 @@
     ecoTicket :: Dashboard
 @endsection
 @section('main')
-    <div class="container-fluid main" style="margin-top:60px;">
+    <div class="container-fluid main">
 
         <div class="row">
             <div class="col-sm-3 col-xs-4 sidebar">

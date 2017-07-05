@@ -1,6 +1,3 @@
-<?php
-session_start();
- ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,13 +10,15 @@ session_start();
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href=<?php echo e(asset("css/custom.css")); ?>>
         <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
+        <?php echo $__env->yieldContent('head'); ?>
     </head>
     <body>
         <?php $__env->startSection('nav'); ?>
             <?php echo $__env->make('_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->yieldSection(); ?>
-
-        <?php echo $__env->yieldContent('main'); ?>
+        <div class="main">
+            <?php echo $__env->yieldContent('main'); ?>
+        </div>
 
         <?php $__env->startSection('footer'); ?>
         <?php echo $__env->yieldSection(); ?>

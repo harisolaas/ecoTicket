@@ -1,6 +1,3 @@
-<?php
-session_start();
- ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,13 +10,15 @@ session_start();
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href={{asset("css/custom.css")}}>
         <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
+        @yield('head')
     </head>
     <body>
         @section('nav')
             @include('_nav')
         @show
-
-        @yield('main')
+        <div class="main">
+            @yield('main')
+        </div>
 
         @section('footer')
         @show

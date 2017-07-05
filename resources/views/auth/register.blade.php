@@ -1,6 +1,14 @@
-@extends('layouts.app')
+@extends('master')
 
-@section('content')
+@section('title')
+    Registro
+@endsection
+
+@section('head')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@endsection
+
+@section('main')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -11,7 +19,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -24,8 +32,22 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
+                            <label for="lastName" class="col-md-4 control-label">Apellido</label>
+
+                            <div class="col-md-6">
+                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName') }}" required autofocus>
+
+                                @if ($errors->has('lastName'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -39,7 +61,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -53,25 +75,25 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="passwordConfirm" class="col-md-4 control-label">Confirmar Contraseña</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="passwordConfirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="user-type" class="col-md-4 control-label">User Type</label>
 
                             <div class="col-md-6">
                                 {{UserType::toSelect('name')}}
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
+                            <div class="col-md-6 col-md-offset-4 flex-center">
+                                <button id='submitButton' type="submit" class="btn btn-primary">
+                                    Enviar
                                 </button>
                             </div>
                         </div>
@@ -81,4 +103,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{asset('js/register/create.js')}}">
+
+</script>
 @endsection
