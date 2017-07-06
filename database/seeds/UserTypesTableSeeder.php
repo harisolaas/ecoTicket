@@ -12,10 +12,10 @@ class UserTypesTableSeeder extends Seeder
     public function run()
     {
         DB::table('UserTypes')->insert([
-            'name' => 'buyer',
+            'name' => 'Comprador',
         ]);
         DB::table('UserTypes')->insert([
-            'name' => 'seller',
+            'name' => 'Vendedor',
         ]);
     }
 }
