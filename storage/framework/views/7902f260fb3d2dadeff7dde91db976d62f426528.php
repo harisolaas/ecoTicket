@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top">
 
+<nav class="navbar navbar-default navbar-fixed-top" id="main-nav">
     <div class="container">
 
         <div class="navbar-header">
@@ -16,6 +16,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Sign-in</a></li>
             <li><a href="#contact">Centro de ayuda</a></li>
+         </ul>
         </div><!--/.nav-collapse -->
     </div>
 

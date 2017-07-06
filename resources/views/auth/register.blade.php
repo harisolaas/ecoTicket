@@ -114,7 +114,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="{{asset('js/register/create.js')}}">
-
-</script>
+<script type="text/javascript" src="{{asset('js/register/create.js')}}"></script>
+<script type="text/javascript" src="{{asset("js/color.js")}}"></script>
 @endsection
