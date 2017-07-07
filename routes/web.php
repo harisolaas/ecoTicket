@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/register-1', 'MyRegisterController@showRegistrationForm');
@@ -31,6 +31,8 @@ Route::post('categories', 'CategorieController@store');
 
 Route::get('brands/create', 'BrandController@create');
 Route::post('brands', 'BrandController@store');
+
+Route::get('/usersCount', 'DBController@usersCount');
 
 Route::get('my-ecoticket', 'RouteController@dashboard');
 
