@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('index');
+    return view('_footer');
 });
 
 Route::get('/register-1', 'MyRegisterController@showRegistrationForm');
@@ -38,7 +38,39 @@ Route::get('my-ecoticket', 'RouteController@dashboard');
 
 Route::get('new-ecoticket', 'RouteController@newTk');
 
+/*
+public function getLogin($uri)
+    {
+        return view('front.clientes.login');
+    }
 
+    public function postLogin(Request $request)
+    {
+        $credentials = ['password' => $request->pass, 'email' => $request->email];
+        if (Auth::guard('clientes')->attempt($credentials)) {
+            return redirect('web.uri.clientes');
+        } else {
+            $request->session()->flash('error', 'El usuario o la contraseña son incorrectos.');
+            return redirect('web.uri.ingresar');
+        }
+    }
+
+    public function logout()
+    {
+        Auth::guard('clientes')->logout();
+        return redirect('web.uri.ingresar');
+    }
+
+    public function store(Request $request)
+    {
+        $cliente = new Cliente($request->all());
+        $cliente->password = bcrypt($request->input('password'));
+        $cliente->save();
+        return redirect('admin/clientes#new');
+    }
+
+
+*/
 
 
 // index

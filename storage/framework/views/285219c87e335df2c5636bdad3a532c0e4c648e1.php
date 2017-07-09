@@ -22,9 +22,6 @@
         </div>
 
         <?php $__env->startSection('footer'); ?>
-        <?php echo $__env->yieldSection(); ?>
-
-        <?php $__env->startSection('footer'); ?>
             <?php echo $__env->make('_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->yieldSection(); ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    $guarded = ['id', 'dt'];
+    public $guarded = ['id', 'dt'];
 
     public function buyer()
     {
@@ -15,7 +15,7 @@ class Transaction extends Model
 
     public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->belongsToMany('App\Product');
     }
 
     public function seller()

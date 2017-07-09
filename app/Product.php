@@ -35,9 +35,9 @@ class Product extends Model
         return $this->belongsToMany('App\Transaction');
     }
 
-    public function image()
+    public function productImage()
     {
-        return $this->hasOne('App\Image');
+        return $this->hasOne('App\ProductImage');
     }
 
 

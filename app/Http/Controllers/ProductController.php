@@ -10,7 +10,7 @@ use App\Brand;
 
 use App\Categorie;
 
-use App\Image;
+use App\ProductImage;
 
 class ProductController extends Controller
 {
@@ -32,8 +32,8 @@ class ProductController extends Controller
         $product = Product::create(request()->all());
 
         $fileName = uniqid().'.'.request()->file('image')->extension();
-        $path = request()->file('image')->storeAs('public/product', $fileName);
-        $image = new Image;
+        $path = request()->file('image')->storeAs('public/product-'.$product->id, $fileName);
+        $image = new ProductImage;
         $image->src = $path;
         $image->product()->associate($product);
         $image->save();

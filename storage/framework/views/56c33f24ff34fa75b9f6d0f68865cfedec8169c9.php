@@ -90,7 +90,7 @@
                                 <div class="panel-body">
                                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <div class="checkbox">
-                                                <label><input type="checkbox" name="" value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->name); ?></label>
+                                                <label><input type="checkbox" name="categories[]" value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->name); ?></label>
                                             </div>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>

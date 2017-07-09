@@ -22,9 +22,6 @@
         </div>
 
         @section('footer')
-        @show
-
-        @section('footer')
             @include('_footer')
         @show
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

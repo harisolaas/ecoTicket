@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buyer extends Model
 {
-    $guarded = ['id'];
+    public $guarded = ['id'];
 
-    $timestamps = false;
+    public $timestamps = false;
 
     public function products()
     {

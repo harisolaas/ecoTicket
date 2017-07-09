@@ -37,7 +37,7 @@ CREATE TABLE products(
 
 CREATE TABLE images(
     id                  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    src                 VARCHAR(50) NOT NULL,    
+    src                 VARCHAR(50) NOT NULL,
     product_id          INT NOT NULL
 );
 
@@ -85,6 +85,11 @@ CREATE TABLE categories_products(
     id                  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     product_id          INT NOT NULL,
     categorie_id        INT NOT NULL
+);
+
+CREATE TABLE user_types(
+    id                  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    user_type           INT NOT NULL,
 );
 
 INSERT INTO buyers (mail,name,last_name,pass) VALUES ('h.solaas1@gmail.com','Hari','Solaas','$2y$10$YuVs9crpdc/w1WIFQw8zB.JqsgJ7NU/cb8DcuHnqxXze9rCuvit5G');

@@ -25,3 +25,10 @@
     max-height: 600px;
     margin: auto;
 }
+footer{
+    background-color: #F8F8F8;
+}
+footer span{
+    font-size: 1.5em;
+    padding: 30px;
+}
