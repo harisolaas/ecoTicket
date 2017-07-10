@@ -1,5 +1,6 @@
 .main{
-    margin-top: 70px;
+    margin-top: 51px;
+    padding: 19px;
 }
 #pd-builder-form{
     display: flex;
@@ -25,8 +26,23 @@
     max-height: 600px;
     margin: auto;
 }
+.dashboard{
+    background-color: #FAFAFA;
+}
+.dashboard div{
+    background-color: #FFF;
+}
+.dashboard .row{
+    height: 50px;
+}
+.row.heading{
+    padding-top: 10px;
+}
+.transaction-details{
+    font-size: 0.8em;
+}
 footer{
-    background-color: #F8F8F8;
+    background-color:s #F8F8F8;
 }
 footer span{
     font-size: 1.5em;

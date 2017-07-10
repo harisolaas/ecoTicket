@@ -31,7 +31,7 @@ class CreateDb extends Migration
             $table->primary('buyer_id', 'product_id');
             $table->integer('buyer_id');
             $table->integer('product_id');
-            $table->integer('count');
+            // $table->integer('count');
             $table->timestamps();
         });
 
@@ -39,7 +39,7 @@ class CreateDb extends Migration
             $table->primary('buyer_id', 'seller_id');
             $table->integer('buyer_id');
             $table->integer('seller_id');
-            $table->integer('count');
+            // $table->integer('count');
             $table->timestamps();
         });
 
@@ -52,7 +52,7 @@ class CreateDb extends Migration
             $table->primary('categorie_id', 'product_id');
             $table->integer('categorie_id');
             $table->integer('product_id');
-            $table->integer('count');
+            // $table->integer('count');
         });
 
         Schema::create('products', function (Blueprint $table) {
@@ -61,7 +61,7 @@ class CreateDb extends Migration
             $table->string('name');
             $table->string('short_desc')->nullable();
             $table->string('long_desc')->nullable();
-            $table->integer('price');
+            $table->float('price');
             $table->integer('brand_id');
             $table->timestamps();
         });
@@ -81,7 +81,7 @@ class CreateDb extends Migration
         });
 
         Schema::create('product_transaction', function (Blueprint $table) {
-            $table->primary('product_id', 'transaction_id');
+            $table->increments('id');
             $table->integer('product_id');
             $table->integer('transaction_id');
         });
@@ -100,6 +100,7 @@ class CreateDb extends Migration
             $table->increments('id');
             $table->integer('buyer_id');
             $table->integer('seller_id');
+            $table->float('total_amount');
             $table->timestamps();
         });
     }

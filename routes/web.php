@@ -11,7 +11,8 @@
 |
 */
 Route::get('/', function () {
-    return view('_footer');
+    $product = App\Product::find(1);
+    dd($product->image);
 });
 
 Route::get('/register-1', 'MyRegisterController@showRegistrationForm');
@@ -34,7 +35,7 @@ Route::post('brands', 'BrandController@store');
 
 Route::get('/usersCount', 'DBController@usersCount');
 
-Route::get('my-ecoticket', 'RouteController@dashboard');
+Route::get('my-ecoticket/{id}', 'DashboardController@show');
 
 Route::get('new-ecoticket', 'RouteController@newTk');
 

@@ -38,10 +38,5 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('secret'),
         ]);
 
-        DB::table('product_images')->insert([
-            'name' => 'ecoticket_logo.jpg',
-            'src' => asset('img/ecoticket_logo.jpg'),
-            'product_id' => 0,
-        ]);
     }
 }

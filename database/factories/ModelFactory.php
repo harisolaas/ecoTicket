@@ -42,7 +42,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'short_desc' => $faker->sentence(6, true),
         'long_desc' => $faker->paragraph(1, true),
-        'price' => $faker->randomFloat(NULL, 0, NULL),
+        'price' => $faker->randomFloat(2, 0, 1000),
         'brand_id' => App\Brand::find(rand(1,15)),
         //'categorie_id' => App\Categorie::find(rand(1,15)),
     ];
@@ -68,11 +68,12 @@ $factory->define(App\Seller::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Transaction::class, function(Faker\Generator $faker){
     return [
-        'buyer_id'=>App\Buyer::find(
+        'buyer_id' => App\Buyer::find(
             rand(1, App\Buyer::count())
         ),
-        'seller_id'=>App\Seller::find(
+        'seller_id' => App\Seller::find(
             rand(1, App\Seller::count())
-            )
+        ),
+        'total_amount' => 0,
     ];
 });
