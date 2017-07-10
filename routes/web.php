@@ -11,8 +11,7 @@
 |
 */
 Route::get('/', function () {
-    $product = App\Product::find(1);
-    dd($product->image);
+    return view('index');
 });
 
 Route::get('/register-1', 'MyRegisterController@showRegistrationForm');

@@ -1,6 +1,9 @@
 .main{
     margin-top: 51px;
-    padding: 19px;
+    padding-top: 19px;
+}
+.jumbotron{
+    background-image: url('http://localhost:8000/img/4.jpg');
 }
 #pd-builder-form{
     display: flex;
@@ -16,6 +19,10 @@
     height: 40px;
     width: 40px;
 }
+.img-xs{
+    height: 25px;
+    width: 25px;
+}
 
 #spinner{
     font-size: 14px;
@@ -27,19 +34,37 @@
     margin: auto;
 }
 .dashboard{
-    background-color: #FAFAFA;
+    background-color: #fff;
 }
-.dashboard div{
-    background-color: #FFF;
+.nav-sidebar{
+    background-color: #fafafa;
 }
-.dashboard .row{
-    height: 50px;
+.sidebar{
+    height: 100%;
+}
+.nav-sidebar:first-child{
+    margin-top: 20px;
+}
+.panel-body .row{
+    height: 30px;
 }
 .row.heading{
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
 .transaction-details{
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 footer{
     background-color:s #F8F8F8;
