@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-
+        <hr>
         <div class="container">
                 <div class="row value-proposal">
                     <div class="col-md-4">
@@ -66,7 +66,11 @@
              </div>
          </div>
 
+         <hr>
 
-
+         <div class="faqs-container">
+              <p class="faqs-p">¿Tenés alguna duda?</p>
+              <a class="faqs-a" href="faq.php">Preguntas frecuentes</a>
+          </div>
     </main>
 @endsection

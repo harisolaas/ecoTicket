@@ -1,3 +1,34 @@
+body{
+    font-family: 'Cabin Condensed', sans-serif;
+}
+a{
+    color: inherit;
+}
+a:hover{
+    text-decoration: none;
+    color: #80AA29;
+}
+hr{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-top: 1px solid #80AA29;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #80AA29;
+    color: rgb(53, 79, 4);
+}
+.navbar-default .navbar-brand{
+    color: rgb(53, 79, 4);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.navbar-default .navbar-nav>li>a {
+     color: rgb(53, 79, 4);
+}
+.navbar-default a:focus, .navbar-default a:hover {
+    color: #80AA29 !important;
+}
 .main{
     margin-top: 51px;
     padding-top: 19px;
@@ -8,6 +39,10 @@
 }
 .btn-primary:hover{
     background-color: #174F04;
+}
+.jumbotron{
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
 }
 .home-img{
     background-image: url('http://localhost:8000/img/5.jpg');
@@ -54,10 +89,10 @@
     font-size: 1.2em;
 }
 .create-account-img {
-    background-image: url('http://localhost:8000/img/train-station.jpg');
     background-size: cover;
     height: 400px;
     background-position: center center;
+    margin-top: 70px;
 }
 .create-account h2{
     margin-bottom: 20px;
@@ -67,10 +102,6 @@
     list-style-type: disc;
     padding-left: 25px;
     margin-bottom: 20px;
-}
-.jumbotron{
-    background-color: rgba(0,0,0,0.2);
-    color: #fff;
 }
 #pd-builder-form{
     display: flex;
@@ -120,18 +151,41 @@
     padding-bottom: 10px;
 }
 .panel-heading .accordion-toggle:after {
-    /* symbol for "opening" panels */
-    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-    float: right;        /* adjust as needed */
-    color: grey;         /* adjust as needed */
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    color: grey;
 }
 .panel-heading .accordion-toggle.collapsed:after {
-    /* symbol for "collapsed" panels */
-    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    content: "\e080";
 }
 .transaction-details{
     font-size: 0.9em;
+}
+.faqs-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.faqs-p{
+    font-size: 2em;
+    padding: 40px;
+}
+.faqs-a{
+    font-size: 2em;
+    line-height: 50px;
+    color: #80AA29;
+    border: 3px solid #80AA29;
+    border-radius: 27.8px;
+    padding: 0 15%;
+    margin-bottom: 80px;
+}
+.faqs-a:hover{
+    color: white;
+    border: 3px solid white;
+    background-color: #80AA29;
 }
 footer{
   min-height: 100px;
@@ -158,5 +212,20 @@ footer a{
   color: #fff;
 
   font-size: 2.5em;
-
+}
+@media (min-width: 480px) {
+    .create-account-img{
+        background-image: url('http://localhost:8000/img/train-station.jpg');
+        background-position: center;
+        background-size: cover;
+        height: 400px;
+    }
+    .create-account{
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
+        height: 100%;
+    }
+    .create-account-content{
+        padding: 40px 0;
+    }
 }
