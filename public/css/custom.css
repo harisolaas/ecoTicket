@@ -2,8 +2,75 @@
     margin-top: 51px;
     padding-top: 19px;
 }
+.btn-primary{
+    background-color: #80AA29;
+    border: none;
+}
+.btn-primary:hover{
+    background-color: #174F04;
+}
+.home-img{
+    background-image: url('http://localhost:8000/img/5.jpg');
+    border-radius: 6px;
+}
+.value-proposal{
+    color: #80AA29;
+    text-align: center;
+}
+.value-proposal span{
+    font-size: 5em;
+    color: #fff;
+}
+.md-circle{
+    margin: auto;
+    background-color: #80AA29;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+
+}
+.value-proposal h2{
+    font-size: 1.2em;
+}
+.value-proposal div{
+    color: #354F04;
+}
+.value-proposal strong{
+    font-weight: normal;
+}
+.value-proposal p{
+    /*display: none;*/
+}
+.create-account{
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
+   background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3));
+   height: 100%;
+}
+.create-account-content{
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    padding-bottom: 40px;
+    font-size: 1.2em;
+}
+.create-account-img {
+    background-image: url('http://localhost:8000/img/train-station.jpg');
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+}
+.create-account h2{
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+.create-account ul{
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
 .jumbotron{
-    background-image: url('http://localhost:8000/img/4.jpg');
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
 }
 #pd-builder-form{
     display: flex;
@@ -67,9 +134,29 @@
     font-size: 0.9em;
 }
 footer{
-    background-color:s #F8F8F8;
+  min-height: 100px;
+  background-color: #80AA29;
+  width: 100%;
+
+  margin: auto;
 }
-footer span{
-    font-size: 1.5em;
-    padding: 30px;
+footer ul{
+  display: flex;
+}
+footer li{
+  display: flex;
+  justify-content: center;
+
+  flex-grow: 0.6;
+  text-align: center;
+}
+footer a{
+  flex-grow: 1;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  color: #fff;
+
+  font-size: 2.5em;
+
 }

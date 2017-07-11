@@ -1,9 +1,7 @@
 @extends('master')
-@section('title')
-    ecoTicket :: Dashboard
-@endsection
+@section('title', 'Dashboard')
 @section('main')
-    <div class="container-fluid main">
+    <div class="container-fluid">
 
         <div class="row">
 
