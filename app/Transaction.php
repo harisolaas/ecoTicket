@@ -8,9 +8,9 @@ class Transaction extends Model
 {
     public $guarded = ['id', 'dt'];
 
-    public function buyer()
+    public function user()
     {
-        return $this->belongsTo('App\Buyer');
+        return $this->belongsTo('App\User');
     }
 
     public function products()

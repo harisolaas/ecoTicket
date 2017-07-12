@@ -19,7 +19,7 @@ $factory->define(App\Brand::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Buyer::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -68,8 +68,8 @@ $factory->define(App\Seller::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Transaction::class, function(Faker\Generator $faker){
     return [
-        'buyer_id' => App\Buyer::find(
-            rand(1, App\Buyer::count())
+        'user_id' => App\User::find(
+            rand(1, App\User::count())
         ),
         'seller_id' => App\Seller::find(
             rand(1, App\Seller::count())

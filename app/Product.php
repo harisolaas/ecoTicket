@@ -15,11 +15,6 @@ class Product extends Model
         return $this->belongsTo('App\Brand');
     }
 
-    public function buyers()
-    {
-        return $this->belongsToMany('App\Buyer');
-    }
-
     public function categories()
     {
         return $this->belongsToMany('App\Categorie');

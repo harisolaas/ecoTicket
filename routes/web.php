@@ -14,11 +14,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/register-1', 'MyRegisterController@showRegistrationForm');
-Route::post('/register-1', 'MyRegisterController@register');
-Route::get('/register-1/checkEmailAvailability', 'MyRegisterController@checkEmailAvailability');
-
-
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 // Route::get('products/{id}', 'ProductController@show');

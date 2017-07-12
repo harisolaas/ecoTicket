@@ -18,31 +18,6 @@ class CreateDb extends Migration
             $table->string('name');
         });
 
-        Schema::create('buyers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
-        Schema::create('buyer_product', function (Blueprint $table) {
-            $table->primary('buyer_id', 'product_id');
-            $table->integer('buyer_id');
-            $table->integer('product_id');
-            // $table->integer('count');
-            $table->timestamps();
-        });
-
-        Schema::create('buyer_seller', function (Blueprint $table) {
-            $table->primary('buyer_id', 'seller_id');
-            $table->integer('buyer_id');
-            $table->integer('seller_id');
-            // $table->integer('count');
-            $table->timestamps();
-        });
-
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -98,7 +73,7 @@ class CreateDb extends Migration
 
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('buyer_id');
+            $table->integer('user_id');
             $table->integer('seller_id');
             $table->float('total_amount');
             $table->timestamps();
@@ -113,9 +88,7 @@ class CreateDb extends Migration
     public function down()
     {
         Schema::dropIfExists('brands');
-        Schema::dropIfExists('buyers');
-        Schema::dropIfExists('buyers_products');
-        Schema::dropIfExists('buyers_sellers');
+        Schema::dropIfExists('users');
         Schema::dropIfExists('categories');
         Schema::dropIfExists('categories_products');
         Schema::dropIfExists('products');

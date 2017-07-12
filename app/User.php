@@ -27,8 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function type()
+    public function sellers()
     {
-        $this->hasOne('App\UserType');
+        return $this->hasMany('App\Seller');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction');
     }
 }

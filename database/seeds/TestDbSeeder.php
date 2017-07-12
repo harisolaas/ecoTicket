@@ -20,17 +20,17 @@ class TestDbSeeder extends Seeder
             $img->product()->associate($p);
             $img->save();
         });
-        factory(App\Buyer::class, 50)->create();
+        factory(App\User::class, 50)->create();
         factory(App\Seller::class, 50)->create();
         factory(App\Transaction::class, 1000)->create()->each(function($t){
-            $b = $t->buyer();
+            $b = $t->user();
             $s = $t->seller();
             for ($i=0; $i < rand(1,15) ; $i++) {
                 $p=App\Product::find(rand(1, App\Product::count()));
                 $t->products()->attach($p->id);
 
                 try {
-                    $p->buyers()->attach($b);
+                    $p->users()->attach($b);
                     $p->sellers()->attach($s->id);
                 } catch (Exception $e) {}
 

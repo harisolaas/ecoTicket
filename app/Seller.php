@@ -10,9 +10,9 @@ class Seller extends Model
 
     public $timestamps = false;
 
-    public function buyers()
+    public function users()
     {
-        return $this->belongsToMany('App\Buyer');
+        return $this->belongsToMany('App\User');
     }
 
     public function products()
