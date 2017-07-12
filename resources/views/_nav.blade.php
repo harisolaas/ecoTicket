@@ -14,8 +14,8 @@
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">Sign-in</a></li>
-            <li><a href="#contact">Centro de ayuda</a></li>
+            <li><a href="/login">Sign-in</a></li>
+            <li><a href="#">Centro de ayuda</a></li>
          </ul>
         </div><!--/.nav-collapse -->
     </div>

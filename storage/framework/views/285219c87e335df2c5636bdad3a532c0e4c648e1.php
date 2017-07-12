@@ -17,6 +17,7 @@
         <?php $__env->startSection('nav'); ?>
             <?php echo $__env->make('_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->yieldSection(); ?>
+        
         <div class="main">
             <?php echo $__env->yieldContent('main'); ?>
         </div>

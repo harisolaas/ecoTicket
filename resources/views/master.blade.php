@@ -17,6 +17,7 @@
         @section('nav')
             @include('_nav')
         @show
+        
         <div class="main">
             @yield('main')
         </div>

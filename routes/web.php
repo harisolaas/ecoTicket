@@ -23,16 +23,12 @@ Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 // Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
-// Route::post('products/{id}/edit', 'ProductController@edit');
-// Route::post('products/{id}', 'ProductController@update');
 
 Route::get('categories/create', 'CategorieController@create');
 Route::post('categories', 'CategorieController@store');
 
 Route::get('brands/create', 'BrandController@create');
 Route::post('brands', 'BrandController@store');
-
-Route::get('/usersCount', 'DBController@usersCount');
 
 Route::get('my-ecoticket/{id}', 'DashboardController@show');
 

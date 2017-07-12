@@ -1,5 +1,8 @@
 body{
     font-family: 'Cabin Condensed', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 150px;
 }
 a{
     color: inherit;
@@ -188,11 +191,11 @@ hr{
     background-color: #80AA29;
 }
 footer{
-  min-height: 100px;
+  height: 110px;
   background-color: #80AA29;
   width: 100%;
-
-  margin: auto;
+  position: absolute;
+  bottom: 0;
 }
 footer ul{
   display: flex;

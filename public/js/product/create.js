@@ -1,7 +1,7 @@
 ;(
 function(window,document,undefined)
 {
-    window.onload = function()
+    window.addEventListener('load', function()
     {
         var modal = document.querySelector('#reqResponse')
         var form = document.forms[0]
@@ -14,7 +14,7 @@ function(window,document,undefined)
             e.preventDefault()
             req.open('POST', '/products')
             req.setRequestHeader('X-CSRF-TOKEN', token)
-            req.setRequestHeader('Content-Type', 'multipart/form-data')            
+            req.setRequestHeader('Content-Type', 'multipart/form-data')
             req.send(data)
             var modalTitle = document.querySelector('.modal-title')
             var modalBody = document.querySelector('.modal-body')
@@ -44,6 +44,6 @@ function(window,document,undefined)
                 // }
             }
         }
-    }
+    });
 }
 (window,document));

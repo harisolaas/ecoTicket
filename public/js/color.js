@@ -1,6 +1,7 @@
 ;
 (function (window,document,undefined)
 {
+    window.addEventListener('load', function(){
         var body = document.body;
         var mainNav = document.getElementById("main-nav")
         var nav = document.getElementById("navbar").firstElementChild
@@ -57,6 +58,7 @@
             body.style.background = colors.boquita[1]
             mainNav.style.background = colors.boquita[2]
         }
+    });
 }
 (window,document))
 ;
