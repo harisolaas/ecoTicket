@@ -13,12 +13,13 @@ class LoginController extends Controller
     }
     public function login()
     {
+        dd('llega');
         $credentials = ['password' => request()->pass, 'email' => request()->email];
-        if (Auth::guard('clientes')->attempt($credentials)) {
-            return redirect('seller.home');
+        if (Auth::guard('sellers')->attempt($credentials)) {
+            return redirect('seller/home');
         } else {
             request()->session()->flash('error', 'El usuario o la contraseña son incorrectos.');
-            return redirect('seller.login');
+            return redirect('seller/login');
         }
     }
     public function logout()

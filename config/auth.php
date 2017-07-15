@@ -80,11 +80,6 @@ return [
             'model' => App\Seller::class,
         ],
 
-        'buyers' => [
-            'driver' => 'eloquent',
-            'model' => App\Buyer::class,
-        ],
-
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

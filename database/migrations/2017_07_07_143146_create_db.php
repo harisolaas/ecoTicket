@@ -66,7 +66,7 @@ class CreateDb extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->smallInteger('type')->nullable();
+            $table->string('type')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

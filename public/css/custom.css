@@ -7,9 +7,16 @@ body{
 a{
     color: inherit;
 }
+.has-error a, .has-success a{
+    color:#337ab7;
+}
 a:hover, a:focus{
     text-decoration: none;
     color: #80AA29;
+}
+.has-error a:hover, .has-error a:focus, .has-success a:hover, .has-success a:focus{
+    text-decoration: none;
+    color: #115895;
 }
 hr{
     margin-top: 100px;

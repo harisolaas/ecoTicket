@@ -91,10 +91,13 @@
 
 
         form.onsubmit = function (e) {
+            console.log('manda');
             if (typeof e != undefined) {
+                console.log('typeof');
                 e.preventDefault()
             }
             if (validate() && !processing) {
+                console.log('manda');
                 processing = true
                 sendForm()
                 button.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
@@ -153,6 +156,8 @@
                     hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
                 }
             }
+        }else {
+            vLastName = true
         }
         pass.onblur = function () {
             if (this.value.match(/^\w+$/) && this.value.length >= 6 && this.value.length <= 12){

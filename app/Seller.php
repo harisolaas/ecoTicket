@@ -8,6 +8,8 @@ class Seller extends Model
 {
     public $guarded = ['id'];
 
+    public $fillable = ['name', 'email', 'password', 'type'];
+
     public $timestamps = false;
 
     public function users()

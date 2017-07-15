@@ -27,6 +27,9 @@ Route::post('brands', 'BrandController@store');
 
 Route::get('new-ecoticket', 'RouteController@newTk');
 
+Route::get('seller/home', function (){
+    return redirect('seller/login');
+});
 Route::get('seller/register', 'Auth\Seller\RegisterController@show');
 Route::post('seller/register', 'Auth\Seller\RegisterController@store');
 Route::get('seller/login', 'Auth\Seller\LoginController@show');

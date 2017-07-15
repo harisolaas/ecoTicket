@@ -70,10 +70,4 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-
-    public function checkEmailAvailability()
-    {
-        $res = (User::where('email', request()->email)->first()) ? true : false;
-        print json_encode($res);
-    }
 }
