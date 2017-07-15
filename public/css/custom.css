@@ -7,7 +7,7 @@ body{
 a{
     color: inherit;
 }
-a:hover{
+a:hover, a:focus{
     text-decoration: none;
     color: #80AA29;
 }
@@ -40,7 +40,7 @@ hr{
     background-color: #80AA29;
     border: none;
 }
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus{
     background-color: #174F04;
 }
 .jumbotron{

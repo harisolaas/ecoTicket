@@ -41,11 +41,6 @@ return [
             'provider' => 'users',
         ],
 
-        'buyers' => [
-           'driver' => 'session',
-           'provider' => 'buyers',
-       ],
-
         'sellers' => [
            'driver' => 'session',
            'provider' => 'sellers',

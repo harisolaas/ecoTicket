@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $transactions = User::find(request()->user()->id)->transactions()->paginate(10);
+
+        return view('home', compact('transactions'));
     }
 }

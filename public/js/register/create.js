@@ -61,14 +61,14 @@
                     }
                 }
             }
-            req.open('GET', '/register-1/checkEmailAvailability?email='+email)
+            req.open('GET', '/checkEmailAvailability?email='+email+'&source='+ window.location.pathname)
             req.send()
         }
 
         function sendForm()
         {
             var data = new FormData(form)
-            req.open('POST', '/register-1')
+            req.open('POST', window.location.pathname)
             req.setRequestHeader('X-CSRF-TOKEN', token)
             req.send(data)
         }
@@ -77,7 +77,6 @@
         var form = document.forms[0]
         var email = form.email
         var name = form.name
-        var lastName = form.lastName
         var pass = form.password
         var confirmPass = form.passwordConfirm
         var req = new XMLHttpRequest()
@@ -104,6 +103,9 @@
 
         req.onreadystatechange = function()
         {
+            console.log('entra');
+            console.log(this.readyState);
+            console.log(this.responseText);
             if (this.readyState === 4)
             {
                 if (this.status === 200)
@@ -141,12 +143,15 @@
                 hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
             }
         }
-        lastName.onblur = function () {
-            if (this.value.match(/[A-z]+$/) && this.value.length < 30){
-                vLastName = true
-                hasSuccess(this)
-            } else {
-                hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
+        if (!window.location.pathname.includes('seller')) {
+            var lastName = form.lastName
+            lastName.onblur = function () {
+                if (this.value.match(/[A-z]+$/) && this.value.length < 30){
+                    vLastName = true
+                    hasSuccess(this)
+                } else {
+                    hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
+                }
             }
         }
         pass.onblur = function () {
