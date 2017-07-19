@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+    Business Login
+@endsection
+
 @section('main')
 <div class="container">
     <div class="row">

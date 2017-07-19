@@ -59,7 +59,7 @@ $factory->define(App\Seller::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'name' => $faker->company,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
@@ -75,5 +75,6 @@ $factory->define(App\Transaction::class, function(Faker\Generator $faker){
             rand(1, App\Seller::count())
         ),
         'total_amount' => 0,
+        'created_at' => $faker->dateTimeThisMonth('now', date_default_timezone_get()),
     ];
 });

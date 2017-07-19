@@ -1,5 +1,5 @@
 <?php
-
+use Barryvdh\DomPDF\Facade;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,9 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/print/{transaction_id}', 'FileController@printTicket');
+Route::get('/download/{transaction_id}', 'FileController@downloadTicket');
 
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
@@ -34,6 +33,9 @@ Route::get('seller/register', 'Auth\Seller\RegisterController@show');
 Route::post('seller/register', 'Auth\Seller\RegisterController@store');
 Route::get('seller/login', 'Auth\Seller\LoginController@show');
 Route::post('seller/login', 'Auth\Seller\LoginController@login');
+Route::get('seller/test', 'Seller\DashboardController@salesChart');
+Route::get('seller/test-datos', 'Seller\DashboardController@datos');
+Route::get('seller/test2', 'Seller\DashboardController@topProducts');
 
 Route::get('checkEmailAvailability', 'RequestsController@checkEmailAvailability');
 

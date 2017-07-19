@@ -26,4 +26,19 @@ class Seller extends Model
     {
         return $this->hasMany('App\Transaction');
     }
+
+    public function getSalesByDay()
+    {
+        $transactions = $this->transactions
+            ->sortBy('created_at')
+            ->groupBy( function($transaction){
+                return $transaction->created_at->format('Y-m-d');
+            })
+            ->map(function($transByDayCol){
+                return $transByDayCol->sum('total_amount');
+            })
+            ->toArray();
+        $data = $transactions;
+        return $data;
+    }
 }

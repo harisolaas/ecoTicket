@@ -13,8 +13,8 @@ class LoginController extends Controller
     }
     public function login()
     {
-        dd('llega');
         $credentials = ['password' => request()->pass, 'email' => request()->email];
+        dd(Auth::guard('sellers')->attempt($credentials));
         if (Auth::guard('sellers')->attempt($credentials)) {
             return redirect('seller/home');
         } else {
