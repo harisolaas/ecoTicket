@@ -113,7 +113,7 @@
             {
                 if (this.status === 200)
                 {
-                    window.location = '/home'
+                    window.location = '/seller/home'
                 }else if (window.confirm('Hubo un error con la carga de datos ¿Desea volver a enviar el formulario?')){
                     sendForm()
                 }else {

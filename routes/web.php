@@ -33,9 +33,15 @@ Route::get('seller/register', 'Auth\Seller\RegisterController@show');
 Route::post('seller/register', 'Auth\Seller\RegisterController@store');
 Route::get('seller/login', 'Auth\Seller\LoginController@show');
 Route::post('seller/login', 'Auth\Seller\LoginController@login');
-Route::get('seller/test', 'Seller\DashboardController@salesChart');
+Route::get('seller/test', 'Seller\DashboardController@show');
 Route::get('seller/test-datos', 'Seller\DashboardController@datos');
-Route::get('seller/test2', 'Seller\DashboardController@topProducts');
+Route::get('seller/topProducts', 'Seller\DashboardController@topProducts');
+Route::get('seller/test-ticket-gen', function ()
+{
+    return view('seller._generate-ticket');
+});
+
+Route::get('request/product', 'RequestsController@getProduct');
 
 Route::get('checkEmailAvailability', 'RequestsController@checkEmailAvailability');
 

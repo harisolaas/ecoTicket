@@ -23,6 +23,13 @@ hr{
     margin-bottom: 100px;
     border-top: 1px solid #80AA29;
 }
+.fs-7{
+    font-size: 0.7em;
+    max-width: 300px;
+    border: 1px solid #DDDDDD;
+}
+.max-width-400{
+}
 .navbar-default {
     background-color: #fff;
     border-color: #80AA29;
@@ -72,7 +79,6 @@ hr{
     border-radius: 50%;
     width: 90px;
     height: 90px;
-
 }
 .value-proposal h2{
     font-size: 1.2em;

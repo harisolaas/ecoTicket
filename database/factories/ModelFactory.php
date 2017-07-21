@@ -44,6 +44,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'long_desc' => $faker->paragraph(1, true),
         'price' => $faker->randomFloat(2, 0, 1000),
         'brand_id' => App\Brand::find(rand(1,15)),
+        'seller_id' => App\Seller::find(rand(1,App\Seller::count())),
         //'categorie_id' => App\Categorie::find(rand(1,15)),
     ];
 });

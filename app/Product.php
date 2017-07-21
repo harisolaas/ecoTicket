@@ -22,7 +22,7 @@ class Product extends Model
 
     public function sellers()
     {
-        return $this->hasMany('App\Seller');
+        return $this->hasOne('App\Seller');
     }
 
     public function transactions()

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticable;
 
-class Seller extends Model
+class Seller extends Authenticable
 {
     public $guarded = ['id'];
 
@@ -19,7 +19,7 @@ class Seller extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->hasMany('App\Product');
     }
 
     public function transactions()

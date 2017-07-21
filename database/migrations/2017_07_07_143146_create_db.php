@@ -38,6 +38,8 @@ class CreateDb extends Migration
             $table->string('long_desc')->nullable();
             $table->float('price');
             $table->integer('brand_id');
+            $table->integer('seller_id');
+            $table->integer('sales_count')->default(0);
             $table->timestamps();
         });
 
@@ -46,13 +48,6 @@ class CreateDb extends Migration
             $table->string('name');
             $table->string('src');
             $table->integer('product_id');
-        });
-
-        Schema::create('product_seller', function (Blueprint $table) {
-            $table->primary('product_id', 'seller_id');
-            $table->integer('product_id');
-            $table->integer('seller_id');
-            $table->timestamps();
         });
 
         Schema::create('product_transaction', function (Blueprint $table) {

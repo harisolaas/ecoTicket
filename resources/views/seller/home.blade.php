@@ -1,8 +1,6 @@
 @extends('_dashboard')
 
-@section('title')
-    Business Dashboard
-@endsection
+@section('title', 'Business Dashboard')
 
 @section('sidebar')
     <ul class="nav nav-sidebar">
@@ -23,22 +21,24 @@
         @areachart('Ventas', 'sales_chart')
     </div>
 
-    {{-- <div id="top-products">
+    <div id="top-products">
         <div id="products_chart">
-            <table>
+            <table class="table table-striped fs-7 max-width-400">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Producto</th>
                         <th>Ingresos</th>
                         <th>Ventas Únicas</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($topProducts as $key => $product)
+                    @forelse ($topProducts as $rank => $product)
                         <tr>
-                            <td>{{$product->name}}</td>
-                            <td>{{$product->revenue}}</td>
-                            <td>{{$product->unique_sales}}</td>
+                            <td>{{$rank+1}}</td>
+                            <td>{{$product['name']}}</td>
+                            <td>$ {{$product['revenue']}}</td>
+                            <td>{{$product['sales']}}</td>
                         </tr>
                     @empty
                         No se encontraron productos.
@@ -46,11 +46,10 @@
                 </tbody>
             </table>
         </div>
-    </div> --}}
+    </div>
 @endsection
+
 @section('scripts')
     @parent
     <script type="text/javascript" src="{{ asset('js/dashboard/real-time-sales.js') }}"></script>
-
-
 @endsection
