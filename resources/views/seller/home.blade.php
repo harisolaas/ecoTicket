@@ -47,6 +47,7 @@
             </table>
         </div>
     </div>
+    {{-- @include('seller._generate-ticket') --}}
 @endsection
 
 @section('scripts')

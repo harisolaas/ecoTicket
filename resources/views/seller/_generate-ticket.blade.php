@@ -1,27 +1,45 @@
-{{-- @section('panels') --}}
-    <div id="create-ticket">
-        <table>
+@php
+    $modal = [
+        'title' => 'Destinatario',
+        'body' => 'E-mail del cliente:',
+        'inputs' => [
+            'name' => 'email'
+        ]
+    ];
+@endphp
+<div id="create-ticket">
+    <form action="#" method="post">
+        <table class="table table-stripped">
             <thead>
                 <tr>
+                    <th>Enviar/<br>Eliminar</th>
                     <th>Código de barras</th>
                     <th>Producto</th>
                     <th>Descripción</th>
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody data-table='tbody'>
-                <tr data-row="current">
-                    <td>
-                        <form data-form='current' action="" method="post">
-                            <input type="text" name="barcode" value="">
-                        </form>
-                    </td>
-                    <td data-field='name'></td>
-                    <td data-field='short_desc'></td>
-                    <td data-field='price'>$ </td>
-                </tr>
+            <tbody id='tk-gen-tbody'>
             </tbody>
+            <tfoot>
+                <tr class="alert alert-info">
+                    <td colspan="5">
+                        <a id='add-prod' href=""><span class="icon ion-plus-circled"></span>Agregar producto...</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td style="text-align:right">$ </td>
+                    <td id='total'>0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:center">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Enviar Ticket</button>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
-    </div>
-    <script type="text/javascript" src="{{ asset('js/seller/create-ticket.js') }}"></script>
-{{-- @endsection --}}
+        @include('_modal', compact($modal))
+    </form>
+</div>
+<script type="text/javascript" src="{{ asset('js/seller/create-ticket.js') }}"></script>

@@ -43,9 +43,8 @@ class RequestsController extends Controller
 
     public function getProduct()
     {
-        // $product = Product::where('barcode', request()->barcode)->first()->toJson();
-
-        // header('Content-Type: application/json');
-        print request()->barcode;
+        $res = Product::where('barcode', request()->barcode)->first();
+        $res = json_encode($res);
+        print $res;
     }
 }
