@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Registro</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -90,6 +90,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-link" href="/seller/register">Registrar un comercio...</a>
                 </div>
             </div>
         </div>

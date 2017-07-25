@@ -10,6 +10,35 @@ use Barryvdh\DomPDF\Facade;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function ()
+{
+    return view('index');
+});
+Route::get('/test', function ()
+{
+    dd(Auth::user());
+});
+Route::prefix('seller')->group(function ()
+{
+    Route::get('/register', 'Auth\Seller\RegisterController@show');
+    Route::post('/register', 'Auth\Seller\RegisterController@store');
+
+    Route::get('/login', 'Auth\SellerLoginController@showLoginForm');
+    Route::post('/login', 'Auth\SellerLoginController@login');
+    Route::get('/home', 'SellerController@index')->name('seller.home');
+
+    Route::get('/test-datos', 'Seller\DashboardController@datos');
+    Route::get('/topProducts', 'Seller\DashboardController@topProducts');
+});
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('request/product', 'RequestsController@getProduct');
+
+Route::get('checkEmailAvailability', 'RequestsController@checkEmailAvailability');
+
 Route::get('/print/{transaction_id}', 'FileController@printTicket');
 Route::get('/download/{transaction_id}', 'FileController@downloadTicket');
 
@@ -24,36 +53,9 @@ Route::post('categories', 'CategorieController@store');
 Route::get('brands/create', 'BrandController@create');
 Route::post('brands', 'BrandController@store');
 
-Route::get('new-ecoticket', 'RouteController@newTk');
-
-Route::get('seller/home', function (){
-    return redirect('seller/login');
-});
-Route::get('seller/register', 'Auth\Seller\RegisterController@show');
-Route::post('seller/register', 'Auth\Seller\RegisterController@store');
-Route::get('seller/login', 'Auth\Seller\LoginController@show');
-Route::post('seller/login', 'Auth\Seller\LoginController@login');
-Route::get('seller/test', 'Seller\DashboardController@show');
-Route::get('seller/test-datos', 'Seller\DashboardController@datos');
-Route::get('seller/topProducts', 'Seller\DashboardController@topProducts');
-Route::get('seller/test-ticket-gen', function ()
-{
-    return view('seller._generate-ticket');
-});
-
-Route::get('request/product', 'RequestsController@getProduct');
-
-Route::get('checkEmailAvailability', 'RequestsController@checkEmailAvailability');
-
-
-
 // index
 // show
 // create
 // delete
 // edit
 // update
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

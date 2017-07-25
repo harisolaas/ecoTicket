@@ -6,11 +6,17 @@ use Illuminate\Foundation\Auth\User as Authenticable;
 
 class Seller extends Authenticable
 {
-    public $guarded = ['id'];
+    protected $guarded = 'seller';
 
-    public $fillable = ['name', 'email', 'password', 'type'];
+    protected $fillable = [
+        'name', 'email', 'password', 'type'
+    ];
 
     public $timestamps = false;
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     public function users()
     {

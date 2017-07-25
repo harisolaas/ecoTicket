@@ -67,7 +67,25 @@
 
         function sendForm()
         {
+            var req = new XMLHttpRequest()
             var data = new FormData(form)
+
+            req.onreadystatechange = function()
+            {
+                if (this.readyState === 4)
+                {
+                    if (this.status === 200)
+                    {
+                        window.location = '/seller/login'
+                    }else if (window.confirm('Hubo un error con la carga de datos ¿Desea volver a enviar el formulario?')){
+                        sendForm()
+                    }else {
+                        button.innerHTML = 'Enviar'
+                        processing = false
+                    }
+                }
+
+            }
             req.open('POST', window.location.pathname)
             req.setRequestHeader('X-CSRF-TOKEN', token)
             req.send(data)
@@ -79,7 +97,6 @@
         var name = form.name
         var pass = form.password
         var confirmPass = form.passwordConfirm
-        var req = new XMLHttpRequest()
         var vEmail = false
         var vName = false
         var vLastName = false
@@ -90,12 +107,8 @@
         var button = document.querySelector('#submitButton')
 
 
-        form.onsubmit = function (e) {
-            console.log('manda');
-            if (typeof e != undefined) {
-                console.log('typeof');
-                e.preventDefault()
-            }
+        form.onsubmit = function (e)
+        {
             if (validate() && !processing) {
                 console.log('manda');
                 processing = true
@@ -104,25 +117,7 @@
             }
         }
 
-        req.onreadystatechange = function()
-        {
-            console.log('entra');
-            console.log(this.readyState);
-            console.log(this.responseText);
-            if (this.readyState === 4)
-            {
-                if (this.status === 200)
-                {
-                    window.location = '/seller/home'
-                }else if (window.confirm('Hubo un error con la carga de datos ¿Desea volver a enviar el formulario?')){
-                    sendForm()
-                }else {
-                    button.innerHTML = 'Enviar'
-                    processing = false
-                }
-            }
 
-        }
 
         email.onblur = function () {
             checkEmailAvailability(this, this.value, function(input, res)

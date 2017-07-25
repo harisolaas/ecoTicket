@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],
 
-        'sellers' => [
+        'seller' => [
            'driver' => 'session',
            'provider' => 'sellers',
        ],
@@ -106,6 +106,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'sellers' => [
+            'provider' => 'sellers',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 

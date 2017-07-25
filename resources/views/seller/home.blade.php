@@ -16,7 +16,7 @@
 @endsection
 
 @section('panels')
-    <div id="sales">
+    {{-- <div id="sales">
         <div id="sales_chart"></div>
         @areachart('Ventas', 'sales_chart')
     </div>
@@ -46,7 +46,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> --}}
     {{-- @include('seller._generate-ticket') --}}
 @endsection
 

@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\Seller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Seller;
 
 class LoginController extends Controller
 {
@@ -13,9 +15,8 @@ class LoginController extends Controller
     }
     public function login()
     {
-        $credentials = ['password' => request()->pass, 'email' => request()->email];
-        dd(Auth::guard('sellers')->attempt($credentials));
-        if (Auth::guard('sellers')->attempt($credentials)) {
+        $credentials = ['password' => request()->password, 'email' => request()->email];
+        if (Auth::guard('seller')->attempt($credentials, request()->remmeber, true)) {
             return redirect('seller/home');
         } else {
             request()->session()->flash('error', 'El usuario o la contraseña son incorrectos.');
