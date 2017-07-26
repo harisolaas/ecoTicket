@@ -4,10 +4,9 @@
 
 @section('sidebar')
     <ul class="nav nav-sidebar">
-        <li class="active"><a href="https://getbootstrap.com/examples/dashboard/#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="https://getbootstrap.com/examples/dashboard/#">Reports</a></li>
-        <li><a href="https://getbootstrap.com/examples/dashboard/#">Analytics</a></li>
-        <li><a href="https://getbootstrap.com/examples/dashboard/#">Export</a></li>
+        <li class="active"><a data-toggle="tab" href="#step2">Overview </a></li>
+        <li><a data-toggle="tab" href="#create-ticket">Nuevo Ticket </a></li>
+        <li><a data-toggle="tab" href="#step2">Todos mis Tickets </a></li>
     </ul>
 @endsection
 
@@ -47,10 +46,12 @@
             </table>
         </div>
     </div> --}}
-    {{-- @include('seller._generate-ticket') --}}
+    @include('seller._create-ticket')
+    {{-- @include('seller._all-tickets', $transactions) --}}
 @endsection
 
 @section('scripts')
     @parent
     <script type="text/javascript" src="{{ asset('js/dashboard/real-time-sales.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/seller/create-ticket.js') }}"></script>
 @endsection

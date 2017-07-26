@@ -22,6 +22,7 @@ class SellerController extends Controller
      */
     public function index()
     {
+        request()->user()->transactions;
         return view('seller.home');
     }
 }
