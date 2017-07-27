@@ -21,15 +21,21 @@ Route::get('/test', function ()
 });
 Route::prefix('seller')->group(function ()
 {
-    Route::get('/register', 'Auth\Seller\RegisterController@show');
-    Route::post('/register', 'Auth\Seller\RegisterController@store');
+    Route::get('/register', 'Auth\SellerRegisterController@show');
+    Route::post('/register', 'Auth\SellerRegisterController@store');
 
     Route::get('/login', 'Auth\SellerLoginController@showLoginForm');
     Route::post('/login', 'Auth\SellerLoginController@login');
     Route::get('/home', 'SellerController@index')->name('seller.home');
 
+    Route::post('/send-ticket', 'TransactionController@storeAndSend')->middleware('auth:seller');
+
     Route::get('/test-datos', 'Seller\DashboardController@datos');
-    Route::get('/topProducts', 'Seller\DashboardController@topProducts');
+    Route::get('/test-mail', function ()
+    {
+        $user = App\Transaction::find(1001);
+        dd($user->total_amount);
+    });
 });
 
 Auth::routes();

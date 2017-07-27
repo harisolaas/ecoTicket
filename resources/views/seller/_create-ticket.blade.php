@@ -3,12 +3,13 @@
         'title' => 'Destinatario',
         'body' => 'E-mail del cliente:',
         'inputs' => [
-            'name' => 'email'
+            'user_email' => 'email'
         ]
     ];
 @endphp
 <div id="create-ticket" class="tab-pane fade">
-    <form action="#" method="post">
+    <form id="create-ticket-form" action="/seller/send-ticket" method="post">
+        {{ csrf_field() }}
         <table class="table table-stripped">
             <thead>
                 <tr>

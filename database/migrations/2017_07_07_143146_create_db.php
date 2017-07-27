@@ -83,13 +83,12 @@ class CreateDb extends Migration
     public function down()
     {
         Schema::dropIfExists('brands');
-        Schema::dropIfExists('users');
         Schema::dropIfExists('categories');
-        Schema::dropIfExists('categories_products');
+        Schema::dropIfExists('categorie_product');
         Schema::dropIfExists('products');
         Schema::dropIfExists('product_images');
         Schema::dropIfExists('products_sellers');
-        Schema::dropIfExists('products_transactions');
+        Schema::dropIfExists('product_transaction');
         Schema::dropIfExists('sellers');
         Schema::dropIfExists('transactions');
     }

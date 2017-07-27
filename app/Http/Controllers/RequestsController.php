@@ -18,9 +18,11 @@ class RequestsController extends Controller
     public function checkEmailAvailability()
     {
         if (request()->source == '/seller/register') {
-            $res = boolval(Seller::where('email', request()->email)->first());
+            $res = Seller::where('email', request()->email)->first();
+            $res = $res && $res->active;
         }else {
-            $res = boolval(User::where('email', request()->email)->first());
+            $res = User::where('email', request()->email)->first();
+            $res = $res && $res->active;
         }
         $res = json_encode($res);
         print $res;

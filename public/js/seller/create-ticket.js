@@ -4,13 +4,25 @@
     {
         const fields = ['send', 'barcode', 'name', 'short_desc', 'price']
 
-// ==================== Factories =================== //
+// ====================== Factories ====================== //
 
         function input()
         {
             var input = document.createElement('input')
             input.type = 'text'
             input.name = 'barcode'
+            input.className = 'form-control'
+            input.style = 'width:inherit'
+
+            return input
+        }
+
+        function hiddenInput(value)
+        {
+            var input = document.createElement('input')
+            input.type = 'hidden'
+            input.name = 'products[]'
+            input.value = value
 
             return input
         }
@@ -22,6 +34,7 @@
 
             var button = document.createElement('button')
             button.type = 'button'
+            button.className = 'btn'
             button.append(span)
             button.addEventListener('click', function ()
             {
@@ -31,10 +44,13 @@
                     var row = document.querySelector('.active-row')
                     if (this.readyState === 4)
                     {
-                        if (this.status === 200)
+                        if (this.status === 200 && this.responseText !== 'null')
                         {
                             var data = JSON.parse(this.responseText)
                             hidrateRow(row, data)
+                        } else
+                        {
+                            setErr(row)
                         }
                     }
                 }
@@ -69,6 +85,7 @@
         {
             var res = document.createElement('button')
             res.type = 'button'
+            res.className = 'btn'
             res.innerHTML = "<span class='icon ion-ios-close' style='color:red'></span>"
             res.setAttribute('data-target', rowId)
 
@@ -80,7 +97,7 @@
             return res
         }
 
-// ===================== Controll functions =================== //
+// ====================== Controll functions ====================== //
 
         function hidrateRow(row, data)
         {
@@ -92,6 +109,8 @@
             row.querySelector('[data-field=short_desc]').innerText = data.short_desc
             row.querySelector('[data-field=price]').innerText = data.price
             row.querySelector('[data-field=barcode] input').disabled = true
+            row.querySelector('[data-field=barcode] p') ? row.querySelector('[data-field=barcode] p').remove() : undefined
+            row.append(hiddenInput(data.id))
 
             row.classList.toggle('active-row')
 
@@ -118,12 +137,53 @@
             }
             total.innerText = res
         }
+        function setErr(row)
+        {
+            if (!row.querySelector('[data-field=barcode] p')) {
+                var err = document.createElement('p')
+                err.style = 'font-size:0.8em;color:#f00;'
+                err.innerText = 'El código ingresado no figura en base de datos.'
+                row.querySelector('[data-field=barcode]').append(err)
+            }
+            row.querySelector('[data-field=barcode] input').focus()
+        }
+        function sendForm(form, callback)
+        {
+            processing = true
+            var data = new FormData(form)
+            data.append('total_amount', Number(document.querySelector('#total').innerText))
+            var req = new XMLHttpRequest()
+            req.onreadystatechange = function ()
+            {
+                if (this.readyState === 4)
+                {
+                    if (this.status === 200)
+                    {
+                        callback()
+                    }else if (window.confirm('Hubo un error mientras procesábamos la operación ¿Desea volver a intentarlo?'))
+                    {
+                        sendForm(form)
+                    }else
+                    {
+                        button.innerHTML = 'Enviar'
+                        processing = false
+                    }
+                }
+            }
+            req.open('POST', '/seller/send-ticket')
+            req.setRequestHeader('X-CSRF-TOKEN', form._token.value)
+            req.send(data)
+        }
 
-// ====================== Variables ========================== //
+// ====================== Global Variables ====================== //
 
         var addProduct = document.querySelector('#add-prod')
         var tbody = document.querySelector('#tk-gen-tbody')
         var addable = true
+        var form = document.getElementById('create-ticket-form')
+        var processing = false
+
+// ====================== Listeners ====================== //
 
         addProduct.addEventListener('click', function (e)
         {
@@ -133,6 +193,18 @@
                 addable = false
             }else {
                 document.querySelector('.active-row input').focus()
+            }
+        })
+
+        form.addEventListener('submit', function (e)
+        {
+            if (!processing)
+            {
+                this.submit.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
+                sendForm(this, function ()
+                {
+
+                })
             }
         })
 

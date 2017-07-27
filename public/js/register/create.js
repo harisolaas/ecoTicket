@@ -110,7 +110,6 @@
         form.onsubmit = function (e)
         {
             if (validate() && !processing) {
-                console.log('manda');
                 processing = true
                 sendForm()
                 button.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
