@@ -33,12 +33,14 @@ Route::prefix('seller')->group(function ()
     Route::get('/test-datos', 'Seller\DashboardController@datos');
     Route::get('/test-mail', function ()
     {
-        $user = App\Transaction::find(1001);
-        dd($user->total_amount);
+        dd(request()->sarasa);
     });
 });
 
 Auth::routes();
+
+Route::post('/user/set-active', 'RegisterController@setActive');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('request/product', 'RequestsController@getProduct');

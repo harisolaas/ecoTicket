@@ -165,7 +165,7 @@
                         sendForm(form)
                     }else
                     {
-                        button.innerHTML = 'Enviar'
+                        form.submit.innerHTML = 'Enviar'
                         processing = false
                     }
                 }
@@ -198,12 +198,13 @@
 
         form.addEventListener('submit', function (e)
         {
+            e.preventDefault()
             if (!processing)
             {
                 this.submit.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
                 sendForm(this, function ()
                 {
-
+                    console.log('algo');
                 })
             }
         })

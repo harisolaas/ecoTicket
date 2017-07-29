@@ -39,6 +39,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function setActive()
+    {
+        $this->validator(request()->all());
+        $user = User::where('email', request()->input('email'));
+        $user->update(array_add(request()->all(), 'active', 1));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

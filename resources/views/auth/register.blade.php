@@ -1,3 +1,15 @@
+@php
+if (isset(request()->email))
+{
+    $target = 'set-active';
+    $email = request()->email;
+}else
+{
+    $target = '';
+    $email = old('email', '');
+}
+@endphp
+
 @extends('master')
 
 @section('title')
@@ -15,7 +27,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registro</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" data-target="{{ $target }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -50,7 +62,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ $email }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">

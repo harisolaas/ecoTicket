@@ -25,7 +25,7 @@ class Ticket extends Mailable
      *
      * @return void
      */
-    public function __construct(Transaction $transaction)
+    public function __construct(Transaction $transaction = null)
     {
         $this->transaction = $transaction;
     }

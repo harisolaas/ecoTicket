@@ -1,3 +1,6 @@
+@php
+
+@endphp
 
 <nav class="navbar navbar-default navbar-fixed-top" id="main-nav">
     <div class="container">

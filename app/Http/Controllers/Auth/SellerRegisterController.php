@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Seller;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Seller;
 
-class RegisterController extends Controller
+class SellerRegisterController extends Controller
 {
     public function show()
     {
@@ -29,7 +29,6 @@ class RegisterController extends Controller
         $seller = Seller::make(request()->all());
         $seller->password = bcrypt($seller->password);
         $seller->save();
-        // return redirect('seller/login');
     }
     protected function redirectTo()
     {

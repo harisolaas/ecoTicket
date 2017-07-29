@@ -8,7 +8,7 @@
     ];
 @endphp
 <div id="create-ticket" class="tab-pane fade">
-    <form id="create-ticket-form" action="/seller/send-ticket" method="post">
+    <form id="create-ticket-form" action="" method="post">
         {{ csrf_field() }}
         <table class="table table-stripped">
             <thead>

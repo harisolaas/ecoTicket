@@ -11,6 +11,8 @@
         <link rel="stylesheet" href=<?php echo e(asset("css/custom.css")); ?>>
         <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
         <?php echo $__env->yieldContent('head'); ?>
     </head>
     <body>

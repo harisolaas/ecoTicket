@@ -19,7 +19,6 @@ class RequestsController extends Controller
     {
         if (request()->source == '/seller/register') {
             $res = Seller::where('email', request()->email)->first();
-            $res = $res && $res->active;
         }else {
             $res = User::where('email', request()->email)->first();
             $res = $res && $res->active;

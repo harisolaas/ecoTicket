@@ -76,7 +76,12 @@
                 {
                     if (this.status === 200)
                     {
-                        window.location = '/seller/login'
+                        if (window.location.pathname.includes('seller')) {
+                            window.location = '/seller/login'
+                        }else
+                        {
+                            window.location = '/login'
+                        }
                     }else if (window.confirm('Hubo un error con la carga de datos ¿Desea volver a enviar el formulario?')){
                         sendForm()
                     }else {
@@ -86,7 +91,12 @@
                 }
 
             }
-            req.open('POST', window.location.pathname)
+            if (form.getAttribute('data-target') == 'set-active') {
+                req.open('POST', window.location.pathname)
+            }else
+            {
+                req.open('POST', '/user/set-active')
+            }
             req.setRequestHeader('X-CSRF-TOKEN', token)
             req.send(data)
         }
