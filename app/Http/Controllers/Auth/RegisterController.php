@@ -42,8 +42,16 @@ class RegisterController extends Controller
     public function setActive()
     {
         $this->validator(request()->all());
+
+        $data = [
+            'name' => request()->name,
+            'password' => bcrypt(request()->password),
+            'active' => 1,
+            'remember_token' => str_random(10),
+        ];
+
         $user = User::where('email', request()->input('email'));
-        $user->update(array_add(request()->all(), 'active', 1));
+        $user->update($data);
     }
 
     /**
@@ -56,7 +64,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'lastName' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);

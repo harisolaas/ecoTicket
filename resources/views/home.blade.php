@@ -69,10 +69,10 @@
                                     </table>
                                     <div class="row">
                                         <div class="col-xs-6 flex-center">
-                                            <a class="btn btn-primary" target='blank' href="/download/{{ $transaction->id }}">Descargar</a>
+                                            <a class="btn btn-primary" target='blank' href="/file/download/{{ $transaction->id }}">Descargar</a>
                                         </div>
                                         <div class="col-xs-6 flex-center">
-                                            <a class="btn btn-primary" target='blank' href="/print/{{ $transaction->id }}">Imprimir</a>
+                                            <a class="btn btn-primary" target='blank' href="/file/print/{{ $transaction->id }}">Imprimir</a>
                                         </div>
                                     </div>
                                 </div>

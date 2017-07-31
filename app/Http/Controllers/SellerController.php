@@ -20,9 +20,35 @@ class SellerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($section)
     {
-        request()->user()->transactions;
-        return view('seller.home');
+        $transactions = request()->user()->transactions;
+        $promotions = '';
+
+        switch ($section)
+        {
+            case 'new-ticket':
+                $view = 'seller.create-ticket';
+
+                break;
+
+            case 'all-tickets':
+                $view = 'seller.all-tickets';
+
+                break;
+
+            case 'promotions':
+                $view = 'seller.promotions';
+                $promotions = request()->user()->promotions;
+
+                break;
+
+            default:
+                $view = 'seller.home';
+
+                break;
+        }
+
+        return view($view, compact('transactions', 'promotions'));
     }
 }

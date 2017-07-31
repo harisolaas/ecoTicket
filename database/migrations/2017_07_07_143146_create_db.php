@@ -50,6 +50,15 @@ class CreateDb extends Migration
             $table->integer('product_id');
         });
 
+        Schema::create('promotions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title', 15);
+            $table->string('desc', 40);
+            $table->string('banner_path');
+            $table->integer('seller_id');
+            $table->timestamps();
+        });
+
         Schema::create('product_transaction', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id');
@@ -89,6 +98,7 @@ class CreateDb extends Migration
         Schema::dropIfExists('product_images');
         Schema::dropIfExists('products_sellers');
         Schema::dropIfExists('product_transaction');
+        Schema::dropIfExists('promotions');
         Schema::dropIfExists('sellers');
         Schema::dropIfExists('transactions');
     }

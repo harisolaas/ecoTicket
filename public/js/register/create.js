@@ -43,7 +43,7 @@
 
         function validate()
         {
-            return vEmail && vName && vLastName && vPass && vConfirmPass
+            return vEmail && vName && vPass && vConfirmPass
         }
 
         function checkEmailAvailability(input, email, callback)
@@ -91,11 +91,12 @@
                 }
 
             }
-            if (form.getAttribute('data-target') == 'set-active') {
-                req.open('POST', window.location.pathname)
-            }else
+            if (form.getAttribute('data-target') == 'set-active')
             {
                 req.open('POST', '/user/set-active')
+            }else
+            {
+                req.open('POST', window.location.pathname)
             }
             req.setRequestHeader('X-CSRF-TOKEN', token)
             req.send(data)
@@ -109,7 +110,6 @@
         var confirmPass = form.passwordConfirm
         var vEmail = false
         var vName = false
-        var vLastName = false
         var vPass = false
         var vConfirmPass = false
         var processing = false
@@ -117,14 +117,15 @@
         var button = document.querySelector('#submitButton')
 
 
-        form.onsubmit = function (e)
+        form.addEventListener('submit', function (e)
         {
+            e.preventDefault()
             if (validate() && !processing) {
                 processing = true
                 sendForm()
                 button.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
             }
-        }
+        })
 
 
 
@@ -150,19 +151,7 @@
                 hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
             }
         }
-        if (!window.location.pathname.includes('seller')) {
-            var lastName = form.lastName
-            lastName.onblur = function () {
-                if (this.value.match(/[A-z]+$/) && this.value.length < 30){
-                    vLastName = true
-                    hasSuccess(this)
-                } else {
-                    hasError(this, 'Este campo es obligatorio y debe tener un máximo de 30 caracteres!')
-                }
-            }
-        }else {
-            vLastName = true
-        }
+
         pass.onblur = function () {
             if (this.value.match(/^\w+$/) && this.value.length >= 6 && this.value.length <= 12){
                 vPass = true

@@ -8,15 +8,11 @@ class Seller extends Authenticable
 {
     protected $guarded = 'seller';
 
-    protected $fillable = [
-        'name', 'email', 'password', 'type'
-    ];
+    protected $fillable = ['name', 'email', 'password', 'type'];
 
     public $timestamps = false;
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     public function users()
     {
@@ -26,6 +22,11 @@ class Seller extends Authenticable
     public function products()
     {
         return $this->hasMany('App\Product');
+    }
+
+    public function promotions()
+    {
+        return $this->hasMany('App\Promotion');
     }
 
     public function transactions()
