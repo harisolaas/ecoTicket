@@ -1,5 +1,4 @@
 <?php
-use Barryvdh\DomPDF\Facade;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +16,9 @@ Route::get('/', function ()
 });
 Route::get('/test', function ()
 {
-    dd(Auth::user());
+    $transaction = App\Transaction::find(1);
+    $pdf = PDF::loadView('pdf.ticket', compact('transaction'));
+    return $pdf->stream();
 });
 Route::prefix('seller')->group(function ()
 {

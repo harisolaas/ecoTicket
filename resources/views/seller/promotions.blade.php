@@ -38,10 +38,14 @@
                     @forelse ($promotions as $promotion)
                         <tr>
                             <td colspan="2">Algo{{ $promotion->title }}</td>
-                            <td>Activa{{ $promotion->state ? 'Activa' : 'Sin publicar' }}</td>
-                            <td><a href="#">Publicar...</a></td>
+                            <td>{{ $promotion->active ? 'Activa' : 'Sin publicar' }}</td>
+                            <td>
+                                <form action="set-active" method="post">
+                                    <input class="btn btn-link" type="submit" name="send" value="Publicar...">
+                                </form>
+                            </td>
                             <td><a href="#">Ver...</a></td>
-                            <td><a href="#"></a>Editar...</td>
+                            <td><a href="#">Editar...</a></td>
                         </tr>
                     @empty
                         <tr>
@@ -63,11 +67,12 @@
                 <div class="form-group">
                     <label for="desc">Descripción:</label>
                     <p>(máximo 40 carácteres)</p>
-                    <input class="form-control" type="text" name="title" value="">
+                    <input class="form-control" type="text" name="desc" value="">
                 </div>
                 <div class="form-group">
                     <label for="title">Imagen:</label>
-                    <input class="form-control-file" type="file" name="title" value="">
+                    <p>(máximo 200KB)</p>
+                    <input class="form-control-file" type="file" name="banner" value="">
                 </div>
                 <button type="submit" class="btn btn-primary" data-toggle='modal' data-target='#modal'>Enviar</button>
             </form>

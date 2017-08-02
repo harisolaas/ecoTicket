@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         DB::table('users')->insert([
-            'name' => 'UserTest',
-            'email' => 'test@gmail.com',
-            'password' => bcrypt('secret'),
+            'name' => 'Skyguy',
+            'email' => 'skyguy@walker.com',
+            'password' => bcrypt('asdasd'),
         ]);
 
         DB::table('categories')->insert([
@@ -33,9 +33,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('sellers')->insert([
-            'name' => 'SellerTest',
-            'email' => 'test@gmail.com',
-            'password' => bcrypt('secret'),
+            'name' => 'Skyguy S.A.',
+            'email' => 'skyguy@walker.com',
+            'password' => bcrypt('asdasd'),
         ]);
 
     }

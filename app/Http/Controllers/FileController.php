@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade;
 use App\Transaction;
 
 class FileController extends Controller

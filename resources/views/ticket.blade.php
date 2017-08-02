@@ -1,8 +1,8 @@
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<div class="row" style="margin:10px;width:8cm; background-image:url({{ asset('img/secureticket_logo.jpg') }});background-size:contain;">
-    <div class="col-xs-12" style="box-shadow: 2px 1px 2px grey;border:0.5px solid grey;margin-left:10px">
+<div class="row" style="font-size:3em;margin:10px;width:22cm;background-size:contain;">
+    <div class="col-xs-12" style="box-shadow: 2px 1px 2px grey;border:1px solid grey;margin-left:10px;padding:25px;">
             {{ $transaction->created_at->format('d-m-Y H:i:s') }}<br>
             {{ $transaction->seller->name }}<br>
             Test S.A.<br>
@@ -23,10 +23,10 @@
             @endforeach
             <div class="row">
                 <div class="col-xs-6">
-                    <h3>TOTAL</h3>
+                    <h3 style="font-size:1.5em">TOTAL</h3>
                 </div>
                 <div class="col-xs-6" style="text-align:right;">
-                    <h3>$ {{ $transaction->total_amount }}</h3>
+                    <h3 style="font-size:1.5em">$ {{ $transaction->total_amount }}</h3>
                 </div>
                 <hr>
                 <div class="col-xs-6">

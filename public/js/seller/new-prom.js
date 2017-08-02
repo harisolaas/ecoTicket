@@ -27,7 +27,7 @@
                     }
                 }
             }
-            req.open('POST', '')
+            req.open('POST', '/seller/new-prom')
             req.setRequestHeader('X-CSRF-TOKEN', form._token.value)
             req.send(data)
         }
@@ -35,11 +35,11 @@
         form.addEventListener('submit', function (e)
         {
             e.preventDefault()
-            // sendForm(this, function ()
-            // {
-            //     modal.innerHTML = success
-            //     var modal = document.getElementById('modal')
-            // })
+            sendForm(this, function ()
+            {
+                var modal = document.getElementById('modal')
+                modal.innerHTML = success
+            })
         })
     })
 }(window,document));
