@@ -15,15 +15,28 @@ class SellerController extends Controller
     {
         $this->middleware('auth:seller');
     }
+
     /**
-     * Show the application dashboard.
+     * Show the home index.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($section)
+    public function index()
     {
         $transactions = request()->user()->transactions;
-        $promotions = '';
+        $promotions = request()->user()->promotions;
+        return view('seller.overview', compact('transactions', 'promotions'));
+    }
+
+    /**
+     * Show the required section.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function section($section)
+    {
+        $transactions = request()->user()->transactions;
+        $promotions = request()->user()->promotions;
 
         switch ($section)
         {
@@ -39,7 +52,6 @@ class SellerController extends Controller
 
             case 'promotions':
                 $view = 'seller.promotions';
-                $promotions = request()->user()->promotions;
 
                 break;
 

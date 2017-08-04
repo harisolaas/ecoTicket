@@ -58,6 +58,7 @@ class CreateDb extends Migration
             $table->string('banner_path')->nullable();
             $table->integer('seller_id');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('product_transaction', function (Blueprint $table) {

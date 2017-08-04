@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
+    protected $dates = ['deleted_at'];
     protected $guarded = ['id'];
     protected $fillable = ['seller_id', 'title', 'desc', 'banner_path'];
 

@@ -27,7 +27,7 @@
                     }
                 }
             }
-            req.open('POST', '/seller/new-prom')
+            req.open('POST', '/seller/promotion/create')
             req.setRequestHeader('X-CSRF-TOKEN', form._token.value)
             req.send(data)
         }

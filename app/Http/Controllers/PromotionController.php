@@ -7,21 +7,6 @@ use App\Promotion;
 
 class PromotionController extends Controller
 {
-    public function store()
-    {
-        $this->validator();
-        $prom = Promotion::create([
-            'title' => request()->input('title'),
-            'desc' => request()->input('desc'),
-            'seller_id' => request()->user()->id
-        ]);
-
-        $path = 'img/promotions/'.request()->user()->id;
-        $path = request()->file('banner')->storeAs($path, $prom->id);
-
-        $prom->banner_path = $path;
-        $prom->update();
-    }
 
     public function validator()
     {
@@ -32,4 +17,48 @@ class PromotionController extends Controller
         ]);
     }
 
+    public function store()
+    {
+        $this->validator();
+        $promotion = Promotion::create([
+            'title' => request()->input('title'),
+            'desc' => request()->input('desc'),
+            'seller_id' => request()->user()->id
+        ]);
+
+        $path = 'img/promotions/'.request()->user()->id;
+        $path = request()->file('banner')->store($path);
+
+        $promotion->banner_path = $path;
+        $promotion->update();
+    }
+
+    public function edit($id)
+    {
+        $promotion = Promotion::findOrFail($id);
+        return view('seller.promotion', compact('promotion'));
+    }
+
+    public function update($id)
+    {
+        $promotion = Promotion::findOrFail($id);
+
+        $this->validator();
+
+        $path = 'img/promotions/'.request()->user()->id;
+        $path = request()->file('banner')->store($path);
+        $promotion->banner_path = $path;
+
+        $promotion->update([
+            'title' => request()->input('title'),
+            'desc' => request()->input('desc'),
+            'seller_id' => request()->user()->id
+        ]);
+    }
+
+    public function delete($id)
+    {
+        $promotion = Promotion::findOrFail($id);
+        $promotion->delete();
+    }
 }
