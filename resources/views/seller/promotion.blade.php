@@ -12,10 +12,10 @@
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
         <li class="active">
-            <a href="#">Promociones </a>
+            <a href="/seller/home/promotions">Promociones </a>
             <ul>
                 @foreach ($promotions as $prom)
-                    <li><a {{ $prom->id == $id ? 'class="active"' : null}} href="/seller/home/promotion/{{ $promotion->id }}"></a></li>
+                    <li><a {{ $prom->id == $promotion->id ? 'class="active"' : null}} href="/seller/home/promotion/{{ $promotion->id }}"></a></li>
                 @endforeach
             </ul>
         </li>
@@ -30,11 +30,7 @@
 
     <div class="tab-content">
         <div id="preview" class="tab-pane fade in active">
-            <div class="promotion-box">
-                <img src="{{ $promotion->banner_path }}" alt="promotion-banner">
-                <h3>{{ $promotion->title }}</h3>
-                <p>{{ $promotion->desc }}</p>
-            </div>
+            @include('promotion-display', compact('promotion'))
         </div>
 
         <div id="edit" class="tab-pane fade">
@@ -74,4 +70,5 @@
 
 @section('scripts')
     @parent
+    <script type="text/javascript" src="{{ asset('js/seller/update-prom.js') }}"></script>
 @endsection

@@ -2,7 +2,7 @@
 {
     window.addEventListener('load', function ()
     {
-        var form = document.getElementById('new-prom-form')
+        var form = document.getElementById('edit-prom-form')
         var processing = false
         var success = '<div class="modal-dialog"><div class="modal-content"><div class="modal-body" style="text-align:center;"><p>La nueva promoción fue cargada con éxito!</p><a class="btn btn-primary" href="" name="ok">Ok</a></div></div></div>'
 
@@ -27,7 +27,7 @@
                     }
                 }
             }
-            req.open('POST', '/seller/promotion/'+window.location.pathname.lastChar())
+            req.open('POST', '/seller/promotion/'+window.location.pathname.charAt(window.location.pathname.length - 1))
             req.setRequestHeader('X-CSRF-TOKEN', form._token.value)
             req.send(data)
         }

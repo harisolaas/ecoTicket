@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Transaction;
 use App\User;
 use Auth;
 use App\Mail\Ticket;
-use Illuminate\Support\Facades\Mail;
 
 class TransactionController extends Controller
 {

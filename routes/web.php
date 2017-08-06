@@ -16,9 +16,8 @@ Route::get('/', function ()
 });
 Route::get('/test', function ()
 {
-    $transaction = App\Transaction::find(1);
-    $pdf = PDF::loadView('pdf.ticket', compact('transaction'));
-    return $pdf->stream();
+    $promotion = App\Promotion::find(1);
+    return view('promotion-display', compact("promotion"));
 });
 Route::prefix('seller')->group(function ()
 {
@@ -38,9 +37,9 @@ Route::prefix('seller')->group(function ()
     Route::post('/promotion/{id}/delete', 'PromotionController@delete')->middleware('auth:seller');
 
     Route::get('/test-datos', 'Seller\DashboardController@datos');
-    Route::get('/test-mail', function ()
+    Route::get('/test', function ()
     {
-        dd(request()->path());
+
     });
 });
 

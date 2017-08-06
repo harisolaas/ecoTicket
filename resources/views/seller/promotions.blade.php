@@ -68,12 +68,12 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Título:</label>
-                    <p>(máximo 15 carácteres)</p>
+                    <p>(máximo 25 carácteres)</p>
                     <input class="form-control" type="text" name="title" value="">
                 </div>
                 <div class="form-group">
                     <label for="desc">Descripción:</label>
-                    <p>(máximo 40 carácteres)</p>
+                    <p>(máximo 60 carácteres)</p>
                     <input class="form-control" type="text" name="desc" value="">
                 </div>
                 <div class="form-group">

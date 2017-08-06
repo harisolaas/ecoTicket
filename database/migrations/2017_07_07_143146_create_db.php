@@ -52,8 +52,8 @@ class CreateDb extends Migration
 
         Schema::create('promotions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 15);
-            $table->string('desc', 40);
+            $table->string('title', 25);
+            $table->string('desc', 60);
             $table->smallInteger('active')->default(0);
             $table->string('banner_path')->nullable();
             $table->integer('seller_id');
