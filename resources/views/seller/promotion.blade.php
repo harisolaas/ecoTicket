@@ -7,18 +7,18 @@
 @endsection
 
 @section('sidebar')
-    <ul class="nav nav-sidebar">
+    <ul class="nav nav-sidebar" style="margin-bottom:0px;">
         <li><a href="/seller/home">Overview </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
-        <li class="active">
+        <li>
             <a href="/seller/home/promotions">Promociones </a>
-            <ul>
-                @foreach ($promotions as $prom)
-                    <li><a {{ $prom->id == $promotion->id ? 'class="active"' : null}} href="/seller/home/promotion/{{ $promotion->id }}"></a></li>
-                @endforeach
-            </ul>
         </li>
+    </ul>
+    <ul class="nav nav-sidebar" style="background-color:#F5F5F5">
+        @foreach ($promotions as $prom)
+            <li class="{{ $prom->id == $promotion->id ? 'active' : '' }}"><a href="/seller/home/promotion/{{ $prom->id }}">{{ $prom->title }}</a></li>
+        @endforeach
     </ul>
 @endsection
 
@@ -38,12 +38,12 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Título:</label>
-                    <p>(máximo 15 carácteres)</p>
+                    <p>(máximo 25 carácteres)</p>
                     <input class="form-control" type="text" name="title" value="{{ $promotion->title }}">
                 </div>
                 <div class="form-group">
                     <label for="desc">Descripción:</label>
-                    <p>(máximo 40 carácteres)</p>
+                    <p>(máximo 60 carácteres)</p>
                     <input class="form-control" type="text" name="desc" value="{{ $promotion->desc }}">
                 </div>
                 <div class="form-group">

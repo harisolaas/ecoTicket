@@ -11,14 +11,7 @@
         <li class="active"><a href="#">Vista general </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
-        <li>
-            <a href="/seller/home/promotions">Promociones </a>
-            <ul>
-                @foreach ($promotions as $promotion)
-                    <li><a href="/seller/home/promotion/{{ $promotion->id }}"></a></li>
-                @endforeach
-            </ul>
-        </li>
+        <li><a href="/seller/home/promotions">Promociones </a></li>
     </ul>
 @endsection
 

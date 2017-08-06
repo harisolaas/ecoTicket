@@ -32,9 +32,10 @@ Route::prefix('seller')->group(function ()
     Route::post('/send-ticket', 'TransactionController@storeAndSend')->middleware('auth:seller');
 
     Route::post('/promotion/create', 'PromotionController@store')->middleware('auth:seller');
-    Route::get('/promotion/{id}', 'PromotionController@edit')->middleware('auth:seller');
+    Route::post('/promotion/toggle', 'PromotionController@toggle')->middleware('auth:seller');
+    Route::post('/promotion/delete', 'PromotionController@delete')->middleware('auth:seller');
+    Route::get('/home/promotion/{id}', 'PromotionController@edit')->middleware('auth:seller');
     Route::post('/promotion/{id}', 'PromotionController@update')->middleware('auth:seller');
-    Route::post('/promotion/{id}/delete', 'PromotionController@delete')->middleware('auth:seller');
 
     Route::get('/test-datos', 'Seller\DashboardController@datos');
     Route::get('/test', function ()

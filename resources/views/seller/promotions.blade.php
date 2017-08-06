@@ -7,18 +7,18 @@
 @endsection
 
 @section('sidebar')
-    <ul class="nav nav-sidebar">
+    <ul class="nav nav-sidebar" style="margin-bottom:0px;">
         <li><a href="/seller/home">Overview </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
         <li class="active">
             <a href="#">Promociones </a>
-            <ul>
-                @foreach ($promotions as $promotion)
-                    <li><a href="/seller/home/promotion/{{ $promotion->id }}"></a></li>
-                @endforeach
-            </ul>
         </li>
+    </ul>
+    <ul class="nav nav-sidebar" style="background-color:#F5F5F5">
+        @foreach ($promotions as $promotion)
+            <li><a href="/seller/home/promotion/{{ $promotion->id }}">{{ $promotion->title }}</a></li>
+        @endforeach
     </ul>
 @endsection
 
@@ -36,23 +36,37 @@
                     <tr>
                         <th colspan="2">Título</th>
                         <th>Estado</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($promotions as $promotion)
                         <tr>
-                            <td colspan="2">Algo{{ $promotion->title }}</td>
+                            <td colspan="2">{{ $promotion->title }}</td>
                             <td>{{ $promotion->active ? 'Activa' : 'Sin publicar' }}</td>
                             <td>
-                                <form action="set-active" method="post">
-                                    <input class="btn btn-link" type="submit" name="send" value="Publicar...">
-                                </form>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Opciones
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><button onclick="location='/seller/home/promotion/{{ $promotion->id }}'" class="btn btn-link" href="#">Editar</button></li>
+                                        <li>
+                                            <form id="promotion-delete-form-{{ $promotion->id }}" data-form="promotion-delete" action="/seller/promotion/delete" method="post">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="promotion_id" value="{{ $promotion->id }}">
+                                                <input class="btn btn-link" type="submit" name="submit" value="Borrar">
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form id="promotion-toggle-form-{{ $promotion->id }}" data-form="promotion-toggle" action="/seller/promotion/toggle" method="post">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="promotion_id" value="{{ $promotion->id }}">
+                                                <input class="btn btn-link" type="submit" name="submit" data-toggle='modal' data-target='#modal' value="{{ $promotion->active ? 'Dejar de publicar' : 'Publicar' }}">
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
                             </td>
-                            <td><a href="#">Ver...</a></td>
-                            <td><a href="#">Editar...</a></td>
                         </tr>
                     @empty
                         <tr>
@@ -99,4 +113,6 @@
 @section('scripts')
     @parent
     <script type="text/javascript" src="{{ asset('js/seller/new-prom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/seller/toggle-prom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/seller/delete-prom.js') }}"></script>
 @endsection

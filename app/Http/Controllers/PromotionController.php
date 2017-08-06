@@ -20,18 +20,18 @@ class PromotionController extends Controller
 
     public function store()
     {
-        // $this->validator();
+        $this->validator();
         $promotion = Promotion::create([
             'title' => request()->input('title'),
             'desc' => request()->input('desc'),
             'seller_id' => request()->user()->id
         ]);
 
-        $path = 'img/promotions/'.request()->user()->id;
+        $path = 'public/img/promotions/'.request()->user()->id;
         $path = request()->file('banner')->store($path);
 
         $promotion->banner_path = str_ireplace("public", "/storage", $path);
-        $promotion->save();
+        $promotion->update();
     }
 
     public function edit($id)
@@ -59,9 +59,16 @@ class PromotionController extends Controller
         ]);
     }
 
-    public function delete($id)
+    public function delete()
     {
-        $promotion = Promotion::findOrFail($id);
+        $promotion = Promotion::find(request()->input('promotion_id'));
         $promotion->delete();
+    }
+
+    public function toggle()
+    {
+        $promotion = Promotion::find(request()->input('promotion_id'));
+        $promotion->active ? $promotion->active = 0 : $promotion->active = 1;
+        $promotion->update();
     }
 }
