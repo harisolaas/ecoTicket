@@ -41,7 +41,7 @@ class SellerController extends Controller
      */
     public function section($section)
     {
-        $transactions = request()->user()->transactions;
+        $transactions = request()->user()->transactions()->paginate(10);
         $promotions = request()->user()->promotions;
 
         switch ($section)
@@ -53,6 +53,7 @@ class SellerController extends Controller
 
             case 'all-tickets':
                 $view = 'seller.all-tickets';
+                // $transactions->paginate(10);
 
                 break;
 

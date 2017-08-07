@@ -204,7 +204,15 @@
                 this.submit.innerHTML = "<span id='spinner' class='fa fa-spinner fa-spin'></spinner>"
                 sendForm(this, function ()
                 {
-                    console.log('algo');
+                    document.getElementById('modal_body').innerHTML = "<h3>El ticket fue enviado con éxito</h3>"
+                    document.querySelector('[data-button=submit]').remove()
+                    var ok = document.querySelector('[data-button=dismiss]')
+                    ok.innerText = 'Ok'
+                    ok.addEventListener('click', function (e)
+                    {
+                        e.preventDefault()
+                        window.location.reload()
+                    })
                 })
             }
         })

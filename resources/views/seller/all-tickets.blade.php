@@ -1,6 +1,14 @@
+@extends('_dashboard')
+
+@section('title', 'Business Dashboard')
+
+@section('h1')
+    ecoTicket Business
+@endsection
+
 @section('sidebar')
     <ul class="nav nav-sidebar">
-        <li><a href="/seller/home">Overview </a></li>
+        <li><a href="/seller/home">Vista previa </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li class="active"><a href="#">Todos mis Tickets </a></li>
         <li><a href="/seller/home/promotions">Promociones </a></li>

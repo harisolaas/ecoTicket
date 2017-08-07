@@ -8,7 +8,7 @@
 
 @section('sidebar')
     <ul class="nav nav-sidebar" style="margin-bottom:0px;">
-        <li><a href="/seller/home">Overview </a></li>
+        <li><a href="/seller/home">Vista general </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
         <li>
@@ -30,7 +30,29 @@
 
     <div class="tab-content">
         <div id="preview" class="tab-pane fade in active">
-            @include('promotion-display', compact('promotion'))
+            <div class="promotion-container">
+                <div class="promotion-handlers">
+                            <form id="promotion-delete-form-{{ $promotion->id }}" data-form="promotion-delete" action="/seller/promotion/delete" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="promotion_id" value="{{ $promotion->id }}">
+                                <input class="btn btn-link" type="submit" name="submit" value="Borrar">
+                            </form>
+
+                            <form id="promotion-toggle-form-{{ $promotion->id }}" data-form="promotion-toggle" action="/seller/promotion/toggle" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="promotion_id" value="{{ $promotion->id }}">
+                                <input class="btn btn-link" type="submit" name="submit" data-toggle='modal' data-target='#modal' value="{{ $promotion->active ? 'Dejar de publicar' : 'Publicar' }}">
+                            </form>
+                </div>
+                @include('promotion-display', compact('promotion'))
+                <div class="promotion-status">
+                    @if ($promotion->active)
+                        <p class="alert alert-success"><span class="icon ion-checkmark-round"></span>  La promoción está activa!</p>
+                    @else
+                        <p class="alert alert-danger"><span class="icon ion-close-round"></span>  La promoción está sin publicar!</p>
+                    @endif
+                </div>
+            </div>
         </div>
 
         <div id="edit" class="tab-pane fade">
@@ -71,4 +93,6 @@
 @section('scripts')
     @parent
     <script type="text/javascript" src="{{ asset('js/seller/update-prom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/seller/toggle-prom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/seller/delete-prom.js') }}"></script>
 @endsection

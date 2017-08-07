@@ -18,7 +18,7 @@
 
 @section('sidebar')
     <ul class="nav nav-sidebar">
-        <li><a href="/seller/home">Overview </a></li>
+        <li><a href="/seller/home">Vista general </a></li>
         <li class="active"><a href="#">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
         <li><a href="/seller/home/promotions">Promociones </a></li>
@@ -26,7 +26,7 @@
 @endsection
 
 @section('panels')
-    
+
         <form id="create-ticket-form" action="" method="post">
             {{ csrf_field() }}
             <table class="table table-stripped">
@@ -61,7 +61,7 @@
             </table>
             @include('_modal', compact($modal))
         </form>
-    
+
 @endsection
 
 @section('scripts')

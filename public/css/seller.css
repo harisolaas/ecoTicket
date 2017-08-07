@@ -176,10 +176,14 @@ hr{
     content: "\e080";
 }
 
+.promotion-container{
+    margin: auto;
+    margin-top: 40px;
+    width: 220px;
+}
 .promotion-box{
     width: 200px;
     padding: 20px;
-    margin: 40px auto;
     box-shadow: 5px 5px 10px grey;
 }
 .promotion-box img{
@@ -200,6 +204,19 @@ hr{
 }
 .promotion-box{
     font-size: 12px;
+    margin: auto;
+}
+.promotion-status{
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+.promotion-handlers{
+    margin: auto 10px;
+    font-size: 1.2em;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .transaction-details{

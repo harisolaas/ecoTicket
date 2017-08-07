@@ -57,6 +57,17 @@ $factory->define(App\ProductImage::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Promotion::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->realText(25, 1),
+        'desc' => $faker->realText(60, 1),
+        'code' => rand(10000000, 99999999),
+        'active' => rand(0,1),
+        'banner_path' => $faker->imageUrl(160, 160),
+        'seller_id' => rand(1,App\Seller::count()),
+    ];
+});
+
 $factory->define(App\Seller::class, function (Faker\Generator $faker) {
     static $password;
 

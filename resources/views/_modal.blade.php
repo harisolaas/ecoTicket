@@ -8,7 +8,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">{{ $modal['title'] }}</h4>
       </div>
-      <div class="modal-body">
+      <div  id='modal_body' class="modal-body">
 
         {{ $modal['body'] }}
 
@@ -20,8 +20,8 @@
         @endforelse
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
+        <button data-button='dismiss' type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button data-button='submit' type="submit" name="submit" class="btn btn-primary">Enviar</button>
       </div>
     </div>
 
