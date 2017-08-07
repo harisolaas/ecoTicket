@@ -18,11 +18,6 @@ a:hover, a:focus{
     text-decoration: none;
     color: #115895;
 }
-hr{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-top: 1px solid #80AA29;
-}
 .fs-7{
     font-size: 0.7em;
     max-width: 300px;
@@ -60,12 +55,15 @@ hr{
 .jumbotron{
     background-color: rgba(0,0,0,0.2);
     color: #fff;
+    padding-top: 17%;
+    padding-bottom:15%;
 }
 .home-img{
     background-image: url('http://localhost:8000/img/5.jpg');
     border-radius: 6px;
 }
 .value-proposal{
+    margin-top:5%;
     color: #80AA29;
     text-align: center;
 }
@@ -255,7 +253,7 @@ background: #333333;
     line-height: 50px;
     color: #80AA29;
     border: 3px solid #80AA29;
-    border-radius: 27.8px;
+    border-radius: 6px;
     padding: 0 15%;
     margin-bottom: 80px;
 }

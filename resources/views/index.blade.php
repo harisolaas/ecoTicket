@@ -12,11 +12,11 @@
                     <h1>Soluciones digitales a problemas cotidianos</h1>
                     <p><strong>El ticket digital ya llegó</strong> y es tan simple como pedir tu versión digital en locales adheridos.</p>
                     <br>
-                    <p><a class="btn btn-primary btn-lg" target="_blank" href="{{ url('register') }}" role="button">Crear mi cuenta de ecoTicket... »</a> <a class="btn btn-primary btn-lg" target="_blank" href="{{ url('seller/register')}}" role="button">Registrar a mi empresa... »</a></p>
+                    <p><a class="btn btn-primary btn-lg" target="_blank" href="{{ url('register') }}" role="button">Crear mi cuenta de ecoTicket</a> <a class="btn btn-primary btn-lg" target="_blank" href="{{ url('seller/register')}}" role="button">Registrar a mi empresa</a></p>
                 </div>
             </div>
         </div>
-        <hr>
+
         <div class="container">
                 <div class="row value-proposal">
                     <div class="col-md-4">
@@ -65,8 +65,6 @@
                  </div>
              </div>
          </div>
-
-         <hr>
 
          <div class="faqs-container">
               <p class="faqs-p">¿Tenés alguna duda?</p>
