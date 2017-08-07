@@ -49,7 +49,9 @@
                                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Opciones
                                     <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
-                                        <li><button onclick="location='/seller/home/promotion/{{ $promotion->id }}'" class="btn btn-link" href="#">Editar</button></li>
+                                        <li>
+                                            <button onclick="location='/seller/home/promotion/{{ $promotion->id }}'" class="btn btn-link" href="#">Editar</button>
+                                        </li>
                                         <li>
                                             <form id="promotion-delete-form-{{ $promotion->id }}" data-form="promotion-delete" action="/seller/promotion/delete" method="post">
                                                 {{ csrf_field() }}

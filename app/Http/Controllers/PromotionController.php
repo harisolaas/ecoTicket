@@ -24,7 +24,8 @@ class PromotionController extends Controller
         $promotion = Promotion::create([
             'title' => request()->input('title'),
             'desc' => request()->input('desc'),
-            'seller_id' => request()->user()->id
+            'seller_id' => request()->user()->id,
+            'code' => rand(1000000000, 9999999999),
         ]);
 
         $path = 'public/img/promotions/'.request()->user()->id;

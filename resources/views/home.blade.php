@@ -17,6 +17,7 @@
     <div class="container-fluid">
         <h2>Promos</h2>
         <div class="row">
+        @if ($grouped_promotions->isNotEmpty())
             <div class="col-xs-12">
                 <div id="myCarousel" class="carousel slide">
                     <ol id="carousel_ol" class="carousel-indicators">
@@ -25,8 +26,8 @@
                         @endfor
                     </ol>
                     <script type="text/javascript">
-                        var active = document.getElementById('carousel_ol').querySelector('li')
-                        active.classList.toggle('active')
+                    var active = document.getElementById('carousel_ol').querySelector('li')
+                    active.classList.toggle('active')
                     </script>
 
                     <div id="carousel_inner" class="carousel-inner">
@@ -42,8 +43,8 @@
                                 </div>
                             </div>
                             <script type="text/javascript">
-                                var active = document.getElementById('carousel_inner').querySelector('.item')
-                                active.classList.toggle('active')
+                            var active = document.getElementById('carousel_inner').querySelector('.item')
+                            active.classList.toggle('active')
                             </script>
                         @endforeach
 
@@ -60,6 +61,9 @@
 
                 </div>
             </div>
+        @else
+            <p class="alert alert-info">No hay promociones vigentes en este momento!</p>
+        @endif
         </div>
     </div>
     <div class="container-fluid">

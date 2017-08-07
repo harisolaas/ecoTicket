@@ -34,5 +34,6 @@ class TestDbSeeder extends Seeder
             }
             $t->save();
         });
+        factory(App\Promotion::class, 50)->create();
     }
 }
