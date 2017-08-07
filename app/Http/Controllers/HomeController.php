@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Promotion;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $transactions = User::find(request()->user()->id)->transactions()->paginate(10);
+        $transactions = request()->user()->transactions()->paginate(10);
 
-        return view('home', compact('transactions'));
+        $sellers = request()->user()->transactions()->pluck("seller_id")->toArray();
+        $grouped_promotions = Promotion::whereIn('seller_id', $sellers)->get()->chunk(4);
+
+        return view('home', compact('transactions', 'grouped_promotions'));
     }
 }

@@ -12,7 +12,7 @@ a{
 }
 a:hover, a:focus{
     text-decoration: none;
-    color: #80AA29;
+    color: #005691;
 }
 .has-error a:hover, .has-error a:focus, .has-success a:hover, .has-success a:focus{
     text-decoration: none;
@@ -21,7 +21,7 @@ a:hover, a:focus{
 hr{
     margin-top: 100px;
     margin-bottom: 100px;
-    border-top: 1px solid #80AA29;
+    border-top: 1px solid #005691;
 }
 .fs-7{
     font-size: 0.7em;
@@ -31,31 +31,31 @@ hr{
 .max-width-400{
 }
 .navbar-default {
-    background-color: #fff;
-    border-color: #80AA29;
-    color: rgb(53, 79, 4);
+    background-color: #004A7C;
+    border-color: #E8F1F5;
+    color: #FAFAFA;
 }
 .navbar-default .navbar-brand{
-    color: rgb(53, 79, 4);
+    color: #FAFAFA;
     font-weight: bold;
     font-size: 1.5em;
 }
 .navbar-default .navbar-nav>li>a {
-     color: rgb(53, 79, 4);
+     color: #FAFAFA;
 }
 .navbar-default a:focus, .navbar-default a:hover {
-    color: #80AA29 !important;
+    color: #E8F1F5 !important;
 }
 .main{
     margin-top: 51px;
     padding-top: 19px;
 }
 .btn-primary{
-    background-color: #80AA29;
+    background-color: #005691;
     border: none;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus{
-    background-color: #174F04;
+    background-color: #004A7C;
 }
 .jumbotron{
     background-color: rgba(0,0,0,0.2);
@@ -175,24 +175,17 @@ hr{
 .panel-heading .accordion-toggle.collapsed:after {
     content: "\e080";
 }
-/*margin: 40px auto;box-shadow: 5px 5px 10px grey;*/
-.carousel-control{
-    opacity: .2;
-    color: black;
-}
+
 .promotion-box{
-    width: 170px;
-    height: 200px;
-    padding: 5px;
-    font-size: 10px;
-}
-.promotion-box .img-container{
-    padding: 0 15px;
-    padding-top: 5px;
+    width: 200px;
+    padding: 20px;
+    margin: 40px auto;
+    box-shadow: 5px 5px 10px grey;
 }
 .promotion-box img{
-    width: 130px;
-    height: 130px;
+    margin: auto;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     box-shadow: 0.5px 1px 3px #444;
 }
@@ -200,40 +193,13 @@ hr{
     text-align: center;
 }
 .promotion-box h3{
-    font-size: 14px;
-    margin-top: 9px;
-    margin-bottom: 2px;
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 4px;
     font-weight: bold;
 }
-.promotion-box p{
-    margin: 0;
-}
-
-/* Removes the default 20px margin and creates some padding space for the indicators and controls */
-.carousel {
-    margin-bottom: 0;
-	padding: 0 40px 30px 40px;
-}
-/* Reposition the controls slightly */
-.carousel-control {
-	left: -12px;
-}
-.carousel-control.right {
-	right: -12px;
-}
-/* Changes the position of the indicators */
-.carousel-indicators {
-	right: 50%;
-	top: auto;
-	bottom: 0px;
-	margin-right: -19px;
-}
-/* Changes the colour of the indicators */
-.carousel-indicators li {
-	background: #c0c0c0;
-}
-.carousel-indicators .active {
-background: #333333;
+.promotion-box{
+    font-size: 12px;
 }
 
 .transaction-details{
@@ -266,7 +232,7 @@ background: #333333;
 }
 footer{
   height: 110px;
-  background-color: #80AA29;
+  background-color: #004A7C;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -286,7 +252,7 @@ footer a{
   width: 100%;
   height: 100px;
   line-height: 100px;
-  color: #fff;
+  color: #FAFAFA;
 
   font-size: 2.5em;
 }

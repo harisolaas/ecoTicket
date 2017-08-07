@@ -8,7 +8,7 @@
         <title>ecoTicket :: @yield('title')</title>
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href={{asset("css/custom.css")}}>
+        <link rel="stylesheet" href={{ str_contains(request()->path(), 'seller') ? asset("css/seller.css") : asset("css/custom.css") }}>
         <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700" rel="stylesheet">
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

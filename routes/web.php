@@ -16,8 +16,9 @@ Route::get('/', function ()
 });
 Route::get('/test', function ()
 {
-    $promotion = App\Promotion::find(1);
-    return view('promotion-display', compact("promotion"));
+    $sellers = request()->user()->transactions()->pluck("seller_id")->toArray();
+    $grouped_promotions = App\Promotion::whereIn('seller_id', $sellers)->get()->chunk(4)->toArray();
+    dd($grouped_promotions);
 });
 Route::prefix('seller')->group(function ()
 {

@@ -2,20 +2,68 @@
 
 @section('title', 'Home')
 
-@section('sidebar')
-    <ul class="nav nav-sidebar">
-        <li><a href="#">Tus compras</a></li>
-        <li><a href="#">Promos</a></li>
-    </ul>
-@endsection
-
 @section('h1')
     ecoTicket
 @endsection
 
+@section('sidebar')
+    <ul class="nav nav-sidebar">
+        <li class="active"><a href="/home">Tus compras</a></li>
+        <li><a href="home/promotions">Promos</a></li>
+    </ul>
+@endsection
+
 @section('panels')
     <div class="container-fluid">
+        <h2>Promos</h2>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="myCarousel" class="carousel slide">
+                    <ol id="carousel_ol" class="carousel-indicators">
+                        @for ($i=0; $i < count($grouped_promotions); $i++)
+                            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                        @endfor
+                    </ol>
+                    <script type="text/javascript">
+                        var active = document.getElementById('carousel_ol').querySelector('li')
+                        active.classList.toggle('active')
+                    </script>
 
+                    <div id="carousel_inner" class="carousel-inner">
+
+                        @foreach ($grouped_promotions as $promotion_group)
+                            <div class="item">
+                                <div class="row-fluid">
+                                    @foreach ($promotion_group as $promotion)
+                                        <div class="col-xs-3">
+                                            @include('promotion-display', $promotion)
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                var active = document.getElementById('carousel_inner').querySelector('.item')
+                                active.classList.toggle('active')
+                            </script>
+                        @endforeach
+
+                    </div>
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2>Tus Tickets</h2>
         <div class="row heading">
             <div class="col-xs-3">
                 <strong>Fecha</strong>
@@ -89,4 +137,8 @@
 
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @parent
 @endsection
