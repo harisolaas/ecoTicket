@@ -28,7 +28,7 @@ class HomeController extends Controller
         $transactions = request()->user()->transactions()->paginate(10);
 
         $sellers = request()->user()->transactions()->pluck("seller_id")->toArray();
-        $grouped_promotions = Promotion::whereIn('seller_id', $sellers)->get()->chunk(4);
+        $grouped_promotions = Promotion::whereIn('seller_id', $sellers)->where('active', '=', 1)->get()->chunk(4);
 
         return view('home', compact('transactions', 'grouped_promotions'));
     }
