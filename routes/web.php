@@ -50,6 +50,7 @@ Auth::routes();
 Route::post('/user/set-active', 'Auth\RegisterController@setActive');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/sellers', 'HomeController@sellers')->middleware('auth:web');
 
 Route::get('request/product', 'RequestsController@getProduct');
 

@@ -9,7 +9,7 @@
 @section('sidebar')
     <ul class="nav nav-sidebar">
         <li class="active"><a href="/home">Tus compras</a></li>
-        <li><a href="home/promotions">Promos</a></li>
+        <li><a href="/home/sellers">Comercios</a></li>
     </ul>
 @endsection
 

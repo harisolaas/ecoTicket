@@ -41,7 +41,7 @@ class SellerController extends Controller
      */
     public function section($section)
     {
-        $transactions = request()->user()->transactions()->paginate(10);
+        $transactions = request()->user()->transactions()->orderByDesc('created_at')->paginate(10);
         $promotions = request()->user()->promotions;
 
         switch ($section)
