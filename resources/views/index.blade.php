@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="md-circle">
-                            <span class="icon ion-bag"></span>
+                            <span class="home fa fa-shopping-bag" style="font-size:4em;    padding-top:12px;"></span>
                         </div>
                       <h2>Asegurá tus compras</h2>
 
@@ -60,7 +60,7 @@
                              <li>Sos comerciante? Lleva registro de todas tus transacciones por local y cliente.</li>
                          </ul>
                          <p style="margin-bottom: 20px">Creá tu cuenta por única vez y comenzá a disfrutar de los beneficios e ecoTicket.</p>
-                         <a class="btn btn-primary" href="sign-up.php">Sumate a nuestra comunidad!</a>
+                         <a class="btn btn-primary" href="/register">Sumate a nuestra comunidad!</a>
                      </article>
                  </div>
              </div>
@@ -68,7 +68,7 @@
 
          <div class="faqs-container">
               <p class="faqs-p">¿Tenés alguna duda?</p>
-              <a class="faqs-a" href="faq.php">Preguntas frecuentes</a>
+              <a class="faqs-a" href="/faqs">Preguntas frecuentes</a>
           </div>
     </main>
 @endsection
