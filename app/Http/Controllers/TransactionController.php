@@ -27,7 +27,8 @@ class TransactionController extends Controller
         foreach (request()->input('products') as $product_id) {
             $transaction->products()->attach($product_id);
         }
-        $transaction->save();
+        $transaction->update();
+        
         Mail::to($transaction->user->email)->send(new Ticket($transaction));
     }
 }

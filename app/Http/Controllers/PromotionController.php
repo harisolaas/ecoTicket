@@ -18,6 +18,12 @@ class PromotionController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $promotion = Promotion::find($id);
+        return view('promotion', compact('promotion'));
+    }
+
     public function store()
     {
         $this->validator();

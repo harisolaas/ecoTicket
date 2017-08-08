@@ -61,6 +61,8 @@ Route::prefix('file')->group(function ()
     Route::get('/download/{transaction_id}', 'FileController@downloadTicket')->middleware('auth:web');
 });
 
+Route::get('promotion/{id}', 'PromotionController@show')->middleware('auth:web');
+
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 // Route::get('products/{id}', 'ProductController@show');

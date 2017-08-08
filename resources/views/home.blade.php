@@ -26,8 +26,8 @@
                         @endfor
                     </ol>
                     <script type="text/javascript">
-                    var active = document.getElementById('carousel_ol').querySelector('li')
-                    active.classList.toggle('active')
+                        var active = document.getElementById('carousel_ol').querySelector('li');
+                        active.classList.toggle('active');
                     </script>
 
                     <div id="carousel_inner" class="carousel-inner">
@@ -42,11 +42,11 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <script type="text/javascript">
-                            var active = document.getElementById('carousel_inner').querySelector('.item')
-                            active.classList.toggle('active')
-                            </script>
                         @endforeach
+                        <script type="text/javascript">
+                            var active = document.getElementById('carousel_inner').querySelector('.item');
+                            active.classList.toggle('active');
+                        </script>
 
                     </div>
 
