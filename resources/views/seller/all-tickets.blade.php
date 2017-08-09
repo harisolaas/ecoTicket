@@ -11,6 +11,7 @@
         <li><a href="/seller/home">Vista previa </a></li>
         <li><a href="/seller/home/new-ticket">Nuevo Ticket </a></li>
         <li class="active"><a href="#">Todos mis Tickets </a></li>
+        <li><a href="/seller/home/products">Productos </a></li>
         <li><a href="/seller/home/promotions">Promociones </a></li>
     </ul>
 @endsection

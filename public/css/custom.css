@@ -59,7 +59,7 @@ a:hover, a:focus{
     padding-bottom:15%;
 }
 .home-img{
-    background-image: url('http://localhost:8000/img/5.jpg');
+    background-image: url('/img/5.jpg');
     border-radius: 6px;
 }
 .value-proposal{

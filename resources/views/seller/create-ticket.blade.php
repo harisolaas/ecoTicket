@@ -21,6 +21,7 @@
         <li><a href="/seller/home">Vista general </a></li>
         <li class="active"><a href="#">Nuevo Ticket </a></li>
         <li><a href="/seller/home/all-tickets">Todos mis Tickets </a></li>
+        <li><a href="/seller/home/products">Productos </a></li>
         <li><a href="/seller/home/promotions">Promociones </a></li>
     </ul>
 @endsection

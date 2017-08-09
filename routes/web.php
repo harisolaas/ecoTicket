@@ -38,6 +38,11 @@ Route::prefix('seller')->group(function ()
     Route::get('/home/promotion/{id}', 'PromotionController@edit')->middleware('auth:seller');
     Route::post('/promotion/{id}', 'PromotionController@update')->middleware('auth:seller');
 
+    Route::get('/home/products', 'ProductController@index')->middleware('auth:seller');
+    Route::get('products/create', 'ProductController@create')->middleware('auth:seller');
+    // Route::get('products/{id}', 'ProductController@show');
+    Route::post('products', 'ProductController@store')->middleware('auth:seller');
+
     Route::get('/test-datos', 'Seller\DashboardController@datos');
     Route::get('/test', function ()
     {
@@ -55,19 +60,16 @@ Route::get('/home/shops', 'HomeController@sellers')->middleware('auth:web');
 Route::get('request/product', 'RequestsController@getProduct');
 
 Route::get('checkEmailAvailability', 'RequestsController@checkEmailAvailability');
+Route::get('/download/{transaction_id}', 'FileController@downloadTicket')->middleware('auth:web');
+
 
 Route::prefix('file')->group(function ()
 {
     Route::get('/print/{transaction_id}', 'FileController@printTicket')->middleware('auth:web');
-    Route::get('/download/{transaction_id}', 'FileController@downloadTicket')->middleware('auth:web');
 });
 
 Route::get('promotion/{id}', 'PromotionController@show')->middleware('auth:web');
 
-Route::get('products', 'ProductController@index');
-Route::get('products/create', 'ProductController@create');
-// Route::get('products/{id}', 'ProductController@show');
-Route::post('products', 'ProductController@store');
 
 Route::get('categories/create', 'CategorieController@create');
 Route::post('categories', 'CategorieController@store');
