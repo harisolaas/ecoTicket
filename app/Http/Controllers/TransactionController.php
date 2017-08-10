@@ -28,7 +28,7 @@ class TransactionController extends Controller
             $transaction->products()->attach($product_id);
         }
         $transaction->update();
-        
-        Mail::to($transaction->user->email)->send(new Ticket($transaction));
+
+        Mail::to($transaction->user->email)->queue(new Ticket($transaction));
     }
 }

@@ -9,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Mail\Ticket;
 
 Route::get('/', function ()
 {
@@ -16,9 +17,8 @@ Route::get('/', function ()
 });
 Route::get('/test', function ()
 {
-    $sellers = request()->user()->transactions()->pluck("seller_id")->toArray();
-    $grouped_promotions = App\Promotion::whereIn('seller_id', $sellers)->get()->chunk(4)->toArray();
-    dd($grouped_promotions);
+    Mail::to('h.solaas1@gmail.com')->queue(new Ticket(App\Transaction::find(1)));
+    dd('llegué');
 });
 Route::prefix('seller')->group(function ()
 {
@@ -37,7 +37,7 @@ Route::prefix('seller')->group(function ()
     Route::post('/promotion/delete', 'PromotionController@delete')->middleware('auth:seller');
     Route::get('/home/promotion/{id}', 'PromotionController@edit')->middleware('auth:seller');
     Route::post('/promotion/{id}', 'PromotionController@update')->middleware('auth:seller');
- 
+
     // Route::get('/home/products', 'ProductController@index')->middleware('auth:seller');
     // Route::get('products/create', 'ProductController@create')->middleware('auth:seller');
     // // Route::get('products/{id}', 'ProductController@show');
