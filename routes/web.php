@@ -28,7 +28,7 @@ Route::prefix('seller')->group(function ()
     Route::get('/login', 'Auth\SellerLoginController@showLoginForm')->name('seller.login');
     Route::post('/login', 'Auth\SellerLoginController@login');
     Route::get('/home', 'SellerController@index')->name('seller.home');
-    Route::get('/home/{section}', 'SellerController@section');
+    Route::get('/home/{section}', 'SellerController@section')->middleware('auth:seller');
 
     Route::post('/send-ticket', 'TransactionController@storeAndSend')->middleware('auth:seller');
 
@@ -37,11 +37,11 @@ Route::prefix('seller')->group(function ()
     Route::post('/promotion/delete', 'PromotionController@delete')->middleware('auth:seller');
     Route::get('/home/promotion/{id}', 'PromotionController@edit')->middleware('auth:seller');
     Route::post('/promotion/{id}', 'PromotionController@update')->middleware('auth:seller');
-
-    Route::get('/home/products', 'ProductController@index')->middleware('auth:seller');
-    Route::get('products/create', 'ProductController@create')->middleware('auth:seller');
-    // Route::get('products/{id}', 'ProductController@show');
-    Route::post('products', 'ProductController@store')->middleware('auth:seller');
+ 
+    // Route::get('/home/products', 'ProductController@index')->middleware('auth:seller');
+    // Route::get('products/create', 'ProductController@create')->middleware('auth:seller');
+    // // Route::get('products/{id}', 'ProductController@show');
+    // Route::post('products', 'ProductController@store')->middleware('auth:seller');
 
     Route::get('/test-datos', 'Seller\DashboardController@datos');
     Route::get('/test', function ()

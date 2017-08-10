@@ -41,7 +41,7 @@ class SellerController extends Controller
      */
     public function section($section)
     {
-        $transactions = request()->user()->transactions()->orderByDesc('created_at')->paginate(10);
+        $data = [];
         $promotions = request()->user()->promotions;
 
         switch ($section)
@@ -52,23 +52,31 @@ class SellerController extends Controller
                 break;
 
             case 'all-tickets':
+                $transactions = request()->user()->transactions()->orderByDesc('created_at')->paginate(10);
+                $data = compact('transactions');
                 $view = 'seller.all-tickets';
-                // $transactions->paginate(10);
 
                 break;
 
             case 'promotions':
+                $data = compact('promotions');
                 $view = 'seller.promotions';
 
                 break;
 
-            default:
-                $view = 'seller.overview';
+            case 'products':
+                $products = request()->user()->products;
+                $data = compact('products');
+                $view = 'seller.products';
 
                 break;
+
+            default:
+                $this->index();
+                exit;
         }
 
-        return view($view, compact('transactions', 'promotions'));
+        return view($view, $data);
     }
 
     /**
