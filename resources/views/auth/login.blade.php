@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Login')
+
 @section('main')
 <div class="container">
     <div class="row">

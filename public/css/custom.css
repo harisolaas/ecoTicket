@@ -306,7 +306,7 @@ footer a{
 }
 @media (min-width: 480px) {
     .create-account-img{
-        background-image: url('http://localhost:8000/img/train-station.jpg');
+        background-image: url('/img/train-station.jpg');
         background-position: center;
         background-size: cover;
         height: 400px;
