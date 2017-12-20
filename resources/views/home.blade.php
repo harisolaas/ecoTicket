@@ -1,6 +1,6 @@
 @extends('_dashboard')
 
-@section('title', 'Home')
+@section('title', 'Test')
 
 @section('h1')
     ecoTicket
